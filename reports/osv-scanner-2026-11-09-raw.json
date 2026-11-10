@@ -1,0 +1,1004 @@
+{
+  "results": [
+    {
+      "source": {
+        "path": "C:/project-new/pnpm-lock.yaml",
+        "type": "lockfile"
+      },
+      "packages": [
+        {
+          "package": {
+            "name": "@nuxt/nitro-server",
+            "version": "4.6.4",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/%40nuxt/nitro-server@4.6.4"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-vjh5-4x84-xrqp"
+              ],
+              "aliases": [
+                "CVE-2026-114132",
+                "GHSA-vjh5-4x84-xrqp"
+              ],
+              "max_severity": "6.3"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "nuxt",
+                    "purl": "pkg:npm/nuxt"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "4.0.0"
+                        },
+                        {
+                          "fixed": "4.6.2"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c 4.0.0",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "nuxt",
+                    "purl": "pkg:npm/nuxt"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "3.0.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "@nuxt/nitro-server",
+                    "purl": "pkg:npm/%40nuxt/nitro-server"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "4.2.0"
+                        },
+                        {
+                          "fixed": "4.6.2"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c 4.0.0",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "@nuxt/nitro-server",
+                    "purl": "pkg:npm/%40nuxt/nitro-server"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "3.20.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-114132"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-178",
+                  "CWE-863"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-22T16:59:55Z",
+                "nvd_published_at": "2026-10-21T18:17:26Z",
+                "severity": "MODERATE"
+              },
+              "details": "## Impact\n\nWith the default `router.options.sensitive: false`, Nuxt's page router resolves routes case-insensitively, so `/Admin` renders the same page as `/admin`. On the server, however, route rules were resolved with Nitro's route-rule matcher, which matches keys case-sensitively. A request whose path differs from a rule key only in letter case therefore rendered the page with none of that rule applied.\n\nEarlier fixes ([GHSA-mm7m-92g8-7m47](https://github.com/nuxt/nuxt/security/advisories/GHSA-mm7m-92g8-7m47), [GHSA-hxvh-4h3w-prp9](https://github.com/nuxt/nuxt/security/advisories/GHSA-hxvh-4h3w-prp9)) case-folded the route rules that the Nuxt app itself reads, such as `appMiddleware`. This advisory covers the rules applied on the server:\n\n- `redirect`: a rule used to send visitors away from a page, such as `'/admin/**': { redirect: '/login' }`, was skipped, and the page and its server-fetched data were rendered instead.\n- `headers`: per-route response headers, including security headers such as `Content-Security-Policy` or `X-Frame-Options`, were not sent.\n- `proxy`: the request was not proxied.\n- `ssr: false` and `noScripts`: the page was server-rendered, or shipped scripts, despite the rule.\n- `getRouteRules(event)` (auto-imported, or from `nuxt/server`) and `matchRouteRules` from `nuxt/server` returned no rules for the case variant.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith this configuration, `/admin/secret` redirects to `/login`, but `/Admin/secret` rendered `app/pages/admin/secret.vue`.\n\n## Mitigating factors\n\n- Applications that set `router.options.sensitive: true` in `nuxt.config` are not affected, because their pages are only served for the exact case of the route.\n- Access checks performed in server middleware, route middleware attached with `definePageMeta`, or in the page's data fetching are not affected. The issue only affects protections that rely on a server-side route rule matching the request path.\n\n## Affected versions\n\n`nuxt` `\u003c4.6.2`, including all Nuxt 3 releases, and `@nuxt/nitro-server` `\u003c4.6.2`.\n\n## Patches\n\nFixed in `nuxt@4.6.2`. Nuxt 3 reached end of life on 31 July 2026 and will not receive a fix.\n\nNuxt now resolves server-side route rules itself, decoding and case-folding both the rule keys and the request path unless `router.options.sensitive` is set, and applies the result to Nitro's `redirect`, `headers` and `proxy` handling, the renderer, and the `getRouteRules` / `matchRouteRules` helpers.\n\nWhen routing is case-insensitive, patched releases change some behaviour:\n\n- Route rules also apply to case variants of server API routes. For example, `/API/x` now matches a `/api/**` `proxy` or `headers` rule.\n- Rule keys that differ only in letter case now resolve to the same path on the server, and the later key takes precedence.\n\nThe following are not changed by this fix:\n\n- `cache` and `swr` response caching is attached to server routes by Nitro's router, which matches case-sensitively. A case variant is still rendered with its route rules applied, but its response is not cached.\n- Rules that a deployment preset compiles into platform configuration (for example Vercel's `config.json` or Netlify's `_redirects` and `_headers`) are matched by the platform. Once a request reaches the Nuxt server, the rules are applied as described above.\n- If `sensitive` is set only in `app/router.options.ts`, the server follows the `nuxt.config` value. In that configuration route rules can only apply to more paths, never fewer.\n\n## Workarounds\n\nUpgrade to `nuxt@4.6.2`. If you cannot upgrade, including on Nuxt 3:\n\n1. Set `router: { options: { sensitive: true } }` in `nuxt.config`, so pages are only served for the exact case of their route.\n2. Alternatively, enforce access control in server middleware or route middleware rather than relying on a `redirect` route rule, and set security headers for every response rather than per route.",
+              "id": "GHSA-vjh5-4x84-xrqp",
+              "modified": "2026-10-22T17:15:04.297280606Z",
+              "published": "2026-10-22T16:59:55Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/nuxt/nuxt/security/advisories/GHSA-vjh5-4x84-xrqp"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114132"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/nuxt/nuxt/commit/f6cfee52cf9576ddc4f4ee83b486969328b358f8"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/nuxt/nuxt"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.2"
+                }
+              ],
+              "schema_version": "1.9.0",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "deepmerge",
+            "version": "4.3.1",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/deepmerge@4.3.1"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-gcqx-w48m-w2h4"
+              ],
+              "aliases": [
+                "CVE-2026-93753",
+                "GHSA-gcqx-w48m-w2h4"
+              ],
+              "max_severity": "5.3"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/09/GHSA-gcqx-w48m-w2h4/GHSA-gcqx-w48m-w2h4.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "deepmerge",
+                    "purl": "pkg:npm/deepmerge"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "4.2.0"
+                        },
+                        {
+                          "last_affected": "4.3.1"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-93753"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-1321"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-27T21:34:55Z",
+                "nvd_published_at": "2026-09-18T18:18:34Z",
+                "severity": "LOW"
+              },
+              "details": "deepmerge through 4.3.1 contains a prototype poisoning vulnerability in the mergeObject() function that fails to properly validate keys being written to target objects. Attackers can supply malicious source objects in merge operations to inject attacker-controlled properties into the returned object's prototype, causing applications to inherit unintended values when accessing properties without own-property checks.",
+              "id": "GHSA-gcqx-w48m-w2h4",
+              "modified": "2026-10-27T21:45:04.256048049Z",
+              "published": "2026-09-18T18:31:44Z",
+              "references": [
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-93753"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/TehShrike/deepmerge/issues/273"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/TehShrike/deepmerge"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/TehShrike/deepmerge/blob/5b87756a5671635679001cbac72aa42f23472c81/index.js#L39-L60"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://www.vulncheck.com/advisories/deepmerge-through-4.3.1-prototype-poisoning-via-mergeobject"
+                }
+              ],
+              "schema_version": "1.9.2",
+              "severity": [
+                {
+                  "score": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N",
+                  "type": "CVSS_V3"
+                },
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "deepmerge mergeObject() allows prototype poisoning of returned objects"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "esbuild",
+            "version": "0.18.20",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/esbuild@0.18.20"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-67mh-4wv8-2f99"
+              ],
+              "aliases": [
+                "GHSA-67mh-4wv8-2f99"
+              ],
+              "max_severity": "5.3"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c= 0.24.2",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2025/02/GHSA-67mh-4wv8-2f99/GHSA-67mh-4wv8-2f99.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "esbuild",
+                    "purl": "pkg:npm/esbuild"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0"
+                        },
+                        {
+                          "fixed": "0.25.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-346"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2025-02-10T17:48:07Z",
+                "nvd_published_at": null,
+                "severity": "MODERATE"
+              },
+              "details": "### Summary\n\nesbuild allows any websites to send any request to the development server and read the response due to default CORS settings.\n\n### Details\n\nesbuild sets `Access-Control-Allow-Origin: *` header to all requests, including the SSE connection, which allows any websites to send any request to the development server and read the response.\n\nhttps://github.com/evanw/esbuild/blob/df815ac27b84f8b34374c9182a93c94718f8a630/pkg/api/serve_other.go#L121\nhttps://github.com/evanw/esbuild/blob/df815ac27b84f8b34374c9182a93c94718f8a630/pkg/api/serve_other.go#L363\n\n**Attack scenario**:\n\n1. The attacker serves a malicious web page (`http://malicious.example.com`).\n1. The user accesses the malicious web page.\n1. The attacker sends a `fetch('http://127.0.0.1:8000/main.js')` request by JS in that malicious web page. This request is normally blocked by same-origin policy, but that's not the case for the reasons above.\n1. The attacker gets the content of `http://127.0.0.1:8000/main.js`.\n\nIn this scenario, I assumed that the attacker knows the URL of the bundle output file name. But the attacker can also get that information by\n\n- Fetching `/index.html`: normally you have a script tag here\n- Fetching `/assets`: it's common to have a `assets` directory when you have JS files and CSS files in a different directory and the directory listing feature tells the attacker the list of files\n- Connecting `/esbuild` SSE endpoint: the SSE endpoint sends the URL path of the changed files when the file is changed (`new EventSource('/esbuild').addEventListener('change', e =\u003e console.log(e.type, e.data))`)\n- Fetching URLs in the known file: once the attacker knows one file, the attacker can know the URLs imported from that file\n\nThe scenario above fetches the compiled content, but if the victim has the source map option enabled, the attacker can also get the non-compiled content by fetching the source map file.\n\n### PoC\n\n1. Download [reproduction.zip](https://github.com/user-attachments/files/18561484/reproduction.zip)\n2. Extract it and move to that directory\n1. Run `npm i`\n1. Run `npm run watch`\n1. Run `fetch('http://127.0.0.1:8000/app.js').then(r =\u003e r.text()).then(content =\u003e console.log(content))` in a different website's dev tools.\n\n![image](https://github.com/user-attachments/assets/08fc2e4d-e1ec-44ca-b0ea-78a73c3c40e9)\n\n### Impact\n\nUsers using the serve feature may get the source code stolen by malicious websites.",
+              "id": "GHSA-67mh-4wv8-2f99",
+              "modified": "2026-09-10T03:50:22.418128505Z",
+              "published": "2025-02-10T17:48:07Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/evanw/esbuild/security/advisories/GHSA-67mh-4wv8-2f99"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/evanw/esbuild/commit/de85afd65edec9ebc44a11e245fd9e9a2e99760d"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/evanw/esbuild"
+                }
+              ],
+              "schema_version": "1.9.0",
+              "severity": [
+                {
+                  "score": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N",
+                  "type": "CVSS_V3"
+                }
+              ],
+              "summary": "esbuild enables any website to send any requests to the development server and read the response"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "esbuild",
+            "version": "0.27.7",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/esbuild@0.27.7"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-g7r4-m6w7-qqqr"
+              ],
+              "aliases": [
+                "GHSA-g7r4-m6w7-qqqr"
+              ],
+              "max_severity": "2.5"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/06/GHSA-g7r4-m6w7-qqqr/GHSA-g7r4-m6w7-qqqr.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "esbuild",
+                    "purl": "pkg:npm/esbuild"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "0.27.3"
+                        },
+                        {
+                          "fixed": "0.28.1"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-22"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-06-12T20:08:53Z",
+                "nvd_published_at": null,
+                "severity": "LOW"
+              },
+              "details": "### Summary\n\nThe development server contains a path traversal vulnerability on Windows when serving files from `servedir`.\n\nDue to the use of `path.Clean()` (which only normalizes forward-slash `/` separators) instead of a Windows-aware path normalization function, it is possible to craft requests using backslashes (`\\`) that bypass the intended directory containment logic. An attacker can escape the configured `servedir` root and access arbitrary files on the filesystem.\nThis issue affects Windows environments only.\n\n### Details\n\nThe request path is sanitized using:\n```go\n// https://github.com/evanw/esbuild/blob/v0.27.3/pkg/api/serve_other.go#L165\nqueryPath := path.Clean(req.URL.Path)[1:]\n```\n\n\nHowever:\n- `path.Clean()` is POSIX-style and only understands `/` (docs: `https://pkg.go.dev/path#Clean`)\n- On Windows, `\\` is a valid path separator\n- `path.Clean()` does not treat `\\` as a separator\n\nLater, the server constructs the absolute path:\n```go\n// https://github.com/evanw/esbuild/blob/v0.27.3/pkg/api/serve_other.go#L221\nabsPath := h.fs.Join(h.servedir, queryPath)\n```\n\nIf `queryPath` contains sequences such as:\n```\n..\\..\\..\\..\\..\\..\\..\\Windows\\system.ini\n```\n\n`path.Clean()` will not normalize them, but the Windows filesystem will interpret `\\` as directory separators when resolving `absPath`.\nBecause the implementation does not verify that the final resolved path remains within `servedir`, it allows directory traversal outside the intended root directory.\n### Vulnerable Code\n\n```go\n// https://github.com/evanw/esbuild/blob/v0.27.3/pkg/api/serve_other.go#L165\n\tqueryPath := path.Clean(req.URL.Path)[1:]\n\t....\n\t// Check for a file in the \"servedir\" directory\n\tif h.servedir != \"\" \u0026\u0026 kind != fs.FileEntry {\n\t\tabsPath := h.fs.Join(h.servedir, queryPath)\n\t\tif absDir := h.fs.Dir(absPath); absDir != absPath {\n\t\t\tif entries, err, _ := h.fs.ReadDirectory(absDir); err == nil {\n\t\t\t\tif entry, _ := entries.Get(h.fs.Base(absPath)); entry != nil \u0026\u0026 entry.Kind(h.fs) == fs.FileEntry {\n\t....\t\t\t\t\n```\n\n\n### Steps to reproduce\n\n```\nnpm install --save-exact --save-dev esbuild\n\necho \"console.log(1)\" \u003e app.js\n\n.\\node_modules\\.bin\\esbuild --version\n0.27.3\n\n.\\node_modules\\.bin\\esbuild app.js --bundle --outdir=www --servedir=www --watch\n\ncurl -i --path-as-is \"http://localhost:8000/..\\..\\..\\..\\..\\..\\..\\Windows\\system.ini\"\n\u003ccontent of Windows\\system.ini\u003e\n```\n\n\n### Impact\n\n- Arbitrary file read on Windows\n- Exposure of sensitive files",
+              "id": "GHSA-g7r4-m6w7-qqqr",
+              "modified": "2026-09-10T03:50:49.427692265Z",
+              "published": "2026-06-12T20:08:53Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/evanw/esbuild/security/advisories/GHSA-g7r4-m6w7-qqqr"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/evanw/esbuild"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/evanw/esbuild/releases/tag/v0.28.1"
+                }
+              ],
+              "schema_version": "1.9.0",
+              "severity": [
+                {
+                  "score": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N",
+                  "type": "CVSS_V3"
+                }
+              ],
+              "summary": "esbuild allows arbitrary file read when running the development server on Windows"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "glob",
+            "version": "10.5.0",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/glob@10.5.0"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-3g3m-2fjr-6pw4"
+              ],
+              "aliases": [
+                "CVE-2026-118773",
+                "GHSA-3g3m-2fjr-6pw4"
+              ],
+              "max_severity": "6.3"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c= 14.0.1",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-3g3m-2fjr-6pw4/GHSA-3g3m-2fjr-6pw4.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "glob",
+                    "purl": "pkg:npm/glob"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "9.0.0"
+                        },
+                        {
+                          "fixed": "14.0.2"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-118773"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-400"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-30T23:09:11Z",
+                "nvd_published_at": "2026-10-29T19:17:19Z",
+                "severity": "MODERATE"
+              },
+              "details": "### Summary\n\nIn glob 13.0.6, an aborted async walk rejects or emits an error but continues recursively reading directories in the background.\n\nThe root cause is that abort branches in src/walker.ts call cb() without returning. As a result, callers that rely on signal or AbortSignal.timeout() to bound glob traversal cost can still incur filesystem I/O and CPU work after the request has already been rejected.\n\n### Details\n\nThis was reproduced on glob v13.0.6 (commit e80cb38ae60d6cbff9e75f39032a994858994d35).\n\nThe README documents that the signal option cancels the glob walk. However, in src/walker.ts, the following methods call cb() when this.signal?.aborted is true but do not return:\n\n- GlobUtil.walkCB()\n- GlobUtil.walkCB2()\n- GlobUtil.walkCBSync()\n- GlobUtil.walkCB2Sync()\n\nExample vulnerable pattern:\n\nif (this.signal?.aborted) cb()\n\nBecause execution continues after cb(), the walker still reaches processor.processPatterns(), readdirCB(), and recursive walkCB2() calls.\n\nThe issue was directly demonstrated against v13.0.6. A source-history review shows the same missing-return pattern is present in tagged releases from v9.0.0 through v13.0.6.\n\nThe issue affects both glob() and globStream().\n\nRecommended fix:\nChange each abort branch to return immediately:\n\nif (this.signal?.aborted) return cb()\n\n### Proof of concept\n\nEnvironment:\n- Linux x86_64\n- Node.js v22.23.3\n- npm 10.9.9\n- glob 13.0.6\n\nReproduction steps:\n\n1. Install the affected package:\n   npm init -y\n   npm install glob@13.0.6\n\n2. Run the attached PoC:\n   node poc/abort-continues-work.mjs\n\nThe PoC aborts after the first readdir() call, waits briefly, and counts how many more directory reads happen after the promise has already rejected.\n\nObserved output on the vulnerable version:\n\n{\n  \"rejection\": \"Error: probe-abort\",\n  \"readdirCalls\": 1365,\n  \"readdirCallsAtReject\": 5,\n  \"readdirCallsAfterReject\": 1360\n}\n\nExpected behavior:\nreaddirCallsAfterReject should be 0.\n\nA second PoC using AbortSignal.timeout() also reproduces the issue:\n\n{\n  \"rejection\": \"TimeoutError: The operation was aborted due to timeout\",\n  \"readdirCalls\": 133,\n  \"readdirCallsAtReject\": 1,\n  \"readdirCallsAfterReject\": 132\n}\n\nThe same test against a patched build with return cb() in the four abort branches stops immediately:\n\n{\n  \"readdirCalls\": 1,\n  \"readdirCallsAtReject\": 1,\n  \"readdirCallsAfterReject\": 0\n}\n\n### Impact\n\nThis is an availability issue.\n\nApplications that expose globbing over attacker-influenced patterns or attacker-controlled directory trees and use AbortSignal / AbortSignal.timeout() as a traversal budget can still perform significant filesystem I/O and CPU work after a request has already timed out or been canceled.\n\nRepeated timed-out requests can stack background glob walks and degrade worker throughput or service availability.\n\nNo confidentiality or integrity impact was observed.",
+              "id": "GHSA-3g3m-2fjr-6pw4",
+              "modified": "2026-10-30T23:15:04.503965732Z",
+              "published": "2026-10-30T23:09:11Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/node-glob/security/advisories/GHSA-3g3m-2fjr-6pw4"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118773"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/node-glob/commit/4682e8c9babee1b385202ede36389634e12076d7"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/isaacs/node-glob"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/node-glob/releases/tag/v14.0.2"
+                }
+              ],
+              "schema_version": "1.9.2",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "glob",
+            "version": "13.0.6",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/glob@13.0.6"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-3g3m-2fjr-6pw4"
+              ],
+              "aliases": [
+                "CVE-2026-118773",
+                "GHSA-3g3m-2fjr-6pw4"
+              ],
+              "max_severity": "6.3"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c= 14.0.1",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-3g3m-2fjr-6pw4/GHSA-3g3m-2fjr-6pw4.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "glob",
+                    "purl": "pkg:npm/glob"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "9.0.0"
+                        },
+                        {
+                          "fixed": "14.0.2"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-118773"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-400"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-30T23:09:11Z",
+                "nvd_published_at": "2026-10-29T19:17:19Z",
+                "severity": "MODERATE"
+              },
+              "details": "### Summary\n\nIn glob 13.0.6, an aborted async walk rejects or emits an error but continues recursively reading directories in the background.\n\nThe root cause is that abort branches in src/walker.ts call cb() without returning. As a result, callers that rely on signal or AbortSignal.timeout() to bound glob traversal cost can still incur filesystem I/O and CPU work after the request has already been rejected.\n\n### Details\n\nThis was reproduced on glob v13.0.6 (commit e80cb38ae60d6cbff9e75f39032a994858994d35).\n\nThe README documents that the signal option cancels the glob walk. However, in src/walker.ts, the following methods call cb() when this.signal?.aborted is true but do not return:\n\n- GlobUtil.walkCB()\n- GlobUtil.walkCB2()\n- GlobUtil.walkCBSync()\n- GlobUtil.walkCB2Sync()\n\nExample vulnerable pattern:\n\nif (this.signal?.aborted) cb()\n\nBecause execution continues after cb(), the walker still reaches processor.processPatterns(), readdirCB(), and recursive walkCB2() calls.\n\nThe issue was directly demonstrated against v13.0.6. A source-history review shows the same missing-return pattern is present in tagged releases from v9.0.0 through v13.0.6.\n\nThe issue affects both glob() and globStream().\n\nRecommended fix:\nChange each abort branch to return immediately:\n\nif (this.signal?.aborted) return cb()\n\n### Proof of concept\n\nEnvironment:\n- Linux x86_64\n- Node.js v22.23.3\n- npm 10.9.9\n- glob 13.0.6\n\nReproduction steps:\n\n1. Install the affected package:\n   npm init -y\n   npm install glob@13.0.6\n\n2. Run the attached PoC:\n   node poc/abort-continues-work.mjs\n\nThe PoC aborts after the first readdir() call, waits briefly, and counts how many more directory reads happen after the promise has already rejected.\n\nObserved output on the vulnerable version:\n\n{\n  \"rejection\": \"Error: probe-abort\",\n  \"readdirCalls\": 1365,\n  \"readdirCallsAtReject\": 5,\n  \"readdirCallsAfterReject\": 1360\n}\n\nExpected behavior:\nreaddirCallsAfterReject should be 0.\n\nA second PoC using AbortSignal.timeout() also reproduces the issue:\n\n{\n  \"rejection\": \"TimeoutError: The operation was aborted due to timeout\",\n  \"readdirCalls\": 133,\n  \"readdirCallsAtReject\": 1,\n  \"readdirCallsAfterReject\": 132\n}\n\nThe same test against a patched build with return cb() in the four abort branches stops immediately:\n\n{\n  \"readdirCalls\": 1,\n  \"readdirCallsAtReject\": 1,\n  \"readdirCallsAfterReject\": 0\n}\n\n### Impact\n\nThis is an availability issue.\n\nApplications that expose globbing over attacker-influenced patterns or attacker-controlled directory trees and use AbortSignal / AbortSignal.timeout() as a traversal budget can still perform significant filesystem I/O and CPU work after a request has already timed out or been canceled.\n\nRepeated timed-out requests can stack background glob walks and degrade worker throughput or service availability.\n\nNo confidentiality or integrity impact was observed.",
+              "id": "GHSA-3g3m-2fjr-6pw4",
+              "modified": "2026-10-30T23:15:04.503965732Z",
+              "published": "2026-10-30T23:09:11Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/node-glob/security/advisories/GHSA-3g3m-2fjr-6pw4"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118773"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/node-glob/commit/4682e8c9babee1b385202ede36389634e12076d7"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/isaacs/node-glob"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/node-glob/releases/tag/v14.0.2"
+                }
+              ],
+              "schema_version": "1.9.2",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "minimatch",
+            "version": "10.2.6",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/minimatch@10.2.6"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-g3hv-75wg-m249"
+              ],
+              "aliases": [
+                "CVE-2026-118764",
+                "GHSA-g3hv-75wg-m249"
+              ],
+              "max_severity": "6.9"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-g3hv-75wg-m249/GHSA-g3hv-75wg-m249.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "minimatch",
+                    "purl": "pkg:npm/minimatch"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "7.0.0"
+                        },
+                        {
+                          "fixed": "11.0.1"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-118764"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-405"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-30T23:09:55Z",
+                "nvd_published_at": "2026-10-29T17:18:07Z",
+                "severity": "MODERATE"
+              },
+              "details": "minimatch 10.2.6 contains an attacker-controlled pattern amplification in firstPhasePreProcess() when optimizationLevel \u003e= 2.\n\nresearcher: Reid Downing (b1nv0id)\nfiles: \n\n- src/index.ts: 690-770\n- src/index.ts: 780-796\n\nissue:\ninput-controlled growth of globParts during first-phase preprocessing, followed by quadratic second-phase processing.\n\nthe **/../ transformation clones a globparts entry and appends the clone to the same globparts array:\n```\nparts.splice(gs, 1)\nconst other = parts.slice(0)\nother[gs] = '**'\nglobParts.push(other)\n```\nthis occurs inside a do...while (didSomething) fixpoint loop, allowing generated entries to be processed again.\n\nthe expanded globparts array is subsequently processed by secondPhasePreProcess(), which performs pairwise comparisons:\n```\nfor (let i = 0; i \u003c globParts.length - 1; i++) {\n  for (let j = i + 1; j \u003c globParts.length; j++) {\n    this.partsMatch(...)\n  }\n}\n```\nan attacker who can supply a glob pattern can therefore cause additional pattern entries to be generated during preprocessing, followed by quadratic pairwise processing, resulting in excessive cpu and memory consumption.",
+              "id": "GHSA-g3hv-75wg-m249",
+              "modified": "2026-11-04T17:01:25.850114200Z",
+              "published": "2026-10-30T23:09:55Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118764"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/commit/297b6c1a01f2410b3ba1ebed14ba222d0c3c1033"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/commit/77a0f5c4b80bdc641c3c930a1d9edf5ad2db57f8"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/commit/fd0b3ab9cbc5bf1aff1c99f1f46e413c2b3340da"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/isaacs/minimatch"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/releases/tag/v11.0.1"
+                }
+              ],
+              "schema_version": "1.9.2",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "minimatch has potential denial of service via globparts amplification"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "minimatch",
+            "version": "9.0.9",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/minimatch@9.0.9"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-g3hv-75wg-m249"
+              ],
+              "aliases": [
+                "CVE-2026-118764",
+                "GHSA-g3hv-75wg-m249"
+              ],
+              "max_severity": "6.9"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-g3hv-75wg-m249/GHSA-g3hv-75wg-m249.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "minimatch",
+                    "purl": "pkg:npm/minimatch"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "7.0.0"
+                        },
+                        {
+                          "fixed": "11.0.1"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-118764"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-405"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-30T23:09:55Z",
+                "nvd_published_at": "2026-10-29T17:18:07Z",
+                "severity": "MODERATE"
+              },
+              "details": "minimatch 10.2.6 contains an attacker-controlled pattern amplification in firstPhasePreProcess() when optimizationLevel \u003e= 2.\n\nresearcher: Reid Downing (b1nv0id)\nfiles: \n\n- src/index.ts: 690-770\n- src/index.ts: 780-796\n\nissue:\ninput-controlled growth of globParts during first-phase preprocessing, followed by quadratic second-phase processing.\n\nthe **/../ transformation clones a globparts entry and appends the clone to the same globparts array:\n```\nparts.splice(gs, 1)\nconst other = parts.slice(0)\nother[gs] = '**'\nglobParts.push(other)\n```\nthis occurs inside a do...while (didSomething) fixpoint loop, allowing generated entries to be processed again.\n\nthe expanded globparts array is subsequently processed by secondPhasePreProcess(), which performs pairwise comparisons:\n```\nfor (let i = 0; i \u003c globParts.length - 1; i++) {\n  for (let j = i + 1; j \u003c globParts.length; j++) {\n    this.partsMatch(...)\n  }\n}\n```\nan attacker who can supply a glob pattern can therefore cause additional pattern entries to be generated during preprocessing, followed by quadratic pairwise processing, resulting in excessive cpu and memory consumption.",
+              "id": "GHSA-g3hv-75wg-m249",
+              "modified": "2026-11-04T17:01:25.850114200Z",
+              "published": "2026-10-30T23:09:55Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-118764"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/commit/297b6c1a01f2410b3ba1ebed14ba222d0c3c1033"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/commit/77a0f5c4b80bdc641c3c930a1d9edf5ad2db57f8"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/commit/fd0b3ab9cbc5bf1aff1c99f1f46e413c2b3340da"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/isaacs/minimatch"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/isaacs/minimatch/releases/tag/v11.0.1"
+                }
+              ],
+              "schema_version": "1.9.2",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:L/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "minimatch has potential denial of service via globparts amplification"
+            }
+          ]
+        },
+        {
+          "package": {
+            "name": "nuxt",
+            "version": "4.6.4",
+            "ecosystem": "npm",
+            "purl": "pkg:npm/nuxt@4.6.4"
+          },
+          "groups": [
+            {
+              "ids": [
+                "GHSA-vjh5-4x84-xrqp"
+              ],
+              "aliases": [
+                "CVE-2026-114132",
+                "GHSA-vjh5-4x84-xrqp"
+              ],
+              "max_severity": "6.3"
+            }
+          ],
+          "vulnerabilities": [
+            {
+              "affected": [
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "nuxt",
+                    "purl": "pkg:npm/nuxt"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "4.0.0"
+                        },
+                        {
+                          "fixed": "4.6.2"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c 4.0.0",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "nuxt",
+                    "purl": "pkg:npm/nuxt"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "3.0.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "@nuxt/nitro-server",
+                    "purl": "pkg:npm/%40nuxt/nitro-server"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "4.2.0"
+                        },
+                        {
+                          "fixed": "4.6.2"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                },
+                {
+                  "database_specific": {
+                    "last_known_affected_version_range": "\u003c 4.0.0",
+                    "source": "https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2026/10/GHSA-vjh5-4x84-xrqp/GHSA-vjh5-4x84-xrqp.json"
+                  },
+                  "package": {
+                    "ecosystem": "npm",
+                    "name": "@nuxt/nitro-server",
+                    "purl": "pkg:npm/%40nuxt/nitro-server"
+                  },
+                  "ranges": [
+                    {
+                      "events": [
+                        {
+                          "introduced": "3.20.0"
+                        }
+                      ],
+                      "type": "SEMVER"
+                    }
+                  ]
+                }
+              ],
+              "aliases": [
+                "CVE-2026-114132"
+              ],
+              "database_specific": {
+                "cwe_ids": [
+                  "CWE-178",
+                  "CWE-863"
+                ],
+                "github_reviewed": true,
+                "github_reviewed_at": "2026-10-22T16:59:55Z",
+                "nvd_published_at": "2026-10-21T18:17:26Z",
+                "severity": "MODERATE"
+              },
+              "details": "## Impact\n\nWith the default `router.options.sensitive: false`, Nuxt's page router resolves routes case-insensitively, so `/Admin` renders the same page as `/admin`. On the server, however, route rules were resolved with Nitro's route-rule matcher, which matches keys case-sensitively. A request whose path differs from a rule key only in letter case therefore rendered the page with none of that rule applied.\n\nEarlier fixes ([GHSA-mm7m-92g8-7m47](https://github.com/nuxt/nuxt/security/advisories/GHSA-mm7m-92g8-7m47), [GHSA-hxvh-4h3w-prp9](https://github.com/nuxt/nuxt/security/advisories/GHSA-hxvh-4h3w-prp9)) case-folded the route rules that the Nuxt app itself reads, such as `appMiddleware`. This advisory covers the rules applied on the server:\n\n- `redirect`: a rule used to send visitors away from a page, such as `'/admin/**': { redirect: '/login' }`, was skipped, and the page and its server-fetched data were rendered instead.\n- `headers`: per-route response headers, including security headers such as `Content-Security-Policy` or `X-Frame-Options`, were not sent.\n- `proxy`: the request was not proxied.\n- `ssr: false` and `noScripts`: the page was server-rendered, or shipped scripts, despite the rule.\n- `getRouteRules(event)` (auto-imported, or from `nuxt/server`) and `matchRouteRules` from `nuxt/server` returned no rules for the case variant.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith this configuration, `/admin/secret` redirects to `/login`, but `/Admin/secret` rendered `app/pages/admin/secret.vue`.\n\n## Mitigating factors\n\n- Applications that set `router.options.sensitive: true` in `nuxt.config` are not affected, because their pages are only served for the exact case of the route.\n- Access checks performed in server middleware, route middleware attached with `definePageMeta`, or in the page's data fetching are not affected. The issue only affects protections that rely on a server-side route rule matching the request path.\n\n## Affected versions\n\n`nuxt` `\u003c4.6.2`, including all Nuxt 3 releases, and `@nuxt/nitro-server` `\u003c4.6.2`.\n\n## Patches\n\nFixed in `nuxt@4.6.2`. Nuxt 3 reached end of life on 31 July 2026 and will not receive a fix.\n\nNuxt now resolves server-side route rules itself, decoding and case-folding both the rule keys and the request path unless `router.options.sensitive` is set, and applies the result to Nitro's `redirect`, `headers` and `proxy` handling, the renderer, and the `getRouteRules` / `matchRouteRules` helpers.\n\nWhen routing is case-insensitive, patched releases change some behaviour:\n\n- Route rules also apply to case variants of server API routes. For example, `/API/x` now matches a `/api/**` `proxy` or `headers` rule.\n- Rule keys that differ only in letter case now resolve to the same path on the server, and the later key takes precedence.\n\nThe following are not changed by this fix:\n\n- `cache` and `swr` response caching is attached to server routes by Nitro's router, which matches case-sensitively. A case variant is still rendered with its route rules applied, but its response is not cached.\n- Rules that a deployment preset compiles into platform configuration (for example Vercel's `config.json` or Netlify's `_redirects` and `_headers`) are matched by the platform. Once a request reaches the Nuxt server, the rules are applied as described above.\n- If `sensitive` is set only in `app/router.options.ts`, the server follows the `nuxt.config` value. In that configuration route rules can only apply to more paths, never fewer.\n\n## Workarounds\n\nUpgrade to `nuxt@4.6.2`. If you cannot upgrade, including on Nuxt 3:\n\n1. Set `router: { options: { sensitive: true } }` in `nuxt.config`, so pages are only served for the exact case of their route.\n2. Alternatively, enforce access control in server middleware or route middleware rather than relying on a `redirect` route rule, and set security headers for every response rather than per route.",
+              "id": "GHSA-vjh5-4x84-xrqp",
+              "modified": "2026-10-22T17:15:04.297280606Z",
+              "published": "2026-10-22T16:59:55Z",
+              "references": [
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/nuxt/nuxt/security/advisories/GHSA-vjh5-4x84-xrqp"
+                },
+                {
+                  "type": "ADVISORY",
+                  "url": "https://nvd.nist.gov/vuln/detail/CVE-2026-114132"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/nuxt/nuxt/commit/f6cfee52cf9576ddc4f4ee83b486969328b358f8"
+                },
+                {
+                  "type": "PACKAGE",
+                  "url": "https://github.com/nuxt/nuxt"
+                },
+                {
+                  "type": "WEB",
+                  "url": "https://github.com/nuxt/nuxt/releases/tag/v4.6.2"
+                }
+              ],
+              "schema_version": "1.9.0",
+              "severity": [
+                {
+                  "score": "CVSS:4.0/AV:N/AC:L/AT:P/PR:N/UI:N/VC:L/VI:L/VA:N/SC:N/SI:N/SA:N",
+                  "type": "CVSS_V4"
+                }
+              ],
+              "summary": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "experimental_config": {
+    "licenses": {
+      "summary": false,
+      "allowlist": null
+    }
+  }
+}

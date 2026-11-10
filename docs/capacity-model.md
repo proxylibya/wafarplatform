@@ -461,4 +461,4 @@ These are assumptions, not final measurements:
 - `docs/pdf-sample-analysis.md` — the 2026-10-23 sample evidence and its limits.
 - `docs/DECISIONS.md` — the decision register's index; the records named here
   are ADR-067, ADR-117, ADR-118, ADR-119, ADR-121, ADR-122.
-- `ROADMAP.md` — R2, R3, R12, R13, R15.
+- `ROADMAP.md` — R2, R3, R12, R13, R15, R16.

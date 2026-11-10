@@ -1,0 +1,14 @@
+{
+  "$comment": "Libyan mobile prefixes. SOURCE: the Libyan numbering plan (ITU-T E.164, country code 218); the mobile ranges assigned to the national operators. Version 1.0.0 (2026-11-01).",
+  "version": "1.0.0",
+  "updated": "2026-11-01",
+  "source": "ITU-T E.164 national numbering plan for Libya (+218)",
+  "sha256": "91e4c6145e1d533e8663222c59afd4b5849e4aa7e062ee70a7639ba790968dcb",
+  "prefixes": [
+    "91",
+    "92",
+    "93",
+    "94",
+    "95"
+  ]
+}

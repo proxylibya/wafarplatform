@@ -1,0 +1,10 @@
+{
+  "extends": "@wafar/config/tsconfig/nuxt.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "paths": {
+      "~/*": ["./app/*"]
+    }
+  },
+  "include": ["app/**/*.ts", "app/**/*.vue", "nuxt.config.ts"]
+}

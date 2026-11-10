@@ -1,0 +1,9 @@
+IconPark
+Copyright 2020 ByteDance.
+https://github.com/bytedance/IconPark
+
+This product includes icon artwork from IconPark, licensed under the Apache
+License, Version 2.0 (see LICENCE.txt). The copy was obtained from the Iconify
+icon-set package @iconify-json/icon-park, version 1.2.4 (IconPark icon-set
+version 1.4.2), commit 599f41e13dd0e25f5e546d7d6094b8bdad63008f of the
+iconify/icon-sets repository. The artwork is unmodified.

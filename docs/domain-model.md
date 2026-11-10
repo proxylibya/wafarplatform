@@ -64,7 +64,7 @@ above exists to prevent.
 The entity names, their relationships, and their invariants below are **not**
 deferred: the product already fixes them in `Core-Project.txt` and the
 constitution's Product Register, and the slice order depends on them — R1
-through R15 all read this document before planning.
+through R17 all read this document before planning.
 
 ## Entity map
 
@@ -159,10 +159,13 @@ service layer re-checks the ones a constraint cannot express.
   index that does not lead with the scoping column cannot serve the scoped read
   without a filter the planner has to apply after the fact.
 - **A query path reachable from a merchant session MUST NOT return another
-  merchant's rows**, and the test that proves it fails the build. R2 owns that
-  test, as the first slice whose merchant-scoped read surface returns
-  merchant-owned rows: R1's `Session` read is keyed by the session token, so it
-  cannot return another account's rows and is not the surface this test covers.
+  merchant's rows**, and the test that proves it fails the build. R1 owns that
+  test: it creates the single shared entry point through which merchant scoping
+  passes, with `Session` as its first caller, and the test fails when the scope
+  is removed from that path (ADR-139). `Session` is merchant-scoped, so R1 is the
+  first slice whose merchant-scoped path reads merchant-owned rows; every later
+  slice adds its merchant-scoped paths to the same entry point and the same test
+  rather than writing a second one (FR-053).
 
 ### Catalog
 
@@ -380,16 +383,29 @@ service layer re-checks the ones a constraint cannot express.
   Product Register names.** They are the consecutive failed sign-in attempt
   count, the sign-in lock's expiry, and the requirement to change the password
   at first sign-in. R1 adds them; the register's `User` row names them, so they
-  are registered fields rather than schema inventions.
-  - **The attempt count is consecutive, and only a failed password
-    verification increments it.** A refusal produced by a rate limit, by a value
-    that is not a valid Libyan mobile number, or by a blocked account MUST NOT
-    increment it, so the count measures exactly what its name says. A successful
-    sign-in clears it to zero.
+  are registered fields rather than schema inventions. The count's registered
+  name is the register's label for one counter; what it counts is a **failed
+  password verification** — a password check that runs against an existing,
+  active account and does not match — on exactly three paths: sign-in, the
+  account's own change-password action, and the administrator's forced first
+  change.
+  - **The count is consecutive, and one set increments it.** A failed password
+    verification on any of the three paths adds one, and nothing else does: a
+    refusal produced by a rate limit, by a value that is not a valid Libyan
+    mobile number, by a blocked account, by an administrator account on the
+    merchant sign-in surface, by a value rule before the check runs, or by the
+    lock MUST NOT increment it, because none of them is a counted failed password
+    verification: the refusals never reach a password check against an active
+    account, and the lock withholds the count from the check it refuses.
+  - **A success on any of the three paths clears the count to zero**, and the
+    lock's expiry clears it too. A password reset through the recovery flow
+    clears neither the count nor the lock.
   - **The lock is a time bound alone.** It is applied after five consecutive
-    failed attempts, runs for fifteen minutes, ends nothing else, and at its
-    expiry the count clears. An attempt refused while the lock is in force is not
-    counted as a further failed attempt and never extends the lock.
+    failed password verifications, runs for fifteen minutes, ends nothing else,
+    and at its expiry the count clears. A refusal made while the lock is in force
+    is not counted as a further failed password verification and never extends
+    the lock; the lock withholds acceptance on the three paths and ends no
+    session.
   - **The forced-password-change requirement is cleared by that change and by no
     other path.** The change must set a value different from the initial
     password and must supply the current password — the initial password the
@@ -407,7 +423,8 @@ service layer re-checks the ones a constraint cannot express.
 
 The one-time codes and the pending sign-up or password-reset request are
 **transient verification state, not an entity**. They carry a per-number
-identity, an expiry, a replacement rule, and a bound on incorrect entries, and
+identity, an expiry, a replacement rule, a count of the new codes the live
+request has asked for, and a bound on incorrect entries, and
 they live in an expiring store outside the entity register rather than as a
 thirteenth entity. The `users` module owns the store.
 
@@ -417,6 +434,12 @@ thirteenth entity. The `users` module owns the store.
   state of the pending request, including the recovery flow's verified state:
   that state ends at once and can no longer set a password, so two authorities
   never coexist for one number.
+- **The re-request limit is counted per pending request.** A fresh sign-up or
+  recovery request for the same number begins a new verification with a full
+  allowance of new-code requests, because the operation's own rate limit bounds
+  how often a fresh request can start; the spent allowance is not carried across
+  requests, and the store carries the live request's re-request count alongside
+  its expiry and its incorrect-entry count.
 - **Exactly one code is valid at any moment.** A new code replaces the previous
   one only when the messaging channel accepts its message; a refusal at
   acceptance leaves the previous code valid, the request live, and the
@@ -434,6 +457,11 @@ thirteenth entity. The `users` module owns the store.
   correct code is entered; the password among them is irreversibly protected at
   submission, in the same form a stored password has, and the request holds that
   value rather than the plaintext. Replacing or ending the request discards it.
+  The one-time code is held the same way: the store carries the irreversibly
+  protected value computed when the code is dispatched, an entered code is
+  verified through that form alone, and a replacement's protected value replaces
+  the previous one at the accepted dispatch, so the store never holds a usable
+  code in plaintext.
 - **A pending request expires.** The expiry, the re-request limit, and the
   incorrect-entry bound are numbers the plan records under Constitution
   Mandated Values; this section fixes the rules, not the numbers. A dispatch the
@@ -445,11 +473,16 @@ thirteenth entity. The `users` module owns the store.
   When the correct code is entered in the password-recovery flow, the code stops
   being usable at once and the pending request moves to a verified state that
   carries the new-password step alone, lasts no longer than the pending
-  request's own lifetime, and ends when the new password is set or when a new
-  request replaces the pending request, so the same
-  code cannot authorise a second reset. A reload while the state lives shows the
-  new-password step again; once the password is set the page returns to its
-  first step. (ADR-111, ADR-115.)
+  request's own lifetime, and ends when the new password is set, when a new
+  request replaces the pending request, or when the account's password changes
+  by another path — the account's own change action or the administrator's
+  forced first change — so the same
+  code cannot authorise a second reset and a reset authority created before a
+  password change never survives it. A successful sign-in alone does not end the
+  request, because it does not change the credential. A reload while the state
+  lives shows the new-password step again; once the password is set the page
+  returns to its first step. (ADR-111, ADR-115; decided 2026-10-29,
+  Clarifications.)
 - **Nothing here is an account.** No `User` row exists until the correct code is
   entered, so `User.status` stays the closed two-value set and the register's
   twelve entities stay twelve. The store's rows carry no merchant identity and
@@ -458,9 +491,10 @@ thirteenth entity. The `users` module owns the store.
 ## Soft deletion
 
 `Core-Project.txt` states that deletion is soft for files and users, and that
-deleting a file withdraws its parts and its index entries. Three slices depend
+deleting a file withdraws its parts and its index entries. Four slices depend
 on it — R4 (a merchant deletes a file they uploaded), R13 (an administrator
-deletes a file or an account), and R15 (automatic deletion after 90 days) — and
+blocks or soft-deletes an account), R16 (an administrator deletes a file), and
+R15 (automatic deletion after 90 days) — and
 none of them could state the rule without it. It was absent from the
 constitution's Product Register, which meant the rule existed in the product
 mirror and nowhere a feature could be held to. The register now carries it, and
@@ -508,7 +542,7 @@ product mirror; any use of them is a reference to this table, not to the mirror.
 | 2 | Whether `Conversation` carries an administrator reference when every administrator account sees the same thread. | The thread is single and shared; whether the administrator side is a reference, a role, or absent is a schema decision. | R10 |
 | 3 | Whether `expires_at` is the retention deadline or the supplier's printed expiry date. The point the 90-day retention is counted from is settled: the catalog file's upload timestamp (ADR-131). | Two product sources disagree on the field; the trigger point, once part of this row, is now fixed. | R15 |
 | 4 | Notification retention. | The product statement defers it. | R9 |
-| 5 | ~~Whether a contact message becomes a conversation or is read in its own inbox.~~ Resolved 2026-10-03 by ADR-028: a dedicated administrator "Contact messages" page. | — | ADR-028 (owning slice: R13) |
+| 5 | ~~Whether a contact message becomes a conversation or is read in its own inbox.~~ Resolved 2026-10-03 by ADR-028: a dedicated administrator "Contact messages" page. | — | ADR-028 (owning slice: R17) |
 | 6 | ~~Whether an administrator is a distinct entity or a role on `User`.~~ Resolved 2026-10-07 by ADR-067: the administrator is a **role on `User`**, not a distinct entity. | — | ADR-067 |
 | 7 | ~~What state an account carries, and whether a blocked merchant is a state or a separate flag.~~ Resolved 2026-10-07 by ADR-067: `User.status` is a closed two-value set, `active` or `blocked` — a state, not a separate flag. | — | ADR-067 |
 | 8 | ~~Whether the `auth` module owns any stored entity of its own.~~ Resolved 2026-10-07 by ADR-067: `auth` owns `Session`, the server-side revocable session store; the account's identity and profile belong to `users`. | — | ADR-067 |

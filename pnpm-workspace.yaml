@@ -1,0 +1,21 @@
+packages:
+  - apps/*
+  - packages/*
+
+overrides:
+  basic-ftp: ^6.2.1
+
+catalog:
+  '@types/node': ^22.18.9
+  '@types/pg': ^8.15.5
+  '@vitest/coverage-v8': ^4.0.18
+  drizzle-kit: ^0.31.5
+  drizzle-orm: ^0.45.4
+  eslint: ^9.37.0
+  pg: ^8.16.3
+  prettier: ^3.6.2
+  stylelint: ^16.24.0
+  typescript: ^5.9.3
+  vitest: ^4.0.18
+  vue: 3.5.45
+  zod: ^4.1.12

@@ -806,6 +806,8 @@ revisions, the roadmap, and the drift check's structural page count
 
 **Consequences and migration/backfill.** The constitution is amended in the same change (Product Scope, the shell paragraph, and the Product Fact Clarifications); `Core-Project.txt` mirrors the shell paragraph, the narrow-screen rule, and the guest behaviour; `ROADMAP.md` adds the surface to R1's first obligations; the R1 specification's FR-022, FR-024, and FR-052 carry it; and the Wafar UI layer builds it. No migration or backfill is required because no page renders the frame yet and no code exists. The live `ADR-001 … ADR-126` range strings become `ADR-001 … ADR-129` in the same change that records ADR-127, ADR-128, and ADR-129. Review date: 2026-12-01. This entry is the durable record.
 
+**Annotation (2026-10-29).** The first slice that ships a page carrying the frame is R2, not R4: ADR-126 moved Upload Catalog to R2, and ADR-139 decision 3 moved the frame's runtime verification with it. R1 verifies the composition and the presence of its controls structurally (exception `EX-007`), and R2 verifies the runtime, the accessibility scan, and the keyboard-only pass on a rendered page, which ends the exception. The owning-feature line and the Context's reference to R4 are read with this annotation; R4 consumes a frame R2 has already proved and verifies nothing of the frame that R2 has not.
+
 ---
 
 ## ADR-128 — The Precision design contract: palette, type, shape, density, and rendering rules
@@ -842,7 +844,11 @@ revisions, the roadmap, and the drift check's structural page count
 
 **Correction (2026-10-27).** Decision 8's drag hint is horizontal table scrolling, not column resizing: the layer fixes every column's width, and the lab records that sorting, paging, filtering, or a new page of rows cannot resize a column (DESIGN-DECISIONS row 46; `docs/design/slice-map.md` R5). Decision 9's timing is the lab's: the indicator appears after 120ms and stays for at least 300ms (the lab's `useWfLoading`; DESIGN-DECISIONS row 29), not the reverse. Decision 13 states only the bare layout's type, focus ring, and touch floor; the composition belongs to the specification, and the four static-page links belong to the frame's footer/drawer (ADR-096; ADR-127; FR-036).
 
-**Annotation to ADR-098.** This record annotates ADR-098 and changes two of its decisions. Decision 2 (the colour set is the default and the outline set serves dense tables and the dark theme) is replaced: the product consumes the outline cut, and the colour cut is vendored but not consumed. Decision 5 (the marine/petrol primary and the warm sand neutral) is replaced by the Precision palette above. Decision 1 (IconPark, both cuts vendored and pinned), decision 3 (IBM Plex Sans Arabic), and decision 4 (light default, no flash) remain in force. `ROADMAP.md` and `docs/architecture.md` are corrected in the same change so no live text still describes the marine/sand direction or a colour-icon default.
+**Correction (2026-10-29).** Decision 5's values govern, and the lab's rendered reference diverges from one of them: the lab's footer band measures 51–53px rather than the fixed 3.5rem (56px); its expanded sidebar measures 240px and agrees with the fixed 15rem. An earlier 254px reading measured to the viewport's right edge and included the 15px page scrollbar; it is withdrawn. The footer's divergence amends nothing: the product's baseline is generated from the layer and is not diffed against the lab (ADR-129), so the recorded values govern and no slice copies the lab's measurements. The lab's header measures 56px and agrees with the contract. Decision 3's numeral face is recorded with its licence and format — IBM Plex Mono, OFL, self-hosted WOFF2 — in the technology mirror, and R1 records it in the layer's inventory, so the typeface record Principle V requires covers both families.
+
+**Annotation (2026-10-29, ADR-140).** Decision 19 records fifteen slices, the count at ratification. ADR-140 split the administrator block into four slices (R13, R14, R16, R17), so the product carries seventeen; the constitution's References row and the slice map name the current count, and the pages, the entities, and the features decision 19 names are unchanged.
+
+**Annotation to ADR-098.** This record annotates ADR-098 and changes two of its decisions. Decision 2 (the colour set is the default and the outline set serves dense tables and the dark theme) is replaced: the product consumes the outline cut, and the colour cut is vendored but not consumed. Decision 5 (the marine/petrol primary and the warm sand neutral) is replaced by the Precision palette above. Decision 1 (IconPark, both cuts vendored and pinned), decision 3 (IBM Plex Sans Arabic, extended by decision 3 above with IBM Plex Mono for numerals), and decision 4 (light default, no flash) remain in force. `ROADMAP.md` and `docs/architecture.md` are corrected in the same change so no live text still describes the marine/sand direction or a colour-icon default.
 
 **Alternatives considered.**
 - *Ship the lab's six models with a switcher.* Rejected: the product has one appearance contract; a switcher is a lab tool, and shipping six palettes would multiply the conformance surface by six.
@@ -1125,8 +1131,12 @@ carries the states and the baseline set.
 move in this change; the live ADR range strings move to ADR-134 and
 `Project-Technologies.txt`'s header list gains 134. The constitution, its footer,
 and `version.json` stay at 6.2.0, because no clause changed. No migration or
-backfill is required because no code exists. Review date: 2026-12-01. This entry
-is the durable record.
+backfill is required because no code exists. (Annotated 2026-10-29, ADR-139: the
+"no backfill" line was read as "no command regeneration and no data migration",
+not as "no specification edit". R1's binding block was written before this change
+and carried four sources; it now carries the six the template names, because a
+template that gains a source does not reach a specification already written.)
+Review date: 2026-12-01. This entry is the durable record.
 
 ---
 

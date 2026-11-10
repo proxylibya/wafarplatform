@@ -1,0 +1,39 @@
+# Dependency-vulnerability exceptions for the committed lockfile.
+#
+# The CI gate blocks on any advisory not explicitly excepted below. The 2026-11-09
+# update cleared every critical and high advisory; the entries below are the
+# medium/low findings that remain. Each entry carries the reason it is not
+# reachable or not fixable in the current dependency ranges, and an expiry date
+# after which osv-scanner reports it again. Plan Complexity Tracking row 39
+# records the dispositions and the review date. Do not add an entry without a
+# reason and an expiry date.
+
+[[IgnoredVulns]]
+id = "GHSA-vjh5-4x84-xrqp"
+effectiveUntil = 2026-12-09
+reason = "The advisory states affected versions <4.6.2 and fixed in 4.6.2; the installed nuxt and @nuxt/nitro-server are 4.6.4. OSV's Nuxt 3 range (introduced 3.0.0, last known affected <4.0.0) carries no fixed event, so the scanner matches the patched 4.x line against it. Recheck when the advisory data is corrected or Nuxt moves past 4.6.4."
+
+[[IgnoredVulns]]
+id = "GHSA-gcqx-w48m-w2h4"
+effectiveUntil = 2026-12-09
+reason = "deepmerge 4.3.1 is reached only by @rollup/plugin-node-resolve at build time, merging repository-controlled package and config objects; no request data reaches mergeObject(). The advisory names 4.3.1 as the last affected version and no fixed release exists."
+
+[[IgnoredVulns]]
+id = "GHSA-67mh-4wv8-2f99"
+effectiveUntil = 2026-12-09
+reason = "esbuild 0.18.20 is a build-time transform inside drizzle-kit's deprecated @esbuild-kit loader; the esbuild serve API is not used, so the development-server CORS issue is not reachable. The parent pins the 0.18 line and the fix is a major (0.25.0)."
+
+[[IgnoredVulns]]
+id = "GHSA-g7r4-m6w7-qqqr"
+effectiveUntil = 2026-12-09
+reason = "esbuild 0.27.7 is a build-time dependency of fontless through @nuxt/fonts; the esbuild development server is not used, and the path traversal is Windows-only while the build and CI run on Linux. The fix (0.28.1) is outside fontless's declared range."
+
+[[IgnoredVulns]]
+id = "GHSA-3g3m-2fjr-6pw4"
+effectiveUntil = 2026-12-09
+reason = "glob 10.5.0 and 13.0.6 are reached only by build and test tooling (node-gyp's cacache chain, @vercel/nft, js-beautify); the walks use repository-controlled paths and no request path or attacker-controlled AbortSignal reaches them. The fix (14.0.2) is a major outside the parents' declared ranges."
+
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+effectiveUntil = 2026-12-09
+reason = "minimatch 9.0.9 and 10.2.6 are reached only by build and test tooling (node-gyp's cacache chain, @vercel/nft, js-beautify, eslint-plugin-vue); the patterns are repository-controlled and no request data reaches them. The fix (11.0.1) is a major outside the parents' declared ranges."

@@ -180,6 +180,29 @@ constitution's Documentation section and enforced by `governance-drift-check.mjs
 | [ADR-136](decisions/volume-08.md#adr-136--the-post-620-audit-fix-set-ii-the-icon-cut-the-template-load-map-and-the-checks-self-description) | The post-6.2.0 audit fix set II: the icon cut, the template load map, and the check's self-description | 2026-10-28 | 6.2.0 (unchanged) |
 | [ADR-137](decisions/volume-08.md#adr-137--the-appearance-authority-the-outline-icon-cut-the-light-default-the-focus-line-and-the-page-size-default) | The appearance authority: the outline icon cut, the light default, the focus line, and the page-size default | 2026-10-28 | 6.2.0 (unchanged) |
 | [ADR-138](decisions/volume-08.md#adr-138--the-621-clarifications-the-typeface-two-terms-and-the-appearance-citation) | The 6.2.1 clarifications: the typeface, two terms, and the appearance citation | 2026-10-28 | 6.2.1 |
+| [ADR-139](decisions/volume-09.md#adr-139--the-audit-repair-set-the-foundation-boundary-the-frame-and-traceability) | The audit repair set: the foundation boundary, the frame, and traceability | 2026-10-29 | 6.2.1 (unchanged) |
+| [ADR-140](decisions/volume-09.md#adr-140--the-admin-slice-split-the-gate-slice-the-recorder-and-two-consumers) | The admin slice split: the gate slice, the recorder, and two consumers | 2026-10-29 | 6.2.2 |
+| [ADR-141](decisions/volume-09.md#adr-141--the-transactional-sms-transport-twilio-behind-a-port) | The transactional SMS transport: Twilio behind a port | 2026-10-30 | 6.2.2 (unchanged) |
+| [ADR-142](decisions/volume-09.md#adr-142--the-backup-and-restore-tooling-pgbasebackup-wal-archiving-and-the-sealed-archive) | The backup and restore tooling: `pg_basebackup`, WAL archiving, and the sealed archive | 2026-10-30 | 6.2.2 (unchanged) |
+| [ADR-143](decisions/volume-09.md#adr-143--the-continuous-integration-provider-github-actions-offline-by-default) | The continuous-integration provider: GitHub Actions, offline by default | 2026-10-30 | 6.2.2 (unchanged) |
+| [ADR-144](decisions/volume-09.md#adr-144--the-sbom-generator-cyclonedxcyclonedx-npm-per-build) | The SBOM generator: `@cyclonedx/cyclonedx-npm` per build | 2026-10-30 | 6.2.2 (unchanged) |
+| [ADR-145](decisions/volume-09.md#adr-145--the-automated-accessibility-checker-axe-coreplaywright) | The automated accessibility checker: `@axe-core/playwright` | 2026-10-30 | 6.2.2 (unchanged) |
+| [ADR-146](decisions/volume-09.md#adr-146--the-technology-standards-amendment-r1s-seven-register-gaps-closed) | The Technology Standards amendment: R1's seven register gaps closed | 2026-10-30 | 6.3.0 |
+| [ADR-147](decisions/volume-09.md#adr-147--the-trade-names-arabic-form-no-diacritics) | The trade name's Arabic form: no diacritics | 2026-11-02 | 6.3.1 |
+| [ADR-148](decisions/volume-09.md#adr-148--the-shared-shells-name-one-term-and-frame-as-its-accepted-synonym) | The shared shell's name: one term, and `frame` as its accepted synonym | 2026-11-04 | 6.3.2 |
+| [ADR-149](decisions/volume-09.md#adr-149--the-silent-hidden-field-refusal-the-unstored-202-and-the-resume-read) | The silent hidden-field refusal: the unstored 202 and the resume read | 2026-11-05 | 6.3.2 (unchanged) |
+| [ADR-150](decisions/volume-09.md#adr-150--the-copys-authority-and-its-measurable-bindings) | The copy's authority and its measurable bindings | 2026-11-05 | 6.3.2 (unchanged) |
+| [ADR-151](decisions/volume-09.md#adr-151--the-identity-flows-technical-shape-better-auths-phone-number-extension-behind-the-auth-module) | The identity flow's technical shape: better-auth's phone-number extension behind the `auth` module | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-152](decisions/volume-09.md#adr-152--the-city-list-and-the-mobile-prefix-dataset-two-committed-reference-files) | The city list and the mobile-prefix dataset: two committed reference files | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-153](decisions/volume-09.md#adr-153--the-password-policys-local-source-seclists-top-100000-verified-at-boot) | The password policy's local source: SecLists' top 100,000, verified at boot | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-154](decisions/volume-09.md#adr-154--the-session-policy-two-clocks-an-activity-signal-and-tombstones) | The session policy: two clocks, an activity signal, and tombstones | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-155](decisions/volume-09.md#adr-155--the-rate-limit-and-transient-store-locations-postgres-tables-swept-hourly) | The rate-limit and transient-store locations: Postgres tables, swept hourly | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-156](decisions/volume-09.md#adr-156--the-frames-route-map-one-exported-map-for-every-link) | The frame's route map: one exported map for every link | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-157](decisions/volume-09.md#adr-157--the-provisioning-boundary-the-initial-password-and-the-audit-log) | The provisioning boundary, the initial password, and the audit log | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-158](decisions/volume-09.md#adr-158--public-api-versioning-and-the-deprecation-rule) | Public API versioning and the deprecation rule | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-159](decisions/volume-09.md#adr-159--the-sc-009-load-profile-and-its-verdict) | The SC-009 load profile and its verdict | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-160](decisions/volume-09.md#adr-160--spec-kit-scaffold-refreshed-to-132-the-reserved-command-and-extension-set-retained) | Spec Kit scaffold refreshed to 1.3.2; the reserved command and extension set retained | 2026-11-08 | 6.3.2 (unchanged) |
+| [ADR-161](decisions/volume-09.md#adr-161--the-city-lists-object-envelope-and-version-200) | The city list's object envelope and version 2.0.0 | 2026-11-09 | 6.3.2 (unchanged) |
 
 **Design-system note (ADR-093).** Every provision of the removed custom design
 system in an earlier record is superseded by ADR-093. Their other provisions,

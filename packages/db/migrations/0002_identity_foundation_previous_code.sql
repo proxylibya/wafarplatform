@@ -1,0 +1,2 @@
+ALTER TABLE "phone_verifications" ADD COLUMN "previous_code_hash" text;--> statement-breakpoint
+ALTER TABLE "phone_verifications" ADD CONSTRAINT "phone_verifications_previous_code_form" CHECK ("phone_verifications"."previous_code_hash" IS NULL OR "phone_verifications"."previous_code_hash" LIKE '$wafar$scrypt$%');

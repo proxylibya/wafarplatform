@@ -1,8 +1,8 @@
 # Project-Technologies.txt — the detail of the technology register
 
 **Constitution**: `.specify/memory/constitution.md` (current version: its footer
-or `.specify/memory/version.json`; last amended 2026-10-28,
-ADR-040/041/042/043/044/045/046/047/048/049/050/051/052/053/054/055/056/057/058/059/060/061/062/063/064/065/066/067/068/069/070/071/072/073/074/075/076/077/078/079/080/081/082/083/084/085/086/087/088/089/090/091/092/093/094/095/096/097/098/099/100/101/102/103/104/105/106/107/108/109/110/111/112/113/114/115/116/117/118/119/120/121/122/123/124/125/126/127/128/129/130/131/132/133/134/135/136/137/138). On any conflict with this file, the constitution
+or `.specify/memory/version.json`; last amended 2026-11-04,
+ADR-040/041/042/043/044/045/046/047/048/049/050/051/052/053/054/055/056/057/058/059/060/061/062/063/064/065/066/067/068/069/070/071/072/073/074/075/076/077/078/079/080/081/082/083/084/085/086/087/088/089/090/091/092/093/094/095/096/097/098/099/100/101/102/103/104/105/106/107/108/109/110/111/112/113/114/115/116/117/118/119/120/121/122/123/124/125/126/127/128/129/130/131/132/133/134/135/136/137/138/139/140/141/142/143/144/145/146/147/148/149/150/151/152/153/154/155/156/157/158/159/160/161). On any conflict with this file, the constitution
 wins and this file is corrected.
 
 **Status**: detail mirror, not a source of rules. The register is
@@ -42,7 +42,7 @@ wafar/
 │   ├── shared/           # Zod schemas + الأنواع + العقود
 │   ├── db/               # Drizzle schema + migrations
 │   ├── search/           # OpenSearch client + mappings
-│   ├── ui/               # Wafar UI layer: tokens + theme + IconPark + IBM Plex Sans Arabic + primitives (ADR-097/098)
+│   ├── ui/               # Wafar UI layer: tokens + theme + IconPark + IBM Plex Sans Arabic + IBM Plex Mono + primitives (ADR-097/098/128)
 │   └── config/           # ESLint + Stylelint + Prettier + TS config
 ├── pnpm-workspace.yaml
 ├── turbo.json
@@ -56,7 +56,7 @@ wafar/
 | التقنية | الدور | التفاصيل |
 |---|---|---|
 | **Modular Monolith** | النمط المعماري للخادم | خادم واحد مقسّم إلى وحدات مستقلة (auth, users, catalogs, parts, suppliers, bookmarks, notifications, messages, support, admin). كل وحدة لها `routes`، `service`، `repository` خاص. لا استدعاء مباشر بين الوحدات — التواصل عبر `packages/shared`. |
-| **Hono** | إطار الخادم | إطار خفيف. الرقم 4.13.5 (2026) مرجع مثبَّت في هذه المرآة فقط، وقراره مُرحَّل عبر ADR-002؛ لا رقم دقيق يثبّته الدستور. يعمل على Node.js، Bun، Deno، Cloudflare Workers. |
+| **Hono** | إطار الخادم | إطار خفيف. الرقم 4.13.17 (2026) مرجع مثبَّت في هذه المرآة فقط، وقراره مُرحَّل عبر ADR-002؛ لا رقم دقيق يثبّته الدستور. يعمل على Node.js، Bun، Deno، Cloudflare Workers. |
 | **OpenAPI** | توثيق الـ API | توليد توثيق تلقائي من نفس كود Hono. يضمن تكاملاً سلساً بين الواجهة والخادم. |
 | **Zod** | التحقق من صحة البيانات | سلسلة v4 مرجع مثبَّت في هذه المرآة فقط؛ سجل الدستور المعتمد يسمّي Zod بلا رقم، والرقم الدقيق يثبّته plan الحِزمة. يُستخدم في الواجهة والخادم معاً لمشاركة نفس schemas. |
 
@@ -84,10 +84,10 @@ apps/api/src/
 
 | التقنية | الدور | التفاصيل |
 |---|---|---|
-| **Nuxt 4** | إطار العمل | الإصدار 4.0 صدر يوليو 2025. الإصدار الحالي **4.5** (يوليو 2026). الاتجاه المعتمد للمشاريع الجديدة هو Nuxt 4؛ Nuxt 3 لم يعد التوصية. |
+| **Nuxt 4** | إطار العمل | الإصدار 4.0 صدر يوليو 2025. الإصدار الحالي **4.6.4** (يوليو 2026). الاتجاه المعتمد للمشاريع الجديدة هو Nuxt 4؛ Nuxt 3 لم يعد التوصية. |
 | **Vue 3** | لغة بناء الواجهات | Composition API + `<script setup>`. |
 | **TypeScript** | لغة البرمجة | strict mode إلزامي. |
-| **Tailwind CSS** | تنسيق التصميم | الإصدار v4.2 مع خيارات ألوان محايدة جديدة. |
+| **Tailwind CSS** | تنسيق التصميم | الإصدار v4.3.4 مع خيارات ألوان محايدة جديدة. |
 | **Nuxt UI** | مكتبة مكونات جاهزة | الإصدار **v4.11.2** (سبتمبر 2026). مئات المكونات والقوالب وحزمة Figma. مجاني بالكامل. الأيقونات عبر IconPark (ADR-098). يتضمن حزم Nuxt 4: `@nuxt/ui` 4.11.2، `@nuxt/icon`، `@nuxtjs/color-mode`، `@nuxt/eslint`؛ تُثبَّت الإصدارات الدقيقة في lockfile. |
 | **Pinia** | إدارة الحالة المحلية | الإصدار المعتمد **v4.0** (يوليو 2026)؛ وv3.0.4 (يناير 2026) هو ما قبله لا خيار مفتوح. المكتبة الرسمية لـ Vue. |
 | **TanStack Query** | إدارة بيانات الخادم | الإصدار v5. يُستخدم مُلَفَّق Vue منه. يدعم `useQueries`، `useQuery`، التخزين المؤقت، التحديثات التلقائية، Infinite Scroll، Optimistic Updates. |
@@ -143,6 +143,7 @@ apps/admin/
 |---|---|
 | **IconPark** | مجموعتا `icon-park` (ملوّنة) و`icon-park-outline` (أحادية)، 2,658 أيقونة لكل منهما؛ Apache-2.0 من ByteDance؛ تُضمَّن داخل `packages/ui/vendor` وتُثبَّت بـ SHA-256؛ يُستهلك `icon-park-outline` (القطعة الخطّية)، والملوّن مُضمَّن وغير مستهلك (ADR-137)؛ ADR-098. |
 | **IBM Plex Sans Arabic** | OFL؛ self-hosted WOFF2 بأوزان 400/500/600/700؛ `font-display: swap`؛ ADR-098. |
+| **IBM Plex Mono** | OFL؛ self-hosted WOFF2؛ خط الأرقام اللاتينية؛ ADR-128 قرار 3. |
 | **Nuxt UI icons** | `@iconify-json/icon-park-outline` هو المستهلك في `app.config.ts`؛ و`@iconify-json/icon-park` مُضمَّن وغير مستهلك (ADR-137)؛ لا Iconify API وقت التشغيل. |
 
 ---
@@ -152,6 +153,7 @@ apps/admin/
 | التقنية | الدور | التفاصيل |
 |---|---|---|
 | **PostgreSQL** | قاعدة البيانات الرئيسية | الإصدار 16+. تخزين المستخدمين، الموردين، الملفات، القطع، سلة المشتريات، الإشعارات، المراسلات، Audit Log. |
+| **pg_basebackup + WAL archiving** | النسخ الاحتياطي والاستعادة | أدوات PostgreSQL المدمجة، الإصدار 16+ (حدّ صف قاعدة البيانات)؛ نسخة أساسية ليلية وأرشفة WAL بفاصل 60 ثانية أو أقل، والاستعادة بـ `pg_restore`. كل أرشيف يُشفَّر قبل مغادرته المضيف (AES-256-GCM، ومفتاح البيانات مُغلَّف بمفتاح من البيئة لا يُخزَّن بجوار الأرشيف). لا منتج نسخ احتياطي خارجي (ADR-142). |
 | **Drizzle ORM** | وسيط قاعدة البيانات | كل شيء في TypeScript. يستنتج الأنواع هيكلياً بدلاً من خطوة توليد منفصلة. خفيف وسريع. |
 | **PgDog** | مجمّع الاتصالات | الإصدار **v0.1**. مكتوب بلغة **Rust**. بديل PgBouncer. يدير أعداداً كبيرة من الاتصالات على أجهزة عادية. مرخّص **AGPL-3.0**؛ يخضع لسجل معالجة تراخيص خدمات البنية التحتية في الدستور، وبديله المعتمد عند تعذّره هو PgBouncer، وتاريخ المراجعة 2027-04-06. |
 
@@ -226,7 +228,8 @@ apps/worker/src/
 
 | التقنية | الدور | التفاصيل |
 |---|---|---|
-| **better-auth** | إدارة تسجيل الدخول | الإصدار **1.6.14** (يونيو 2026). **تحذير أمني**: ثغرة **CVE-2026-67330** في `@better-auth/scim` (تجاوز تفويض). ثغرة **CVE-2026-80192** في `@better-auth/sso`. **لا تفعّل `scim` أو `sso` أبداً.** استخدم الدوال الأساسية فقط، ومعها إضافة phone-number (ADR-030). |
+| **better-auth** | إدارة تسجيل الدخول | الإصدار **1.7.18** (يونيو 2026). **تحذير أمني**: ثغرة **CVE-2026-67330** في `@better-auth/scim` (تجاوز تفويض). ثغرة **CVE-2026-80192** في `@better-auth/sso`. **لا تفعّل `scim` أو `sso` أبداً.** استخدم الدوال الأساسية فقط، ومعها إضافة phone-number (ADR-030). |
+| **Twilio Programmable Messaging** | قناة الرسائل النصية للمصادقة | REST عبر حزمة `twilio` (MIT)؛ رسائل معاملات أحادية الاتجاه فقط: رمز التحقق عند التسجيل، ورمز استعادة كلمة المرور، والإشعاران الأمنيان. `To` دائماً رقم +218 بصيغة E.164؛ لا مسار وارد ولا تسويق ولا بديل بريدي. مهلة استدعاء المزوّد 750 ms، والمهلة رفض. لا حدّ أدنى للإصدار: التثبيت الدقيق في lockfile هو المرجع (ADR-141). |
 
 ---
 
@@ -234,8 +237,9 @@ apps/worker/src/
 
 | التقنية | الدور | التفاصيل |
 |---|---|---|
-| **Vitest** | اختبارات الوحدة | أداة الاختبار القياسية لمشاريع Vite. Playwright يُستخدم للاختبارات الطرفية، واختيار مزوّد CI يظل فجوة مسجلة يملكها R1. |
+| **Vitest** | اختبارات الوحدة | أداة الاختبار القياسية لمشاريع Vite. Playwright يُستخدم للاختبارات الطرفية، ومزوّد التكامل المستمر هو GitHub Actions (ADR-143). |
 | **Playwright** | اختبارات الواجهة (E2E) | يدعم التنفيذ المتوازي — أسرع من webdriverio. |
+| **@axe-core/playwright** | الفحص الآلي لإمكانية الوصول | بوابة تطوير واختبار فقط، لا تُشحَن؛ تفحص كل حالة صفحة عند 320 و1280 CSS px، ويكمّلها فحص لوحة المفاتيح المسجّل. MPL-2.0. لا حدّ أدنى: التثبيت الدقيق في lockfile هو المرجع (ADR-145). |
 
 ---
 
@@ -246,6 +250,7 @@ apps/worker/src/
 | **ESLint** | اكتشاف الأخطاء | قواعد صارمة لمنع `any` والـ double assertions. |
 | **Prettier** | تنسيق الكود | تنسيق موحد عبر المشروع. |
 | **Stylelint** | بوابة CSS الثابتة | يُفشل البناء على خصائص الاتجاه الفيزيائي وعلى أي قيمة لون/تباعد/نصف قطر/ظل/مدة/z-index لا تأتي من طبقة واجهة Wafar (ADR-024، معدّل بـ ADR-093). |
+| **@cyclonedx/cyclonedx-npm** | مولّد SBOM | CycloneDX JSON لكل بناء عبر `pnpm sbom`، يُرفَق بالإصدار. Apache-2.0، أداة بناء لا تُشحَن. لا حدّ أدنى: التثبيت الدقيق في lockfile هو المرجع (ADR-144). |
 
 ---
 
@@ -256,6 +261,7 @@ apps/worker/src/
 | **VPS** | خوادم افتراضية | خوادم Hetzner أو ما يعادلها. |
 | **Nginx / HAProxy** | موازن الحمل | ضروري عند التوسع. |
 | **Docker** (اختياري) | حاويات | للـstaging parity فقط، كما يقيّد الدستور. |
+| **GitHub Actions** | مزوّد التكامل المستمر | `.github/workflows/ci.yml`؛ المهام تعمل دون شبكة على خدمات محلية وقناة SMS وهمية، وخطوة تثبيت التبعيات هي الخطوة الشبكية الوحيدة. كل إجراء، بما فيه إجراءات GitHub، مثبّت بـ commit SHA، وDependabot يتابع `github-actions`. لا رقم إصدار لخدمة مستضافة (ADR-143). |
 
 > مجمّع الاتصالات PgDog مسجَّل في طبقة قاعدة البيانات أعلاه ولا يُعاد هنا؛ طبقة النشر تسمّي في سجل الدستور المعتمد خوادم VPS وموازن Nginx أو HAProxy وDocker الاختياري فقط.
 
@@ -268,15 +274,15 @@ apps/worker/src/
 | **البنية** | Monorepo، pnpm، Turborepo، Node.js |
 | **الواجهة الأمامية** | Nuxt 4، Vue 3، TypeScript، Tailwind CSS، Nuxt UI، Pinia، TanStack Query، Zod |
 | **الواجهة الخلفية** | Hono، OpenAPI، Modular Monolith، Zod |
-| **قاعدة البيانات** | PostgreSQL، Drizzle ORM، PgDog |
+| **قاعدة البيانات** | PostgreSQL، Drizzle ORM، PgDog، pg_basebackup + WAL archiving |
 | **البحث** | OpenSearch، Arabic Analyzer، ISM |
 | **الملفات** | SeaweedFS، BullMQ، Redis |
-| **المصادقة** | better-auth |
-| **الاختبارات** | Vitest، Playwright |
-| **الجودة** | ESLint، Prettier، Stylelint، Lighthouse CI، Semgrep OSS، osv-scanner، pg_anonymize |
+| **المصادقة** | better-auth، Twilio Programmable Messaging |
+| **الاختبارات** | Vitest، Playwright، @axe-core/playwright |
+| **الجودة** | ESLint، Prettier، Stylelint، Lighthouse CI، Semgrep OSS، osv-scanner، pg_anonymize، @cyclonedx/cyclonedx-npm |
 | **الأمان** | ClamAV |
 | **المراقبة** | Prometheus + Grafana |
-| **النشر** | VPS، Nginx/HAProxy، Docker (اختياري) |
+| **النشر** | VPS، Nginx/HAProxy، Docker (اختياري)، GitHub Actions |
 
 ---
 

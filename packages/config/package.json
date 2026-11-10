@@ -1,0 +1,24 @@
+{
+  "name": "@wafar/config",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./tsconfig/base.json": "./tsconfig/base.json",
+    "./tsconfig/api.json": "./tsconfig/api.json",
+    "./tsconfig/nuxt.json": "./tsconfig/nuxt.json",
+    "./eslint": "./eslint.config.mjs",
+    "./stylelint": "./stylelint.config.mjs",
+    "./prettier": "./prettier.config.mjs",
+    "./vitest": "./vitest.config.ts"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.37.0",
+    "eslint": "catalog:",
+    "eslint-plugin-vue": "^10.5.0",
+    "prettier": "catalog:",
+    "stylelint": "catalog:",
+    "stylelint-config-standard": "^39.0.1",
+    "typescript-eslint": "^8.46.0"
+  }
+}

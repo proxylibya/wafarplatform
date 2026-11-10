@@ -1,0 +1,10 @@
+node_modules/
+dist/
+build/
+.nuxt/
+.output/
+coverage/
+.turbo/
+pnpm-lock.yaml
+*.min.js
+packages/ui/vendor/**

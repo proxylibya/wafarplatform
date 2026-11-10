@@ -1,0 +1,11 @@
+node_modules
+dist
+build
+.nuxt
+.output
+coverage
+.turbo
+.git
+*.log
+.env
+.env.*

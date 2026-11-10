@@ -19,8 +19,10 @@ The external design lab is a reference frozen at its capture date. It is not a
 dependency, no filesystem path to it appears in this repository, and nothing
 here is copied from it as code. The manifest's `http://localhost:4321` URLs
 record the capture source as provenance, not a dependency. Its screenshots are
-evidence that the contract was rendered and measured; they are not a baseline
-the product diffs against.
+evidence that the contract was rendered; they are evidence of composition, not
+of measurement (the lab's footer band is shorter than ADR-128's 3.5rem while its
+sidebar agrees with 15rem, and the slice map records the footer's divergence),
+and they are not a baseline the product diffs against.
 
 Capture drift: the screenshots were captured on 2026-10-27. The lab's shared
 `:root` gained ten skeleton tokens on 2026-10-28, after the capture, so the
@@ -38,7 +40,7 @@ the screenshots remain evidence, not a baseline.
 
 ## Contents
 
-- `slice-map.md` — the fifteen slices and the twenty-eight pages, with each
+- `slice-map.md` — the seventeen slices and the twenty-eight pages, with each
   page's blocks, order, states, copy, behaviour, the lab-only material that is
   not transferred, the token reference, the screenshots, and the open questions
   a specification must answer. The eleven administrator pages are marked as

@@ -1,0 +1,157 @@
+{
+  "drill": "T129",
+  "criterion": "FR-055, AC-061",
+  "date": "2026-11-09",
+  "method": "logical pg_dump sealed with seal.mjs, restored into a clean database",
+  "host": {
+    "platform": "win32",
+    "release": "10.0.19045",
+    "node": "v22.23.4"
+  },
+  "departure": "The production drill restores pg_basebackup plus WAL on Linux; this host has no Docker and no Linux cluster, so the drill takes a point-in-time logical dump and restores it into a clean database. The encryption, the clean restore, the API boot, the assertions, and the RTO/RPO reading are the same.",
+  "recoveryPoint": "2026-11-09T07:37:13.221Z",
+  "schema": {
+    "version": "df0bab0bae8d:2",
+    "steps": 2
+  },
+  "archive": {
+    "sealedBytes": 19594,
+    "plaintextBytes": 19497,
+    "cipher": "AES-256-GCM under a random data key wrapped by the key-encryption key",
+    "keyCustody": "generated for this drill in process memory; never written beside the archive"
+  },
+  "pointState": {
+    "sessionLive": true,
+    "lockInForce": "2026-11-09T07:47:12.567Z",
+    "lockCount": 5,
+    "pendingState": "pending",
+    "rateWindowStart": "2026-11-09T07:30:00.000Z",
+    "rateWindowCount": 2
+  },
+  "afterPointState": {
+    "sessionRevoked": true,
+    "lockLifted": true,
+    "pendingVerified": true,
+    "rateWindowCount": 3
+  },
+  "restoredState": {
+    "sessionRevokedAt": null,
+    "sessionExpiresAt": "2026-11-09T08:37:12.567Z",
+    "failedSignInCount": 5,
+    "lockedUntil": "2026-11-09T07:47:12.567Z",
+    "pendingState": "pending",
+    "pendingVerifiedAt": null,
+    "rateWindowStart": "2026-11-09T07:30:00.000Z",
+    "rateWindowCount": 2
+  },
+  "assertions": [
+    {
+      "name": "the restored session is live",
+      "pass": true,
+      "measured": null
+    },
+    {
+      "name": "the restored session has not expired",
+      "pass": true,
+      "measured": "2026-11-09T08:37:12.567Z"
+    },
+    {
+      "name": "the lock is in force at the recovery point",
+      "pass": true,
+      "measured": 5
+    },
+    {
+      "name": "the lock has not been lifted",
+      "pass": true,
+      "measured": "2026-11-09T07:47:12.567Z"
+    },
+    {
+      "name": "the pending request is pending at the point",
+      "pass": true,
+      "measured": "pending"
+    },
+    {
+      "name": "the pending request is not verified",
+      "pass": true,
+      "measured": null
+    },
+    {
+      "name": "the rate-limit window reads as at the point",
+      "pass": true,
+      "measured": 2
+    },
+    {
+      "name": "GET /health answers 200",
+      "pass": true,
+      "measured": 200
+    },
+    {
+      "name": "the health body reports the database",
+      "pass": true,
+      "measured": {
+        "status": "ok",
+        "database": "ok"
+      }
+    },
+    {
+      "name": "GET /api/v1/auth/session answers 200 with the restored session",
+      "pass": true,
+      "measured": 200
+    },
+    {
+      "name": "the restored session still grants access",
+      "pass": true,
+      "measured": {
+        "authenticated": true,
+        "user": {
+          "fullName": "محمد علي"
+        },
+        "session": {
+          "expiresAt": "2026-11-09T08:37:12.567Z",
+          "lastActivityAt": "2026-11-09T07:37:12.567Z",
+          "restricted": false
+        }
+      }
+    },
+    {
+      "name": "the session belongs to the restored account",
+      "pass": true,
+      "measured": {
+        "fullName": "محمد علي"
+      }
+    },
+    {
+      "name": "a guest read stays a guest",
+      "pass": true,
+      "measured": {
+        "authenticated": false
+      }
+    }
+  ],
+  "timings": {
+    "migrateMs": 1933,
+    "dumpMs": 500,
+    "sealMs": 162,
+    "openMs": 130,
+    "restoreMs": 377,
+    "apiReadyMs": 6698,
+    "totalMs": 6831
+  },
+  "rto": {
+    "targetHours": 4,
+    "measuredSeconds": 6.8,
+    "verdict": "pass"
+  },
+  "rpo": {
+    "targetMinutes": 15,
+    "measuredMinutes": 0,
+    "note": "The logical dump is the recovery point itself; the state after it is absent. Production bounds the window at 15 minutes with archive_timeout = 60.",
+    "verdict": "pass"
+  },
+  "verdict": "pass",
+  "failures": [],
+  "acceptanceEstimate": {
+    "persisted": null,
+    "note": "The SMS port’s rolling acceptance estimate is process memory (AcceptanceEstimate); a fresh API starts with an empty window and no table holds it."
+  }
+}

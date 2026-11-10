@@ -1,0 +1,86 @@
+# Development composition for the Wafar identity foundation.
+# PostgreSQL 16 is the system of record; PgDog stands in front of it in every
+# environment, with PgBouncer as the register's named fallback profile.
+# Redis, SeaweedFS, and OpenSearch are provisioned here and read by no R1 code.
+name: wafar-dev
+
+services:
+  postgres:
+    # Pinned by digest (2026-11-07); move it deliberately with the tag (T202).
+    image: postgres:16-alpine@sha256:aa6cb33cf4c19c765cefcf48d96176258800870a9a1e930ad126200f9d825139
+    environment:
+      POSTGRES_USER: wafar
+      POSTGRES_PASSWORD: wafar
+      POSTGRES_DB: wafar
+      PGDATA: /var/lib/postgresql/data/pgdata
+    command:
+      - postgres
+      - -c
+      - archive_mode=on
+      - -c
+      - archive_timeout=60
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+      - ./scripts/backup/wal-archive:/var/lib/postgresql/wal-archive
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U wafar -d wafar']
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  pgdog:
+    # Pinned by digest (2026-11-07); the tag is kept beside it (T202).
+    image: ghcr.io/pgdogdev/pgdog:0.1@sha256:6b4f0ae93516c2dab96c0d6acf2ef5b425ca7d0bc64b1f7919466f6b71057a7d
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      PGDATABASE_URL: postgres://wafar:wafar@postgres:5432/wafar
+    ports:
+      - '6432:6432'
+
+  pgdog-fallback:
+    profiles: ['pgbouncer-fallback']
+    image: edoburu/pgbouncer:1.24.1
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DB_USER: wafar
+      DB_PASSWORD: wafar
+      DB_HOST: postgres
+      DB_NAME: wafar
+      POOL_MODE: transaction
+      AUTH_TYPE: scram-sha-256
+    ports:
+      - '6432:5432'
+
+  redis:
+    image: redis:7-alpine
+    profiles: ['cache']
+    ports:
+      - '6379:6379'
+
+  seaweedfs:
+    image: chrislusf/seaweedfs:3.80
+    profiles: ['storage']
+    command: 'server -dir=/data -s3'
+    ports:
+      - '8333:8333'
+    volumes:
+      - seaweed-data:/data
+
+  opensearch:
+    image: opensearchproject/opensearch:2.19.0
+    profiles: ['search']
+    environment:
+      discovery.type: single-node
+      DISABLE_SECURITY_PLUGIN: 'true'
+    ports:
+      - '9200:9200'
+
+volumes:
+  postgres-data:
+  seaweed-data:

@@ -1,0 +1,35 @@
+{
+  "name": "@wafar/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "test:e2e": "playwright test --config tests/playwright.config.ts",
+    "test:a11y": "playwright test --config tests/playwright.config.ts --project=a11y",
+    "test:visual": "playwright test --config tests/playwright.config.ts --project=visual",
+    "test:inp": "node tests/perf/inp-user-flow.mjs",
+    "lint": "eslint app tests server nuxt.config.ts"
+  },
+  "dependencies": {
+    "@nuxt/ui": "4.11.2",
+    "@tanstack/vue-query": "^5.90.2",
+    "@wafar/shared": "workspace:*",
+    "@wafar/ui": "workspace:*",
+    "nuxt": "4.6.4",
+    "vue": "catalog:",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.3",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "catalog:",
+    "@vue/test-utils": "^2.4.6",
+    "vitest": "catalog:",
+    "vue-tsc": "^3.3.14"
+  }
+}

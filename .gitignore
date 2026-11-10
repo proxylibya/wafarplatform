@@ -10,6 +10,9 @@ build/
 .turbo/
 coverage/
 *.tsbuildinfo
+.lighthouseci/
+apps/web/reports/
+apps/web/test-results/
 
 # Package manager store
 .pnpm-store/

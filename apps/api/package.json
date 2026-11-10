@@ -1,0 +1,35 @@
+{
+  "name": "@wafar/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.build.json && node scripts/copy-assets.mjs",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "openapi": "tsx src/http/emit-openapi.ts",
+    "provision-administrator": "tsx src/cli/provision-administrator.ts",
+    "revoke-session": "tsx src/cli/revoke-session.ts",
+    "test": "vitest run --root ../.. --project api",
+    "lint": "eslint src test"
+  },
+  "dependencies": {
+    "@hono/node-server": "^2.1.6",
+    "@wafar/db": "workspace:*",
+    "@wafar/shared": "workspace:*",
+    "better-auth": "1.7.18",
+    "drizzle-orm": "catalog:",
+    "hono": "4.13.17",
+    "pg": "catalog:",
+    "twilio": "^5.10.3",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "@wafar/config": "workspace:*",
+    "tsx": "^4.20.6",
+    "vitest": "catalog:"
+  }
+}

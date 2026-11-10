@@ -120,9 +120,9 @@ replace them with the core templates.
   an emoji glyph is not an icon. The set is **IconPark** (the outline cut is
   consumed; the colour cut is vendored but not consumed), chosen by ADR-098 and
   annotated by ADR-137; both cuts are vendored under `packages/ui/vendor`; the
-  Technology Standards register gap for the icon set is still open and owned by
-  R1, so no other slice may choose a set of its own or add a second family, and
-  R1 closes the gap through the register-gap process.
+  set and the typeface are assets of that layer, not rows of the Approved
+  register, and ADR-146 records both gap rows closed at R1's acceptance, so no
+  other slice may choose a set or a family of its own.
 - Registration is Libya only: every account is a +218 number and sign-up offers
   no dial-code selector (ADR-041).
 
@@ -181,11 +181,11 @@ key), so a `specify` upgrade may replace it; the project copy is the one to keep
 and its `requires.integrations.any` list must stay correctly nested under
 `integrations:` (ADR-072).
 
-**The governance drift check is committed (ADR-071, ADR-072, ADR-073, ADR-074, ADR-075, ADR-080, ADR-082, ADR-083, ADR-086, ADR-088, ADR-092, ADR-093, ADR-096, ADR-097, ADR-098, ADR-099, ADR-100, ADR-101, ADR-102, ADR-103, ADR-104, ADR-105, ADR-106, ADR-125, ADR-133, ADR-136).** `governance-drift-check.mjs`
+**The governance drift check is committed (ADR-071, ADR-072, ADR-073, ADR-074, ADR-075, ADR-080, ADR-082, ADR-083, ADR-086, ADR-088, ADR-092, ADR-093, ADR-096, ADR-097, ADR-098, ADR-099, ADR-100, ADR-101, ADR-102, ADR-103, ADR-104, ADR-105, ADR-106, ADR-125, ADR-133, ADR-136, ADR-140).** `governance-drift-check.mjs`
 in the repository root is a read-only, dependency-free Node script that verifies
 the invariants the governance set cannot verify by discipline: the constitution
 footer's version and amended date against `.specify/memory/version.json`; every
-live `ADR-001 … ADR-138` range string — in the required files, in the top-level
+live `ADR-001 … ADR-161` range string — in the required files, in the top-level
 `docs/` files, in the two Arabic mirrors, in the template overrides, and in the
 feature specifications — against the last row of
 `docs/DECISIONS.md`'s index; every ADR index row's anchor against its heading in

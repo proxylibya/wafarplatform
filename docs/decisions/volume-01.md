@@ -689,6 +689,11 @@ the sixteen defects found, the slice that closes it.
 - *Keep the identity slice first and let it absorb the foundation.* Rejected as
   the identity slice's own scope; the foundation duties are large enough that
   hiding them inside authentication makes the slice's boundary unreviewable.
+  (Annotated 2026-10-29, ADR-139: this sentence states the risk the decision
+  accepted, not a rejected option — the decision below folds the foundation into
+  identity. The foundation phase and its hard checkpoint are the mitigation, and
+  the boundary is reviewed at that checkpoint. The record is annotated, not
+  rewritten.)
 - *A separate foundation slice with contributor stories.* Rejected: a story
   about running the project is not observable product value, and Principle VIII
   makes that a violation rather than a preference.

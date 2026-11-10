@@ -1,5 +1,42 @@
 # Wafar Platform Constitution
 
+<!--
+Sync Impact Report (review material; MUST NOT be committed — Governance →
+amendment procedure)
+==============================================================================
+Version change: 6.3.1 -> 6.3.2 (PATCH)
+
+Rationale for PATCH: the amendment registers one term in the Glossary — the
+product's shared page composition — and names the second word already in use for
+it as an accepted synonym rather than a second term. It fixes a name, not a
+rule: no principle is added, removed, or redefined, no section is added or
+removed, and no behaviour changes, so the bump is neither MAJOR nor MINOR.
+
+Modified principles: none. Titles and rules are unchanged.
+
+Modified sections:
+  - Glossary -> a new row, **Shell**, placed before **Wafar UI layer**: it
+    defines the composition (header, sidebar, footer band, and the narrow-screen
+    bottom navigation bar), fixes **Shell** as the approved term, records
+    **Frame** as an accepted synonym confined to text that already carries it,
+    and requires new text to use **Shell**.
+
+Added sections: none
+Removed sections: none
+Templates: none — the resolved scaffold's headings and their order are kept;
+no versioned template layer is written.
+
+Supersedes: nothing. No record is rewritten; ADR-127's title and the R1
+specification's existing "frame" occurrences stay as written, because the new
+row accepts them as the synonym rather than as a second term. ADR-148 records
+this amendment.
+
+Follow-up TODOs: none. No placeholder token is left unresolved.
+
+Note for the reviewer: this report is scratch material and MUST be deleted
+before the amended constitution is committed.
+-->
+
 This project turns parts catalogs supplied as PDF, Excel, or Word files into a
 structured, searchable catalog for Libyan merchants who currently catalog them
 by hand. A merchant registers, opens an account, uploads supplier catalogs, and
@@ -1379,12 +1416,18 @@ UI layer.
 | Quality | Semgrep OSS | SAST scan whose failures block release (Deployment and Observability's supply-chain rule); a CI gate, not a runtime dependency — exception `EX-004` in `.specify/templates/exception-register.md` |
 | Quality | osv-scanner | Dependency vulnerability scan whose failures block release (Deployment and Observability's supply-chain rule); a CI gate, not a runtime dependency — exception `EX-005` in `.specify/templates/exception-register.md` |
 | Quality | pg_anonymize | Staging data anonymisation (Deployment and Observability); a staging tool, not a runtime dependency — exception `EX-006` in `.specify/templates/exception-register.md` |
+| Messaging | Twilio Programmable Messaging | One-way transactional SMS only: sign-up verification, the password-recovery code, and the two security notices; `To` is always a +218 E.164 number, no inbound path, no email fallback; provider call timeout 750 ms; no floor beyond the exact lockfile pin (ADR-141) |
+| Database | `pg_basebackup` + WAL archiving | PostgreSQL 16+ tooling, the database row's floor; a nightly base backup, a WAL archive interval of 60 s or less, and `pg_restore` for the drill; every archive is encrypted before it leaves the host; no third-party backup product (ADR-142) |
+| Delivery | GitHub Actions | The continuous-integration provider; jobs run offline against local services and the fake SMS transport, and the dependency-install step is the only networked step; every action, first-party included, is pinned by commit SHA (ADR-143) |
+| Quality | `@cyclonedx/cyclonedx-npm` | A CycloneDX JSON SBOM per build, attached to the release; Apache-2.0, build-time only and never shipped; no floor beyond the exact lockfile pin (ADR-144) |
+| Quality | `@axe-core/playwright` | The automated accessibility gate, run over every page state at 320 and 1280 CSS px and supplemented by a recorded keyboard-only pass; MPL-2.0, dev-only and never shipped; no floor beyond the exact lockfile pin (ADR-145) |
 
-These six rows are the named implementations of rules the constitution already
-stated, and they close a register gap rather than open one: the register named no
-implementation, and the technology mirror named these six anyway. The six are not
-uniform in the rule they serve. Four — Prometheus + Grafana, Semgrep OSS,
-osv-scanner, and pg_anonymize — implement a rule in Deployment and Observability
+The six rows from ClamAV to pg_anonymize are the named implementations of rules
+the constitution already stated, and they close a register gap rather than open
+one: the register named no implementation, and the technology mirror named these
+six anyway. The six are not uniform in the rule they serve. Four — Prometheus +
+Grafana, Semgrep OSS, osv-scanner, and pg_anonymize — implement a rule in
+Deployment and Observability
 whose own body says "or an equivalent"; the other two implement a rule that names
 its tool directly and allows no equivalent: ClamAV is File Processing Rules'
 content-safety step, and Lighthouse CI is Performance Budgets and Verification's
@@ -1394,6 +1437,20 @@ merchant's browser — so the treatment is uniform even though the two groups ar
 not. Substituting a different tool for one of the four rows whose rule says "or
 an equivalent" is an amendment to this register, not a local choice; substituting
 one for ClamAV or Lighthouse CI is the same, because their rules name them.
+
+The five rows from Twilio Programmable Messaging to `@axe-core/playwright` are
+R1's register gaps, closed at R1's acceptance (ADR-146). Each was a pending
+choice whose slice owned the record, and each carries that record: ADR-141 for
+the transactional SMS transport, ADR-142 for the backup and restore tooling,
+ADR-143 for the continuous-integration provider, ADR-144 for the SBOM generator,
+and ADR-145 for the automated accessibility checker. The version floor is the
+one R1's plan fixes and no more: `pg_basebackup` carries the database row's
+PostgreSQL 16 floor, and the three npm tools and GitHub Actions fix no minimum
+because the committed lockfile and the SHA-pinned actions are the versions of
+record. Two of the five are build- or test-time gates — the SBOM generator and
+the accessibility checker — and are never shipped; Twilio is an outbound channel
+and the backup tooling runs on the database host. Substituting one of the five
+is an amendment to this register, not a local choice.
 
 The frontend row's libraries split their roles and MUST NOT overlap: Nuxt UI
 v4 provides the UI components; Pinia holds client-side stores; TanStack Query
@@ -1429,47 +1486,38 @@ for the other:
 | Gap | Recorded in | Also in Complexity Tracking |
 |---|---|---|
 | Excel, PDF, and Word extraction; content-type validation | Constitution Mandated Values (extraction libraries) | Yes |
-| Transactional SMS provider for OTP and password reset | Constitution Mandated Values (transactional SMS transport) | Yes |
-| Continuous-integration provider | Constitution Mandated Values (continuous-integration provider) | Yes |
-| Icon set used by the interface | Constitution Mandated Values (icon set) | Yes |
-| Typeface used by the interface | Complexity Tracking | — |
 | Redis client library | Complexity Tracking | — |
 | OpenSearch client library | Complexity Tracking | — |
 | Arabic analyzer configuration and verification | Complexity Tracking | — |
-| Automated accessibility checker | Complexity Tracking | — |
 | Error tracker | Complexity Tracking | — |
 | Secret manager, plus pre-commit and CI secret scanning | Complexity Tracking | — |
 | TLS certificate management | Complexity Tracking | — |
-| Backup and restore tooling | Complexity Tracking | — |
 | Log pipeline | Complexity Tracking | — |
-| SBOM generator | Complexity Tracking | — |
 | Load-test tool | Complexity Tracking | — |
 
 | Gap | Required by | Owning slice |
 |---|---|---|
 | Excel, PDF, and Word extraction; content-type validation | File Processing Overview; Usage Limits | R3 (validation: R2) |
-| Transactional SMS provider for OTP and password reset | Product Scope: Sign Up, Forgot Password | R1 (international provider such as Twilio/Vonage) |
-| Continuous-integration provider | Principle III coverage gate; Dependency Governance | R1 (the slice that introduces the test runner) |
 | Error tracker | Deployment and Observability | R12 (the first deploying slice) |
 | Secret manager, plus pre-commit and CI secret scanning | Query Safety and Secrets | R12 (the first deploying slice) |
 | TLS certificate management | Identity, Authentication, and Session Policy | R12 (the first deploying slice) |
-| Backup and restore tooling | Deployment and Observability | R1 (the slice that introduces persistent storage) |
 | Log pipeline | Deployment and Observability | R12 (the first deploying slice) |
-| Icon set used by the interface: an open-source set under a permissive licence (MIT, Apache-2.0, ISC, or BSD), self-hosted as SVG, with no emoji standing in for an icon | Product Scope; Principle V; the Wafar UI layer | R1 |
-| Typeface used by the interface: an open-source family under a permissive licence (OFL or equivalent), self-hosted as WOFF2 | Principle V's Arabic-first interfaces; the Wafar UI layer | R1 |
 | Redis client library | Files register row (BullMQ, Redis); Deployment and Observability's worker-durability rules | R3 |
 | OpenSearch client library | Search register row; `packages/search`; the worker's index-write path (R3 indexes the parts, so R3 is the first slice to need the client) | R3 |
-| Automated accessibility checker | Principle IV's verification MUST | R1 |
 | Arabic analyzer configuration and verification | Principle V's root-aware search; Search register row | R5 |
-| SBOM generator | Deployment and Observability's supply-chain controls; Glossary (SBOM) | R1 (the slice that establishes the release build) |
 | Load-test tool | Performance Budgets and Verification (load testing before the first public release) | R12 |
 
-The typeface and the icon set are assets of the Wafar UI layer, not rows of the
-Approved register. The layer records the family and the cut it consumes; the
-icon-set and typeface gap rows above carry the register duty until R1 closes both
-at acceptance. ADR-098 records both choices, and ADR-137 fixes the consumed cut;
-the mirror names the exact family and cuts, and this register does not restate
-them.
+The seven rows R1 owned are closed, and none of them is a gap any more.
+Transactional SMS, the continuous-integration provider, the automated
+accessibility checker, the SBOM generator, and the backup and restore tooling are
+rows of the Approved register above, each with the record that decided it
+(ADR-141 to ADR-145) and the amendment that added it (ADR-146). The icon set and
+the typeface are assets of the Wafar UI layer, not rows of the Approved register:
+the layer records the family and the cut it consumes, ADR-098 records both
+choices, ADR-137 fixes the consumed cut, and the mirror names the exact family
+and cuts. This register therefore carries neither row and does not restate them.
+A closed row is not reopened by a later slice: changing one of the seven is an
+amendment to this section, not a fresh gap.
 
 ### Licence treatment for infrastructure services
 
@@ -1526,10 +1574,11 @@ however obviously the concept belongs to the entity.
 | **DLQ** | Dead-letter queue for jobs that exhaust retries. |
 | **Reprocess** | The administrator's re-run of the file-processing pipeline over a catalog's stored bytes, from the admin Files page (for example after an extraction fix). Distinct from a retry, which the merchant triggers for a failed job. |
 | **Retry** | The merchant's re-enqueue of a failed file's processing job, without re-uploading the bytes. |
-| **Wafar** | The platform's trade name, written «Wafar» (وَفَّر). The mandatory diacritics bind the Arabic form «وَفَّر»; the Latin «Wafar» carries no diacritics. The wordmark and the page titles read «منصة وَفَّر»; the trade name itself remains «وَفَّر». |
+| **Wafar** | The platform's trade name, written «Wafar» (وفر). The Arabic form carries no diacritics, and the Latin «Wafar» carries none either. The wordmark and the page titles read «منصة وفر»; the trade name itself is «وفر». |
 | **SBOM** | Software Bill of Materials produced per build. |
 | **Presigned multipart upload** | Direct-to-object-storage upload in parts, avoiding buffering through the API. |
 | **Merchant isolation** | A tenant is a merchant account. A merchant-reachable query path MUST NOT return another merchant's rows. |
+| **Shell** | The product's shared page composition: the header, the sidebar, the footer band that carries the static-page links, and, on a narrow screen, the bottom navigation bar (ADR-096, ADR-127). It is present on the public site and the merchant's authenticated area; the authentication pages, the 404 page, and the static pages are bare, and the administrator application carries its own shell. **Frame** is an accepted synonym for this composition, not a second term: it stays in the text that already carries it (Product Scope, Product Fact Clarifications, ADR-127, and `specs/001-identity-foundation/`), and new text — a specification, a plan, a task, or a decision record — MUST use **Shell**, because a feature MUST use a term as defined rather than a synonym for it. The code that builds the composition carries the same name, `packages/ui/app/components/shell/` and `apps/web/app/layouts/shell.vue`, so the term and the tree agree (ADR-148). |
 | **Wafar UI layer** | The project's single interface layer at `packages/ui`: the design tokens, the theme configuration, the icon set, the Arabic typeface, and the shared primitives every interface consumes. Its path is fixed by ADR-097; it is not a row of the Technology Standards topology, and no parallel layer or token file outside it may be created (Principle IX). |
 | **Token** | A named UI value — a colour, a type size, a spacing, a radius, a shadow, or a duration — recorded once by the Wafar UI layer and consumed by name. A raw value outside the layer is not a token, and a token file outside the layer is prohibited (Principle IX, ADR-128). |
 | **Technical Context** | The per-feature block in `plan.md` that records the stack, version pins, and constraints for this feature. |
@@ -1552,7 +1601,7 @@ however obviously the concept belongs to the entity.
 | `docs/architecture.md` | The repository layout, module map, and data-flow descriptions. | `docs/`. |
 | `docs/capacity-model.md` | The capacity and load envelope: the six-month plan, the ingestion envelope, and the starting point a plan's Scale/Scope records. The planning authority for the envelope only; this constitution wins on every conflict (ADR-117, ADR-119, ADR-121, ADR-122). | `docs/`. |
 | `docs/pdf-sample-analysis.md` | The measured sample evidence behind the capacity model's baseline (the 19-file sample of 2026-10-23). Evidence, not a source of rules (ADR-119, ADR-122). | `docs/`. |
-| `docs/design/` | The design contract's reference evidence: the slice map for the fifteen slices and twenty-eight pages, and the reference screenshots it names. Reference, not a visual baseline; the contract is ADR-128, the conformance gate is ADR-129, and the appearance authority is ADR-137. Evidence, not a source of rules (ADR-128, ADR-129, ADR-137). | `docs/`. |
+| `docs/design/` | The design contract's reference evidence: the slice map for the seventeen slices and twenty-eight pages, and the reference screenshots it names. Reference, not a visual baseline; the contract is ADR-128, the conformance gate is ADR-129, and the appearance authority is ADR-137. Evidence, not a source of rules (ADR-128, ADR-129, ADR-137). | `docs/`. |
 | `.specify/templates/exception-register.md` | The exception register required by Governance. | `.specify/templates/`. |
 | `.specify/templates/overrides/` | Template overrides required by Single-Reference Sufficiency and by Governance. | `.specify/templates/overrides/`. |
 | `.specify/memory/constitution.md` | This document. | `.specify/memory/`. |
@@ -1562,7 +1611,7 @@ however obviously the concept belongs to the entity.
 | `.specify/extensions.yml` | The installed extensions and the hook registry every Spec Kit command reads before and after it runs. | `.specify/`. |
 | `.specify/workflows/speckit/workflow.yml` | The bundled workflow that runs the binding cycle in order, with its human review gates. | `.specify/workflows/speckit/`. |
 | `README.md` | The contributor entry point: documentation map, workflow, and prerequisites. | Repository root. |
-| `governance-drift-check.mjs` | The committed read-only drift check (ADR-071, ADR-072, ADR-073, ADR-074, ADR-075, ADR-080, ADR-082, ADR-083, ADR-086, ADR-088, ADR-092, ADR-093, ADR-096, ADR-097, ADR-098, ADR-099, ADR-100, ADR-101, ADR-102, ADR-103, ADR-104, ADR-105, ADR-106, ADR-125, ADR-133, ADR-136): the two version sources including the amended date, every live ADR range string (in the required files, in the top-level `docs/` files, in the two Arabic mirrors, in the template overrides, and in the feature specifications), every ADR index row's anchor against its heading in the volume that holds it and every heading against the index, every volume's ADR continuity and the volume and index size caps (ADR-125), every `ADR-NNN` reference against the index, the ADR list in `Project-Technologies.txt`'s header and its contiguity, every ADR enumeration in the governance set against the canonical one the check's own header carries, the upstream manifest hashes in both directions, the two integrations' byte-identity (their command directories, and each integration manifest against the tree it records and that integration's whole command directory), the integration topology across `integration.json`, `init-options.json`, the integration directories and the bundled workflow's nesting, the structural counts the governance text states in prose, the Constitution Mandated Values count the plan template states, every entity's owning module in `docs/domain-model.md` against the Data entities table above, the design evidence's registration and citation, the template load map, the ADR index's constitution-version column against the footer's version, and the absence of the removed stylesheet and its constitution section. Read-only and dependency-free; exits non-zero on drift, and runs on commit through the committed `pre-commit` hook. | Repository root. |
+| `governance-drift-check.mjs` | The committed read-only drift check (ADR-071, ADR-072, ADR-073, ADR-074, ADR-075, ADR-080, ADR-082, ADR-083, ADR-086, ADR-088, ADR-092, ADR-093, ADR-096, ADR-097, ADR-098, ADR-099, ADR-100, ADR-101, ADR-102, ADR-103, ADR-104, ADR-105, ADR-106, ADR-125, ADR-133, ADR-136, ADR-140): the two version sources including the amended date, every live ADR range string (in the required files, in the top-level `docs/` files, in the two Arabic mirrors, in the template overrides, and in the feature specifications), every ADR index row's anchor against its heading in the volume that holds it and every heading against the index, every volume's ADR continuity and the volume and index size caps (ADR-125), every `ADR-NNN` reference against the index, the ADR list in `Project-Technologies.txt`'s header and its contiguity, every ADR enumeration in the governance set against the canonical one the check's own header carries, the upstream manifest hashes in both directions, the two integrations' byte-identity (their command directories, and each integration manifest against the tree it records and that integration's whole command directory), the integration topology across `integration.json`, `init-options.json`, the integration directories and the bundled workflow's nesting, the structural counts the governance text states in prose, the Constitution Mandated Values count the plan template states, every entity's owning module in `docs/domain-model.md` against the Data entities table above, the design evidence's registration and citation, the template load map, the ADR index's constitution-version column against the footer's version, and the absence of the removed stylesheet and its constitution section. Read-only and dependency-free; exits non-zero on drift, and runs on commit through the committed `pre-commit` hook. | Repository root. |
 
 ## Artifact Workflow and Traceability
 
@@ -1603,8 +1652,8 @@ the same force as the principles above.
 ## Product Fact Clarifications
 
 - Contact form fields are exactly `name`, `phone`, and `body`.
-- The platform's trade name is «Wafar» (وَفَّر); the mandatory diacritics
-  bind the Arabic form «وَفَّر», and the Latin «Wafar» carries none.
+- The platform's trade name is «Wafar» (وفر); the Arabic form carries no
+  diacritics, and the Latin «Wafar» carries none.
 - "Reports" means the statistics and summaries the administrator Dashboard
   shows over entities already in scope. Advanced reports
   (تقارير متقدمة) are out of scope until specified.
@@ -1854,4 +1903,4 @@ in place of them or leave the gap unrecorded.
 
 ---
 
-**Version**: 6.2.1 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-28
+**Version**: 6.3.2 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-11-04

@@ -1,0 +1,22 @@
+{
+  "name": "@wafar/ui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./nuxt.config.ts",
+    "./tokens.css": "./app/assets/css/tokens.css",
+    "./app/*": "./app/*"
+  },
+  "dependencies": {
+    "@tanstack/vue-query": "^5.90.2",
+    "@wafar/shared": "workspace:*",
+    "vue": "catalog:"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^2.4.6"
+  },
+  "scripts": {
+    "lint": "eslint app tests nuxt.config.ts env.d.ts"
+  }
+}

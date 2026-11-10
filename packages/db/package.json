@@ -1,0 +1,35 @@
+{
+  "name": "@wafar/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./schema": "./schema/index.ts",
+    "./client": "./client.ts",
+    "./schema-version": "./schema-version.ts",
+    "./sweeps": "./sweeps.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "generate": "drizzle-kit generate",
+    "migrate": "tsx ./scripts/migrate.ts",
+    "reset": "tsx ./scripts/reset.ts",
+    "seed": "tsx ./scripts/seed.ts",
+    "stamp-version": "node ./scripts/stamp-version.mjs",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "drizzle-orm": "catalog:",
+    "pg": "catalog:"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/pg": "catalog:",
+    "@wafar/config": "workspace:*",
+    "drizzle-kit": "catalog:",
+    "tsx": "^4.20.6"
+  }
+}

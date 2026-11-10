@@ -1,0 +1,26 @@
+/* The application's CSS entry: it imports the layer's tokens only. A page
+   carries no visual value of its own. */
+@import '@wafar/ui/tokens.css';
+
+html {
+  color: var(--wf-ink);
+  background: var(--wf-surface-muted);
+  font-family: var(--wf-font-sans);
+  line-height: var(--wf-leading-normal);
+}
+
+body {
+  margin: 0;
+  min-block-size: 100vh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: var(--wf-focus-width) solid var(--wf-focus-colour);
+  outline-offset: var(--wf-focus-offset);
+}

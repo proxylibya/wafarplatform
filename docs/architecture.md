@@ -8,9 +8,11 @@ the constitution wins. The data model's entities and their owning modules are
 stated in `docs/domain-model.md`, which this document does not restate.
 
 **Status**: baseline for a repository where production code does not exist yet.
-Directories are created by the first feature or the pre-R1 foundation that owns
-them, and every directory holding production code is registered in that plan's
-Project Structure > Ownership Map (Project Structure and Debt Control).
+Directories are created by the first feature that owns them, or by R1's
+foundation phase for the workspace and the layer; the phrase "pre-R1 foundation"
+is retired (ADR-139). Every directory holding production code is registered in
+that plan's Project Structure > Ownership Map (Project Structure and Debt
+Control).
 
 ## 1. Repository layout (Monorepo)
 
@@ -25,7 +27,7 @@ wafar/
 │   ├── shared/           # Validation schemas + types + contracts (Zod) shared by frontend and backend
 │   ├── db/               # Database schema + migrations (Drizzle), single migration mechanism
 │   ├── search/           # Search client + index mappings (OpenSearch)
-│   ├── ui/               # Wafar UI layer: tokens, theme, IconPark icons, IBM Plex Sans Arabic, shared primitives (ADR-097, ADR-098)
+│   ├── ui/               # Wafar UI layer: tokens, theme, IconPark icons, IBM Plex Sans Arabic, IBM Plex Mono, shared primitives (ADR-097, ADR-098, ADR-128)
 │   └── config/           # ESLint + Stylelint + Prettier + TypeScript shared configuration
 ├── pnpm-workspace.yaml
 ├── turbo.json
@@ -67,7 +69,7 @@ Principle IX (ADR-093 keeps that path out of the constitution's package rows).
 | Web server routes | `apps/web/server/` — optional Nitro server routes (Nitro is part of Nuxt 4 and is deliberately not a row of the Approved register); created only by the feature that declares them in its Ownership Map |
 | Administrator frontend | `apps/admin/app/{pages,components,composables,stores,layouts,assets}`, `apps/admin/app/app.config.ts`, `apps/admin/app/app.vue`; `apps/admin/public/` and `apps/admin/shared/` at the app root |
 | Administrator server routes | `apps/admin/server/` — optional Nitro server routes; created only by the feature that declares them in its Ownership Map |
-| Wafar UI layer | `packages/ui/{app/components,app/composables,app/utils,app/assets,app/app.config.ts,nuxt.config.ts}` — fixed by ADR-097 under Principle IX; not a row of the constitution's Internal layout (ADR-093) |
+| Wafar UI layer | `packages/ui/{app/components,app/composables,app/plugins,app/utils,app/assets,app/app.config.ts,nuxt.config.ts}` — fixed by ADR-097 under Principle IX; not a row of the constitution's Internal layout (ADR-093). `app/plugins/` holds a provider only when both frontends need it; `apps/web` installs the TanStack Query provider from there (T268) |
 | Validation | `packages/shared` only; a second local schema MUST NOT be created |
 | Database ownership | `packages/db/schema/<module>.ts` — one file per module named in Principle X; the table it declares belongs to that module |
 
@@ -95,7 +97,7 @@ shared package — never through a direct import from one module to another.
 | `notifications` | Processing-completed/failed notices, administrative messages, and an administrator's reply to a merchant message; read state. | Failed processing presents a retry action. |
 | `messages` | The conversation thread between a merchant and the administrator: a user has at most one (Product Register). Whether it carries an administrator reference, and whether every administrator account reads the same thread, is unresolved fact #2 in `docs/domain-model.md`, owned by R10 — never user-to-user. | Direct user-to-user messaging is prohibited (Principle VI). |
 | `support` | Support content and assistance flows: FAQ, privacy policy, terms of use; contact intake that reaches the administrator. | Public pages from Product Scope. |
-| `admin` | Administrator operations: users (view/block/edit/set upload quota), files (review/delete/reprocess), suppliers, parts (edit/add), message replies, broadcasts, settings, contact messages. | Every administrator operation is recorded in the append-only audit log (Authorization and Access Control). The administrator is a `User` holding the administrator role. The Settings page reads and writes `PlatformSetting`, owned by `admin` (ADR-067); it never carries a Usage Limit. The module is created by R11 for the public Contact page's read of `PlatformSetting` (its schema and its public read projection), and R13 extends it with the administrator's write surface and the remaining operations (ADR-077). |
+| `admin` | Administrator operations: users (view/block/edit/set upload quota), files (review/delete/reprocess), suppliers, parts (edit/add), message replies, broadcasts, settings, contact messages. | Every administrator operation is recorded in the append-only audit log (Authorization and Access Control). The administrator is a `User` holding the administrator role. The Settings page reads and writes `PlatformSetting`, owned by `admin` (ADR-067); it never carries a Usage Limit. The module is created by R11 for the public Contact page's read of `PlatformSetting` (its schema and its public read projection), and R13, R16 and R17 extend it with the administrator's write surface and the remaining operations (ADR-077, annotated by ADR-140). |
 
 Cross-cutting rules for every module:
 
@@ -237,7 +239,7 @@ Read/write notes:
 | `packages/shared` | Validation schemas, types, and contracts shared between frontend and backend. | Single source of the two contracts (Principle II); promoted code only after a second consumer exists. |
 | `packages/db` | Database schema and migrations. | One migration tool only; every migration a single reversible step; destructive changes split into expand/backfill/contract (Schema and Migration Control). |
 | `packages/search` | Search client and index mappings. | Arabic analyzer; time-based indices behind an alias; OpenSearch Index State Management (ISM) deletes a whole index by age, with the per-catalog 90-day deletion enforced by the retention job (R15); one mapping owner per index; shard count from the modelled index (ADR-121). |
-| `packages/ui` | The Wafar UI layer: design tokens, theme, IconPark icons, IBM Plex Sans Arabic, and shared primitives. | Nuxt UI v4 only; IconPark (outline cut consumed; the colour cut vendored and not consumed; both cuts vendored and pinned, ADR-098 annotated by ADR-128 and ADR-137); IBM Plex Sans Arabic; no app pages; app-specific components stay in the apps; ADR-097/098/128/137. IconPark is the ADR-098 choice; the icon set and the typeface remain Technology Standards register gaps R1 closes (ADR-116; ADR-138). |
+| `packages/ui` | The Wafar UI layer: design tokens, theme, IconPark icons, IBM Plex Sans Arabic, IBM Plex Mono, and shared primitives. | Nuxt UI v4 only; IconPark (outline cut consumed; the colour cut vendored and not consumed; both cuts vendored and pinned, ADR-098 annotated by ADR-128 and ADR-137); IBM Plex Sans Arabic and IBM Plex Mono; no app pages; app-specific components stay in the apps; ADR-097/098/128/137. IconPark is the ADR-098 choice; the icon set and the typeface are assets of this layer, not rows of the Approved register: ADR-098 records both choices, ADR-137 fixes the consumed cut, and ADR-146 records the two gap rows closed at R1's acceptance. |
 | `packages/config` | ESLint, Stylelint, Prettier, TypeScript configuration shared by all workspaces. | Dependency and tooling changes follow Dependency Governance. Stylelint + ESLint fail the build on physical direction properties and on any colour, spacing, radius, shadow, duration, or z-index value that is not supplied by the Wafar UI layer — enforced by the committed configuration, not a review comment (Principle IX). |
 
 ## 5. Environments and operations
@@ -275,7 +277,7 @@ Read/write notes:
   Deferred areas).
 - Decisions and their rationale: the decision register — `docs/DECISIONS.md`
   (index and reading protocol) and `docs/decisions/volume-NN.md` (records),
-  ADR-001 … ADR-138.
+  ADR-001 … ADR-161.
 - Data model: `docs/domain-model.md` — the entities, their relationships and
   invariants, and the owning module of each. This document names the modules;
   that document explains what each one owns. Neither repeats the other.
@@ -286,10 +288,10 @@ Read/write notes:
 - UI foundation: Nuxt UI v4 is the component library; the Wafar UI layer is
   `packages/ui`, fixed by ADR-097 (Principle IX); R1 builds it through its plan
   and consumes it.
-  ADR-098 records IconPark and IBM Plex Sans Arabic; ADR-128 replaces its
-  marine/sand palette with the Precision contract, and ADR-132 keeps the
-  scroll-hide bar; ADR-137 restores the light default and consumes the outline
-  icon cut.
+  ADR-098 records IconPark and IBM Plex Sans Arabic; ADR-128 adds IBM Plex Mono
+  for numerals and replaces ADR-098's marine/sand palette with the Precision
+  contract, and ADR-132 keeps the scroll-hide bar; ADR-137 restores the light
+  default and consumes the outline icon cut.
 - Technology stack: `Project-Technologies.txt`; product scope and roles:
   `Core-Project.txt`.
 - Deferred areas that touch this architecture: extraction algorithm; file
